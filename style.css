@@ -150,3 +150,46 @@ color:white;
 text-align:center;
 padding:20px;
 }
+
+
+.komunitas{
+
+background:#f9f9f9;
+
+padding:100px 10%;
+
+text-align:center;
+
+}
+
+.komunitas h2{
+
+font-size:36px;
+
+margin-bottom:20px;
+
+}
+
+.komunitas p{
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:40px;
+
+color:#555;
+
+}
+
+.komentar-box{
+
+background:white;
+
+padding:40px;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
