@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,6 +11,7 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+
 
 <body>
 
@@ -26,9 +28,10 @@
 
 <li><a href="index.html">Beranda</a></li>
 
+
 <li class="dropdown-parent">
 
-<a href="javascript:void(0)">Profil</a>
+<button class="menu-btn">Profil</button>
 
 <div class="dropdown">
 <a href="profil.html">Siapa Tetuko Ethnic</a>
@@ -39,7 +42,7 @@
 
 <li class="dropdown-parent">
 
-<a href="javascript:void(0)">Galeri</a>
+<button class="menu-btn">Galeri</button>
 
 <div class="dropdown">
 <a href="galeri-workshop.html">Galeri Workshop</a>
@@ -52,7 +55,7 @@
 
 <li class="dropdown-parent">
 
-<a href="javascript:void(0)">Edukasi</a>
+<button class="menu-btn">Edukasi</button>
 
 <div class="dropdown">
 <a href="rebab.html">Tentang Rebab</a>
@@ -64,8 +67,8 @@
 
 </li>
 
-<li><a href="katalog.html">Katalog</a></li>
 
+<li><a href="katalog.html">Katalog</a></li>
 <li><a href="kontak.html">Kontak</a></li>
 
 </ul>
@@ -79,6 +82,7 @@
 <section class="hero">
 
 <h1>TETUKO ETHNIC</h1>
+
 <p>Produsen Rebab Berkualitas</p>
 
 <a href="katalog.html" class="btn">Lihat Produk</a>
@@ -162,6 +166,43 @@ navbar.classList.remove("nav-scroll");
 
 
 
+/* DROPDOWN MENU CLICK */
+
+const buttons=document.querySelectorAll(".menu-btn");
+
+buttons.forEach(button=>{
+
+button.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+const dropdown=this.nextElementSibling;
+
+document.querySelectorAll(".dropdown").forEach(menu=>{
+if(menu!==dropdown){
+menu.classList.remove("show");
+}
+});
+
+dropdown.classList.toggle("show");
+
+});
+
+});
+
+
+/* KLIK LUAR MENU MENUTUP */
+
+window.addEventListener("click",function(){
+
+document.querySelectorAll(".dropdown").forEach(menu=>{
+menu.classList.remove("show");
+});
+
+});
+
+
+
 /* LIGHTBOX GALERI */
 
 const images=document.querySelectorAll(".slide-track img");
@@ -179,14 +220,14 @@ lightboxImg.src=img.src;
 
 }
 
-})
+});
 
 lightbox.onclick=()=>{
 lightbox.style.display="none";
-}
-
+};
 
 </script>
+
 
 </body>
 </html>
