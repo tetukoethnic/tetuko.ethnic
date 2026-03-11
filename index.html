@@ -291,6 +291,8 @@ TikTok : @tetuko.ethnic
 
 <script>
 
+<script>
+
 /* SEARCH FULLSCREEN */
 
 function openSearch(){
@@ -298,7 +300,7 @@ function openSearch(){
 const overlay = document.getElementById("search-overlay");
 const input = document.getElementById("search-input");
 
-overlay.style.display="flex";
+overlay.classList.add("active");
 
 setTimeout(()=>{
 input.focus();
@@ -306,17 +308,16 @@ input.focus();
 
 }
 
-
-
 function closeSearch(){
 
-document.getElementById("search-overlay").style.display="none";
+const overlay = document.getElementById("search-overlay");
+
+overlay.classList.remove("active");
 
 document.getElementById("search-input").value="";
 document.getElementById("search-results").innerHTML="";
 
 }
-
 
 
 /* SEARCH DATA */
@@ -331,8 +332,6 @@ const pages=[
 {title:"Katalog",url:"katalog.html"}
 
 ];
-
-
 
 function searchSite(){
 
@@ -373,7 +372,6 @@ results.innerHTML="<p>Tidak ditemukan</p>";
 }
 
 
-
 /* TUTUP SEARCH DENGAN ESC */
 
 document.addEventListener("keydown",function(e){
@@ -391,6 +389,7 @@ closeSearch();
 
 </body>
 </html>
+
 
 
 
