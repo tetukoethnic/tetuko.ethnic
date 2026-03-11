@@ -13,8 +13,6 @@
 
 <body>
 
-<!-- NAVBAR -->
-
 <header class="navbar">
 
 <div class="nav-container">
@@ -82,9 +80,6 @@
 </header>
 
 
-
-<!-- SEARCH BOX -->
-
 <div id="search-box">
 
 <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
@@ -94,8 +89,6 @@
 </div>
 
 
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -108,8 +101,6 @@
 </section>
 
 
-
-<!-- TENTANG -->
 
 <section class="tentang">
 
@@ -129,8 +120,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 </section>
 
 
-
-<!-- GALERI -->
 
 <section class="galeri">
 
@@ -163,8 +152,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 </section>
 
 
-
-<!-- PRODUK -->
 
 <section class="produk-unggulan">
 
@@ -220,27 +207,19 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 <script>
 
-/* SEARCH OPEN */
-
 function toggleSearch(){
 
 let box=document.getElementById("search-box");
 
 if(box.style.display==="block"){
-
 box.style.display="none";
-
 }else{
-
 box.style.display="block";
-
 }
 
 }
 
 
-
-/* DATA PENCARIAN */
 
 const pages=[
 
@@ -262,7 +241,6 @@ const pages=[
 function searchSite(){
 
 let input=document.getElementById("search-input").value.toLowerCase();
-
 let results=document.getElementById("search-results");
 
 results.innerHTML="";
@@ -272,9 +250,7 @@ pages.forEach(page=>{
 if(page.title.toLowerCase().includes(input)){
 
 let link=document.createElement("a");
-
 link.href=page.url;
-
 link.textContent=page.title;
 
 results.appendChild(link);
