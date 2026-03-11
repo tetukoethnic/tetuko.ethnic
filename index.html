@@ -13,6 +13,23 @@
 
 <body>
 
+<!-- SEARCH FULLSCREEN -->
+
+<div id="search-overlay">
+
+<div class="search-container">
+
+<input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
+
+<div id="search-results"></div>
+
+<span class="close-search" onclick="closeSearch()">✕</span>
+
+</div>
+
+</div>
+
+
 <header class="navbar">
 
 <div class="nav-container">
@@ -42,7 +59,7 @@
 
 <div class="dropdown">
 
-<a href="galeri-workshop.html">Galeri Workshop</a>
+<a href="galeri-produksi.html">Galeri Produksi</a>
 <a href="galeri-produk.html">Galeri Produk</a>
 <a href="proses.html">Proses Pembuatan</a>
 
@@ -67,26 +84,22 @@
 
 </li>
 
+
 <li><a href="katalog.html">Katalog</a></li>
 
-<li><a href="kontak.html">Kontak</a></li>
+<li>
+<a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">
+Kontak
+</a>
+</li>
 
 </ul>
 
-<div class="search-icon" onclick="toggleSearch()">🔍</div>
+<div class="search-icon" onclick="openSearch()">🔍</div>
 
 </div>
 
 </header>
-
-
-<div id="search-box">
-
-<input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
-
-<div id="search-results"></div>
-
-</div>
 
 
 
@@ -161,23 +174,37 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 <div class="produk-container">
 
-<div class="produk-card">
+<a href="https://id.shp.ee/dxZxTbs3" target="_blank" class="produk-card">
+
 <img src="images/produk1.jpg">
+
 <h3>Rebab Ukir Klasik</h3>
-<p>Rebab dengan ukiran khas dan karakter suara halus untuk kebutuhan karawitan.</p>
-</div>
 
-<div class="produk-card">
+<p>Rebab ukiran khas dengan suara halus.</p>
+
+</a>
+
+
+<a href="https://id.shp.ee/dxZxTbs3" target="_blank" class="produk-card">
+
 <img src="images/produk2.jpg">
-<h3>Rebab Profesional</h3>
-<p>Dibuat dari bahan pilihan untuk menghasilkan resonansi suara yang optimal.</p>
-</div>
 
-<div class="produk-card">
+<h3>Rebab Profesional</h3>
+
+<p>Material pilihan dengan resonansi optimal.</p>
+
+</a>
+
+
+<a href="https://id.shp.ee/dxZxTbs3" target="_blank" class="produk-card">
+
 <img src="images/produk3.jpg">
+
 <h3>Perangkat Gender</h3>
-<p>Instrumen penting dalam karawitan dengan kualitas pengerjaan yang presisi.</p>
-</div>
+
+<p>Instrumen karawitan dengan presisi tinggi.</p>
+
+</a>
 
 </div>
 
@@ -201,38 +228,47 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 <p>© 2026 Tetuko Ethnic</p>
 
+<p>
+
+Instagram : @tetuko.ethnic  
+<br>
+
+TikTok : @tetuko.ethnic
+
+</p>
+
 </footer>
 
 
 
 <script>
 
-function toggleSearch(){
+/* SEARCH FULLSCREEN */
 
-let box=document.getElementById("search-box");
+function openSearch(){
 
-if(box.style.display==="block"){
-box.style.display="none";
-}else{
-box.style.display="block";
-}
+document.getElementById("search-overlay").style.display="flex";
 
 }
 
+function closeSearch(){
 
+document.getElementById("search-overlay").style.display="none";
+
+}
+
+
+
+/* SEARCH DATA */
 
 const pages=[
 
 {title:"Rebab",url:"rebab.html"},
-{title:"Cara Merawat Rebab",url:"rawat-rebab.html"},
-{title:"Tentang Gender",url:"gender.html"},
-{title:"Cara Merawat Gender",url:"rawat-gender.html"},
+{title:"Gender",url:"gender.html"},
 {title:"Karawitan",url:"karawitan.html"},
-{title:"Galeri Workshop",url:"galeri-workshop.html"},
+{title:"Galeri Produksi",url:"galeri-produksi.html"},
 {title:"Galeri Produk",url:"galeri-produk.html"},
-{title:"Proses Pembuatan",url:"proses.html"},
-{title:"Katalog",url:"katalog.html"},
-{title:"Kontak",url:"kontak.html"}
+{title:"Katalog",url:"katalog.html"}
 
 ];
 
@@ -250,7 +286,9 @@ pages.forEach(page=>{
 if(page.title.toLowerCase().includes(input)){
 
 let link=document.createElement("a");
+
 link.href=page.url;
+
 link.textContent=page.title;
 
 results.appendChild(link);
@@ -263,7 +301,6 @@ results.appendChild(link);
 
 </script>
 
+
 </body>
 </html>
-
-
