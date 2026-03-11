@@ -49,7 +49,7 @@ padding:8px 18px;
 border-radius:20px;
 }
 
-/* APPLE STYLE NAVBAR */
+/* NAVBAR */
 
 .apple-header{
 
@@ -86,14 +86,12 @@ padding:10px 20px;
 /* LOGO */
 
 .logo img{
-
 height:25px;
-
 }
 
 
 
-/* MENU TENGAH */
+/* MENU */
 
 .apple-nav{
 
@@ -103,16 +101,14 @@ gap:35px;
 
 align-items:center;
 
-flex:1;
-
 justify-content:center;
+
+flex:1;
 
 }
 
 .nav-item{
-
 position:relative;
-
 }
 
 .nav-item a{
@@ -127,7 +123,7 @@ font-size:14px;
 
 
 
-/* MEGA MENU */
+/* DROPDOWN */
 
 .mega-menu{
 
@@ -137,64 +133,44 @@ top:40px;
 
 left:0;
 
-width:100vw;
-
 background:white;
 
-padding:40px 200px;
+padding:20px;
 
 display:none;
 
-gap:80px;
+flex-direction:column;
+
+min-width:200px;
 
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 
-}
-
-.nav-item:hover .mega-menu{
-
-display:flex;
+border-radius:8px;
 
 }
 
+.mega-menu a{
 
-
-/* KOLOM MENU */
-
-.menu-column{
-
-display:flex;
-
-flex-direction:column;
-
-}
-
-.menu-column h4{
-
-margin-bottom:10px;
-
-font-size:14px;
-
-color:#888;
-
-}
-
-.menu-column a{
-
-margin:5px 0;
+padding:8px 10px;
 
 text-decoration:none;
 
 color:#333;
 
-font-size:16px;
+}
+
+.mega-menu a:hover{
+
+background:#f5f5f7;
 
 }
 
-.menu-column a:hover{
 
-color:#0071e3;
 
+/* HOVER */
+
+.nav-item:hover .mega-menu{
+display:flex;
 }
 
 
