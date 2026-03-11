@@ -1,8 +1,8 @@
 body{
 margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:white;
 color:#1d1d1f;
-background:#fff;
 }
 
 
@@ -10,28 +10,31 @@ background:#fff;
 /* NAVBAR */
 
 .navbar{
+
 position:fixed;
 top:0;
 width:100%;
-background:rgba(255,255,255,0.4);
+background:rgba(255,255,255,0.6);
 backdrop-filter:blur(10px);
 border-bottom:1px solid transparent;
-transition:0.3s;
-z-index:999;
+z-index:9999;
+
 }
 
-.nav-scrolled{
-background:rgba(255,255,255,0.9);
+.nav-scroll{
+background:rgba(255,255,255,0.95);
 border-bottom:1px solid #eee;
 }
 
 .nav-container{
+
 max-width:1200px;
 margin:auto;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:15px 40px;
+
 }
 
 
@@ -39,7 +42,7 @@ padding:15px 40px;
 /* LOGO */
 
 .logo img{
-height:50px;
+height:45px;
 }
 
 
@@ -54,9 +57,13 @@ margin:0;
 padding:0;
 }
 
+.nav-menu li{
+position:relative;
+}
+
 .nav-menu a{
 text-decoration:none;
-color:#1d1d1f;
+color:#333;
 font-size:15px;
 }
 
@@ -64,62 +71,38 @@ font-size:15px;
 
 /* DROPDOWN */
 
-.dropdown-parent{
-position:relative;
-}
-
 .dropdown{
 
 position:absolute;
-
 top:40px;
-
 left:0;
-
 background:white;
-
 border-radius:10px;
-
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 display:none;
-
 flex-direction:column;
-
 min-width:220px;
-
 padding:10px 0;
-
-z-index:9999;
+z-index:99999;
 
 }
 
 .dropdown a{
 
 padding:10px 20px;
-
 display:block;
-
-text-decoration:none;
-
 color:#333;
 
 }
 
 .dropdown a:hover{
-
 background:#f5f5f7;
-
 }
 
 
 
-/* tampil saat navbar disentuh */
-
 .dropdown-parent:hover .dropdown{
-
 display:flex;
-
 }
 
 
@@ -127,6 +110,7 @@ display:flex;
 /* HERO */
 
 .hero{
+
 height:100vh;
 background:url("images/background.jpg") center/cover;
 display:flex;
@@ -135,6 +119,7 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+
 }
 
 .hero h1{
@@ -168,26 +153,21 @@ padding:100px 10%;
 text-align:center;
 }
 
-.galeri h2{
-font-size:36px;
-}
-
-
-
-/* SLIDER */
-
 .slider{
 overflow:hidden;
 margin-top:40px;
 }
 
 .slide-track{
+
 display:flex;
 width:calc(270px * 12);
 animation:scroll 40s linear infinite;
+
 }
 
 .slide-track img{
+
 width:250px;
 height:170px;
 object-fit:cover;
@@ -195,31 +175,21 @@ border-radius:10px;
 margin-right:20px;
 cursor:pointer;
 transition:0.3s;
+
 }
 
 .slide-track img:hover{
-transform:scale(1.08);
+transform:scale(1.1);
 }
 
 
 
 @keyframes scroll{
+
 0%{transform:translateX(0);}
+
 100%{transform:translateX(-50%);}
-}
 
-
-
-/* BUTTON GALERI */
-
-.btn-galeri{
-display:inline-block;
-margin-top:30px;
-padding:10px 25px;
-background:#000;
-color:white;
-border-radius:25px;
-text-decoration:none;
 }
 
 
@@ -227,13 +197,11 @@ text-decoration:none;
 /* PRODUK */
 
 .produk-showcase{
+
 padding:120px 10%;
 background:#f5f5f7;
 text-align:center;
-}
 
-.produk-showcase h2{
-font-size:48px;
 }
 
 .produk-showcase img{
@@ -248,6 +216,7 @@ border-radius:20px;
 /* LIGHTBOX */
 
 #lightbox{
+
 position:fixed;
 top:0;
 left:0;
@@ -257,7 +226,8 @@ background:rgba(0,0,0,0.9);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:2000;
+z-index:999999;
+
 }
 
 #lightbox img{
@@ -267,97 +237,14 @@ max-height:85%;
 
 
 
-/* SCROLL ANIMATION */
-
-.reveal{
-opacity:0;
-transform:translateY(60px);
-transition:1s;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-
-
 /* FOOTER */
 
 footer{
+
 background:#111;
 color:#aaa;
 text-align:center;
 padding:30px;
-margin-top:100px;
-}
+margin-top:80px;
 
-/* NAVBAR FIX */
-
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(255,255,255,0.9);
-backdrop-filter:blur(10px);
-z-index:9999;
-}
-
-.nav-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:15px 40px;
-}
-
-.nav-menu{
-display:flex;
-gap:35px;
-list-style:none;
-margin:0;
-padding:0;
-}
-
-.nav-menu li{
-position:relative;
-}
-
-.nav-menu a{
-text-decoration:none;
-color:#333;
-font-size:15px;
-}
-
-/* DROPDOWN */
-
-.dropdown{
-
-position:absolute;
-top:35px;
-left:0;
-background:white;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-display:none;
-flex-direction:column;
-min-width:200px;
-padding:10px 0;
-z-index:9999;
-}
-
-.dropdown a{
-padding:10px 20px;
-display:block;
-}
-
-.dropdown a:hover{
-background:#f5f5f7;
-}
-
-/* HOVER AKTIF */
-
-.dropdown-parent:hover .dropdown{
-display:flex;
 }
