@@ -1,14 +1,9 @@
 body{
 
 margin:0;
-
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-
+color:#1d1d1f;
 background:#fff;
-
-color:#111;
-
-padding-top:80px;
 
 }
 
@@ -19,31 +14,22 @@ padding-top:80px;
 .navbar{
 
 position:fixed;
-
 top:0;
-
 width:100%;
-
-background:#f5f5f7;
-
-border-bottom:1px solid #ddd;
-
-z-index:1000;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #eee;
+z-index:999;
 
 }
 
 .nav-container{
 
 max-width:1200px;
-
 margin:auto;
-
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
-
 padding:15px 40px;
 
 }
@@ -65,25 +51,17 @@ height:50px;
 .nav-menu{
 
 display:flex;
-
 gap:35px;
-
 list-style:none;
-
 margin:0;
-
 padding:0;
-
-align-items:center;
 
 }
 
 .nav-menu a{
 
 text-decoration:none;
-
-color:#333;
-
+color:#1d1d1f;
 font-size:15px;
 
 }
@@ -101,31 +79,22 @@ position:relative;
 .dropdown{
 
 position:absolute;
-
 top:35px;
-
 left:0;
-
 background:white;
-
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-
 border-radius:10px;
-
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 display:none;
-
 flex-direction:column;
-
 min-width:220px;
-
 padding:10px 0;
+animation:fadeDown .3s;
 
 }
 
 .dropdown a{
 
 padding:10px 20px;
-
 display:block;
 
 }
@@ -144,13 +113,17 @@ display:flex;
 
 
 
-/* SEARCH */
+@keyframes fadeDown{
 
-.search{
+from{
+opacity:0;
+transform:translateY(-10px);
+}
 
-font-size:18px;
-
-cursor:pointer;
+to{
+opacity:1;
+transform:translateY(0);
+}
 
 }
 
