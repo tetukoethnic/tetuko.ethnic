@@ -1,10 +1,8 @@
 body{
-
 margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
 color:#1d1d1f;
 background:#fff;
-
 }
 
 
@@ -12,7 +10,6 @@ background:#fff;
 /* NAVBAR */
 
 .navbar{
-
 position:fixed;
 top:0;
 width:100%;
@@ -20,18 +17,15 @@ background:rgba(255,255,255,0.7);
 backdrop-filter:blur(10px);
 border-bottom:1px solid #eee;
 z-index:999;
-
 }
 
 .nav-container{
-
 max-width:1200px;
 margin:auto;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:15px 40px;
-
 }
 
 
@@ -39,9 +33,7 @@ padding:15px 40px;
 /* LOGO */
 
 .logo img{
-
-height:50px;
-
+height:55px;
 }
 
 
@@ -49,21 +41,17 @@ height:50px;
 /* MENU */
 
 .nav-menu{
-
 display:flex;
 gap:35px;
 list-style:none;
 margin:0;
 padding:0;
-
 }
 
 .nav-menu a{
-
 text-decoration:none;
 color:#1d1d1f;
 font-size:15px;
-
 }
 
 
@@ -71,21 +59,16 @@ font-size:15px;
 /* DROPDOWN */
 
 .dropdown-parent{
-
 position:relative;
 padding-bottom:15px;
-
 }
 
 .dropdown-parent span{
-
 cursor:pointer;
 font-size:15px;
-
 }
 
 .dropdown{
-
 position:absolute;
 top:40px;
 left:0;
@@ -96,29 +79,21 @@ display:none;
 flex-direction:column;
 min-width:220px;
 padding:10px 0;
-z-index:1000;
-
 }
 
 .dropdown a{
-
 padding:10px 20px;
 display:block;
-text-decoration:none;
 color:#1d1d1f;
-
+text-decoration:none;
 }
 
 .dropdown a:hover{
-
 background:#f5f5f7;
-
 }
 
 .dropdown-parent:hover .dropdown{
-
 display:flex;
-
 }
 
 
@@ -126,36 +101,23 @@ display:flex;
 /* HERO */
 
 .hero{
-
 height:100vh;
-
-background:url("background.JPG") center/cover;
-
+background:url("images/background.JPG") center/cover;
 display:flex;
-
 flex-direction:column;
-
 align-items:center;
-
 justify-content:center;
-
 text-align:center;
-
 color:white;
-
 }
 
 .hero h1{
-
 font-size:72px;
 letter-spacing:4px;
-
 }
 
 .hero p{
-
 font-size:22px;
-
 }
 
 
@@ -163,14 +125,12 @@ font-size:22px;
 /* BUTTON */
 
 .btn{
-
 background:#0071e3;
 color:white;
 padding:12px 25px;
 border-radius:25px;
 text-decoration:none;
 margin-top:20px;
-
 }
 
 
@@ -178,12 +138,10 @@ margin-top:20px;
 /* TENTANG */
 
 .tentang{
-
 padding:120px 15%;
 text-align:center;
 line-height:1.8;
 font-size:18px;
-
 }
 
 
@@ -191,56 +149,42 @@ font-size:18px;
 /* GALERI */
 
 .galeri{
-
 padding:120px 10%;
 text-align:center;
-
 }
 
 .slider{
-
 overflow:hidden;
 margin-top:40px;
-
 }
 
 .slide-track{
-
 display:flex;
 width:calc(270px * 12);
 animation:scroll 40s linear infinite;
-
 }
 
 .slide-track img{
-
 width:250px;
 height:170px;
 object-fit:cover;
 border-radius:10px;
 margin-right:20px;
 transition:0.3s;
-
 }
 
 .slide-track img:hover{
-
 transform:scale(1.1);
-
 }
 
 @keyframes scroll{
-
 0%{transform:translateX(0);}
-
 100%{transform:translateX(-50%);}
-
 }
 
 
 
 .btn-galeri{
-
 display:inline-block;
 margin-top:40px;
 background:#333;
@@ -248,7 +192,6 @@ color:white;
 padding:10px 25px;
 border-radius:25px;
 text-decoration:none;
-
 }
 
 
@@ -256,38 +199,30 @@ text-decoration:none;
 /* PRODUK */
 
 .produk-unggulan{
-
 padding:120px 10%;
 background:#f5f5f7;
 text-align:center;
-
 }
 
 .produk-container{
-
 display:flex;
 gap:40px;
 margin-top:50px;
 justify-content:center;
 flex-wrap:wrap;
-
 }
 
 .produk-card{
-
 width:300px;
 background:white;
 border-radius:15px;
 padding:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
-
 }
 
 .produk-card img{
-
 width:100%;
 border-radius:10px;
-
 }
 
 
@@ -295,10 +230,8 @@ border-radius:10px;
 /* CTA */
 
 .cta{
-
 padding:120px 10%;
 text-align:center;
-
 }
 
 
@@ -306,31 +239,22 @@ text-align:center;
 /* FOOTER */
 
 footer{
-
 background:#111;
 color:#aaa;
 text-align:center;
 padding:30px;
-
 }
 
 
 
-/* SEARCH ICON */
+/* SEARCH */
 
 .search-icon{
-
 cursor:pointer;
 font-size:18px;
-
 }
 
-
-
-/* SEARCH BOX */
-
 #search-box{
-
 position:fixed;
 top:80px;
 right:40px;
@@ -341,35 +265,26 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 display:none;
 width:300px;
 z-index:2000;
-
 }
 
 #search-input{
-
 width:100%;
 padding:10px;
 border:1px solid #ddd;
 border-radius:5px;
-
 }
 
 #search-results{
-
 margin-top:10px;
-
 }
 
 #search-results a{
-
 display:block;
 padding:8px;
 text-decoration:none;
 color:#333;
-
 }
 
 #search-results a:hover{
-
 background:#f5f5f7;
-
 }
