@@ -2,7 +2,6 @@ body{
 
 margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-background:#fff;
 color:#1d1d1f;
 
 }
@@ -16,16 +15,10 @@ color:#1d1d1f;
 position:fixed;
 top:0;
 width:100%;
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(10px);
-border-bottom:1px solid transparent;
-z-index:9999;
-
-}
-
-.nav-scroll{
-background:rgba(255,255,255,0.95);
+background:white;
 border-bottom:1px solid #eee;
+z-index:999;
+
 }
 
 .nav-container{
@@ -41,86 +34,25 @@ padding:15px 40px;
 
 
 
-/* LOGO */
-
 .logo img{
 height:45px;
 }
 
 
 
-/* MENU */
-
 .nav-menu{
 
 display:flex;
-gap:35px;
+gap:30px;
 list-style:none;
-margin:0;
-padding:0;
 
-}
-
-.nav-menu li{
-position:relative;
 }
 
 .nav-menu a{
 
 text-decoration:none;
 color:#333;
-font-size:15px;
 
-}
-
-
-
-/* MENU BUTTON */
-
-.menu-btn{
-
-background:none;
-border:none;
-font-size:15px;
-cursor:pointer;
-color:#333;
-
-}
-
-
-
-/* DROPDOWN */
-
-.dropdown{
-
-position:absolute;
-top:40px;
-left:0;
-background:white;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-display:none;
-flex-direction:column;
-min-width:220px;
-padding:10px 0;
-
-}
-
-.dropdown a{
-
-padding:10px 20px;
-display:block;
-text-decoration:none;
-color:#333;
-
-}
-
-.dropdown a:hover{
-background:#f5f5f7;
-}
-
-.dropdown.show{
-display:flex;
 }
 
 
@@ -142,16 +74,9 @@ color:white;
 
 .hero h1{
 font-size:70px;
-letter-spacing:4px;
-}
-
-.hero p{
-font-size:22px;
 }
 
 
-
-/* BUTTON */
 
 .btn{
 
@@ -160,56 +85,27 @@ color:white;
 padding:12px 25px;
 border-radius:25px;
 text-decoration:none;
-margin-top:20px;
 
 }
 
 
 
-/* GALERI */
+/* SECTION */
 
-.galeri{
+.section{
 
-padding:100px 10%;
+padding:120px 10%;
 text-align:center;
 
 }
 
-.slider{
-overflow:hidden;
-margin-top:40px;
-}
-
-.slide-track{
-
-display:flex;
-width:calc(270px * 12);
-animation:scroll 40s linear infinite;
-
-}
-
-.slide-track img{
-
-width:250px;
-height:170px;
-object-fit:cover;
-border-radius:10px;
-margin-right:20px;
-cursor:pointer;
-transition:0.3s;
-
-}
-
-.slide-track img:hover{
-transform:scale(1.1);
-}
 
 
+/* PAGE */
 
-@keyframes scroll{
+.page{
 
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+padding:120px 10%;
 
 }
 
@@ -217,45 +113,17 @@ transform:scale(1.1);
 
 /* PRODUK */
 
-.produk-showcase{
+.produk-grid{
 
-padding:120px 10%;
-background:#f5f5f7;
-text-align:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 
 }
 
-.produk-showcase img{
-
-max-width:900px;
+.produk img{
 width:100%;
-margin-top:40px;
-border-radius:20px;
-
-}
-
-
-
-/* LIGHTBOX */
-
-#lightbox{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999999;
-
-}
-
-#lightbox img{
-max-width:90%;
-max-height:85%;
+border-radius:10px;
 }
 
 
@@ -268,6 +136,5 @@ background:#111;
 color:#aaa;
 text-align:center;
 padding:30px;
-margin-top:80px;
 
 }
