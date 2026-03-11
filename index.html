@@ -20,7 +20,7 @@
 <div class="nav-container">
 
 <div class="logo">
-<img src="images/logo.png" alt="Tetuko Ethnic">
+<img src="images/logo.png">
 </div>
 
 <ul class="nav-menu">
@@ -70,15 +70,28 @@
 </li>
 
 <li><a href="katalog.html">Katalog</a></li>
+
 <li><a href="kontak.html">Kontak</a></li>
 
 </ul>
 
-<div class="search-icon">🔍</div>
+<div class="search-icon" onclick="toggleSearch()">🔍</div>
 
 </div>
 
 </header>
+
+
+
+<!-- SEARCH BOX -->
+
+<div id="search-box">
+
+<input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
+
+<div id="search-results"></div>
+
+</div>
 
 
 
@@ -185,8 +198,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 
 
-<!-- CTA -->
-
 <section class="cta">
 
 <h2>Katalog Produk Tetuko Ethnic</h2>
@@ -205,6 +216,76 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 </footer>
 
+
+
+<script>
+
+/* SEARCH OPEN */
+
+function toggleSearch(){
+
+let box=document.getElementById("search-box");
+
+if(box.style.display==="block"){
+
+box.style.display="none";
+
+}else{
+
+box.style.display="block";
+
+}
+
+}
+
+
+
+/* DATA PENCARIAN */
+
+const pages=[
+
+{title:"Rebab",url:"rebab.html"},
+{title:"Cara Merawat Rebab",url:"rawat-rebab.html"},
+{title:"Tentang Gender",url:"gender.html"},
+{title:"Cara Merawat Gender",url:"rawat-gender.html"},
+{title:"Karawitan",url:"karawitan.html"},
+{title:"Galeri Workshop",url:"galeri-workshop.html"},
+{title:"Galeri Produk",url:"galeri-produk.html"},
+{title:"Proses Pembuatan",url:"proses.html"},
+{title:"Katalog",url:"katalog.html"},
+{title:"Kontak",url:"kontak.html"}
+
+];
+
+
+
+function searchSite(){
+
+let input=document.getElementById("search-input").value.toLowerCase();
+
+let results=document.getElementById("search-results");
+
+results.innerHTML="";
+
+pages.forEach(page=>{
+
+if(page.title.toLowerCase().includes(input)){
+
+let link=document.createElement("a");
+
+link.href=page.url;
+
+link.textContent=page.title;
+
+results.appendChild(link);
+
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
