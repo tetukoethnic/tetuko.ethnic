@@ -386,3 +386,111 @@ footer{
 .produk-unggulan .product-card {
   margin-bottom: 30px; /* jarak bawah tiap card */
 }
+
+/* ===== SECTION LIHAT LEBIH DEKAT ===== */
+.section-look-apple {
+    text-align: center;
+    padding: 120px 10%;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.section-look-apple .look-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+
+.section-look-apple .look-subtitle {
+    font-size: 1.1rem;
+    color: #6e6e73;
+    margin-bottom: 40px;
+}
+
+.section-look-apple .video-preview {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-look-apple .video-preview img {
+    width: 100%;
+    display: block;
+}
+
+.section-look-apple .video-preview:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Play button */
+.section-look-apple .play-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.section-look-apple .play-icon {
+    width: 0;
+    height: 0;
+    border-left: 28px solid #000;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+
+.section-look-apple .play-wrap:hover {
+    background: rgba(255,255,255,1);
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* Lightbox overlay */
+.video-overlay {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Close button */
+.close-video {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+}
