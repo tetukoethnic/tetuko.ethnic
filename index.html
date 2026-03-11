@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,41 +13,6 @@
 
 <body>
 
-<!-- SEARCH OVERLAY -->
-
-<div id="search-overlay">
-
-<div class="search-container">
-
-<div class="search-header">
-
-<input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
-
-<span class="close-search" onclick="closeSearch()">✕</span>
-
-</div>
-
-<div id="search-results"></div>
-
-</div>
-
-</div>
-
-
-<!-- IMAGE VIEWER -->
-
-<div id="image-viewer">
-
-<span class="close-viewer" onclick="closeViewer()">✕</span>
-
-<img id="viewer-img">
-
-</div>
-
-
-
-<!-- NAVBAR -->
-
 <header class="navbar">
 
 <div class="nav-container">
@@ -61,15 +25,12 @@
 
 <li><a href="index.html">Beranda</a></li>
 
-
 <li class="dropdown-parent">
 
 <span>Profil</span>
 
-<div class="mega-menu">
-
+<div class="dropdown">
 <a href="profil.html">Siapa Tetuko Ethnic</a>
-
 </div>
 
 </li>
@@ -79,7 +40,7 @@
 
 <span>Galeri</span>
 
-<div class="mega-menu">
+<div class="dropdown">
 
 <a href="galeri-workshop.html">Galeri Workshop</a>
 <a href="galeri-produk.html">Galeri Produk</a>
@@ -94,7 +55,7 @@
 
 <span>Edukasi</span>
 
-<div class="mega-menu">
+<div class="dropdown">
 
 <a href="rebab.html">Tentang Rebab</a>
 <a href="rawat-rebab.html">Cara Merawat Rebab</a>
@@ -112,17 +73,24 @@
 
 </ul>
 
-<div class="search-icon" onclick="openSearch()">🔍</div>
+<div class="search-icon" onclick="toggleSearch()">🔍</div>
 
 </div>
 
 </header>
 
 
+<div id="search-box">
 
-<!-- HERO -->
+<input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
 
-<section class="hero scroll-section">
+<div id="search-results"></div>
+
+</div>
+
+
+
+<section class="hero">
 
 <h1>TETUKO ETHNIC</h1>
 
@@ -134,9 +102,7 @@
 
 
 
-<!-- TENTANG -->
-
-<section class="tentang scroll-section">
+<section class="tentang">
 
 <h2>Tentang Tetuko Ethnic</h2>
 
@@ -155,9 +121,7 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 
 
-<!-- GALERI -->
-
-<section class="galeri scroll-section">
+<section class="galeri">
 
 <h2>Galeri Tetuko Ethnic</h2>
 
@@ -165,19 +129,19 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 <div class="slide-track">
 
-<img src="images/galeri1.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri2.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri3.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri4.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri5.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri6.jpg" onclick="openViewer(this.src)">
+<img src="images/galeri1.jpg">
+<img src="images/galeri2.jpg">
+<img src="images/galeri3.jpg">
+<img src="images/galeri4.jpg">
+<img src="images/galeri5.jpg">
+<img src="images/galeri6.jpg">
 
-<img src="images/galeri1.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri2.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri3.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri4.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri5.jpg" onclick="openViewer(this.src)">
-<img src="images/galeri6.jpg" onclick="openViewer(this.src)">
+<img src="images/galeri1.jpg">
+<img src="images/galeri2.jpg">
+<img src="images/galeri3.jpg">
+<img src="images/galeri4.jpg">
+<img src="images/galeri5.jpg">
+<img src="images/galeri6.jpg">
 
 </div>
 
@@ -189,9 +153,7 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 
 
-<!-- PRODUK -->
-
-<section class="produk-unggulan scroll-section">
+<section class="produk-unggulan">
 
 <h2>Produk Unggulan</h2>
 
@@ -200,36 +162,36 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 <div class="produk-container">
 
 <div class="produk-card">
-
 <img src="images/produk1.jpg">
-
 <h3>Rebab Ukir Klasik</h3>
-
 <p>Rebab dengan ukiran khas dan karakter suara halus untuk kebutuhan karawitan.</p>
-
 </div>
 
 <div class="produk-card">
-
 <img src="images/produk2.jpg">
-
 <h3>Rebab Profesional</h3>
-
 <p>Dibuat dari bahan pilihan untuk menghasilkan resonansi suara yang optimal.</p>
-
 </div>
 
 <div class="produk-card">
-
 <img src="images/produk3.jpg">
-
 <h3>Perangkat Gender</h3>
-
 <p>Instrumen penting dalam karawitan dengan kualitas pengerjaan yang presisi.</p>
-
 </div>
 
 </div>
+
+</section>
+
+
+
+<section class="cta">
+
+<h2>Katalog Produk Tetuko Ethnic</h2>
+
+<p>Lihat berbagai pilihan produk rebab dan perangkat karawitan.</p>
+
+<a href="katalog.html" class="btn">Lihat Katalog</a>
 
 </section>
 
@@ -245,25 +207,36 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 <script>
 
-/* SEARCH */
+function toggleSearch(){
 
-function openSearch(){
-document.getElementById("search-overlay").style.display="flex";
+let box=document.getElementById("search-box");
+
+if(box.style.display==="block"){
+box.style.display="none";
+}else{
+box.style.display="block";
 }
 
-function closeSearch(){
-document.getElementById("search-overlay").style.display="none";
 }
+
+
 
 const pages=[
 
 {title:"Rebab",url:"rebab.html"},
 {title:"Cara Merawat Rebab",url:"rawat-rebab.html"},
 {title:"Tentang Gender",url:"gender.html"},
+{title:"Cara Merawat Gender",url:"rawat-gender.html"},
 {title:"Karawitan",url:"karawitan.html"},
-{title:"Katalog",url:"katalog.html"}
+{title:"Galeri Workshop",url:"galeri-workshop.html"},
+{title:"Galeri Produk",url:"galeri-produk.html"},
+{title:"Proses Pembuatan",url:"proses.html"},
+{title:"Katalog",url:"katalog.html"},
+{title:"Kontak",url:"kontak.html"}
 
 ];
+
+
 
 function searchSite(){
 
@@ -277,9 +250,7 @@ pages.forEach(page=>{
 if(page.title.toLowerCase().includes(input)){
 
 let link=document.createElement("a");
-
 link.href=page.url;
-
 link.textContent=page.title;
 
 results.appendChild(link);
@@ -289,45 +260,6 @@ results.appendChild(link);
 });
 
 }
-
-
-
-/* IMAGE VIEWER */
-
-function openViewer(src){
-
-document.getElementById("image-viewer").style.display="flex";
-document.getElementById("viewer-img").src=src;
-
-}
-
-function closeViewer(){
-
-document.getElementById("image-viewer").style.display="none";
-
-}
-
-
-
-/* SCROLL ANIMATION */
-
-const sections=document.querySelectorAll(".scroll-section");
-
-window.addEventListener("scroll",()=>{
-
-sections.forEach(section=>{
-
-let top=section.getBoundingClientRect().top;
-
-if(top<window.innerHeight-100){
-
-section.classList.add("show");
-
-}
-
-});
-
-});
 
 </script>
 
