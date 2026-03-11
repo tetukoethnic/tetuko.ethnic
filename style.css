@@ -49,6 +49,7 @@ body{
   font-weight:600;
 }
 
+/* DROPDOWN STABIL */
 .dropdown-parent{
   position:relative;
 }
@@ -57,30 +58,38 @@ body{
   cursor:pointer;
   font-size:16px;
   font-weight:600;
+  display:inline-block; /* pastikan area hover sesuai teks */
+  padding:8px 0;       /* beri ruang vertikal agar hover stabil */
 }
 
-/* Hapus area hover yang menutupi dropdown */
+/* Hapus pseudo-element yang menutupi dropdown */
 .dropdown-parent::after{
-  content:"";
-  position:absolute;
-  height:0; /* jangan terlalu tinggi */
-  width:100%;
-  left:0;
-  bottom:0;
+  display: none;
 }
 
+/* Dropdown container stabil */
 .dropdown{
   position:absolute;
-  top:35px; /* sesuaikan tinggi dengan teks navbar */
+  top:100%; /* tepat di bawah menu utama */
   left:0;
   background:white;
   border-radius:10px;
   box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  display:none;
   flex-direction:column;
   min-width:220px;
   padding:10px 0;
   z-index:1000;
+  opacity:0;            /* sembunyikan default */
+  pointer-events:none;  /* tidak bisa diklik saat tersembunyi */
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Tampilkan dropdown saat hover */
+.dropdown-parent:hover .dropdown{
+  opacity:1;
+  pointer-events:auto;  /* bisa diklik saat muncul */
+  transform: translateY(0);
 }
 
 .dropdown a{
@@ -88,15 +97,10 @@ body{
   display:block;
   color:#1d1d1f;
   text-decoration:none;
-  pointer-events:auto; /* pastikan bisa diklik */
 }
 
 .dropdown a:hover{
   background:#f5f5f7;
-}
-
-.dropdown-parent:hover .dropdown{
-  display:flex;
 }
 
 /* HERO */
