@@ -49,77 +49,145 @@ padding:8px 18px;
 border-radius:20px;
 }
 
-/* DROPDOWN MENU */
+/* NAVBAR APPLE STYLE */
 
-.dropdown{
+header{
+
+position:fixed;
+top:0;
+width:100%;
+
+background:#f5f5f7;
+
+border-bottom:1px solid #ddd;
+
+z-index:1000;
+
+}
+
+.navbar{
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:10px 20px;
+
+}
+
+.logo img{
+
+height:25px;
+
+}
+
+
+
+/* MENU TENGAH */
+
+nav{
+
+display:flex;
+
+gap:35px;
+
+align-items:center;
+
+}
+
+.menu-item{
 
 position:relative;
 
-display:inline-block;
-
 }
 
-.dropdown-content{
-
-position:absolute;
-
-top:40px;
-
-left:0;
-
-background:white;
-
-width:600px;
-
-padding:30px;
-
-display:none;
-
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
-
-border-radius:10px;
-
-}
-
-.dropdown:hover .dropdown-content{
-
-display:flex;
-
-gap:40px;
-
-}
-
-.menu-column{
-
-display:flex;
-
-flex-direction:column;
-
-}
-
-.menu-column h4{
-
-margin-bottom:10px;
-
-font-size:16px;
-
-}
-
-.menu-column a{
+.menu-item a{
 
 text-decoration:none;
 
 color:#333;
 
-margin:5px 0;
-
 font-size:14px;
 
 }
 
-.menu-column a:hover{
 
-color:#0071e3;
+
+/* DROPDOWN */
+
+.dropdown{
+
+display:none;
+
+position:absolute;
+
+top:35px;
+
+left:-20px;
+
+background:white;
+
+padding:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+border-radius:10px;
+
+min-width:200px;
+
+flex-direction:column;
+
+}
+
+.dropdown a{
+
+display:block;
+
+padding:8px 10px;
+
+color:#333;
+
+}
+
+.dropdown a:hover{
+
+background:#f5f5f7;
+
+border-radius:5px;
+
+}
+
+
+
+/* HOVER */
+
+.menu-item:hover .dropdown{
+
+display:flex;
+
+}
+
+
+
+/* SEARCH */
+
+.search input{
+
+border:none;
+
+background:#eee;
+
+padding:6px 10px;
+
+border-radius:15px;
+
+font-size:13px;
 
 }
 
