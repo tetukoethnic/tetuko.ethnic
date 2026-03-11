@@ -354,3 +354,22 @@ footer{
   font-size:26px;
   cursor:pointer;
 }
+
+/* Center judul dan paragraf */
+.produk-unggulan h2,
+.produk-unggulan p {
+  text-align: center;
+  margin: 0 auto 20px auto; /* auto untuk horizontal, 20px bawah */
+  max-width: 600px; /* agar paragraf tidak terlalu lebar */
+}
+
+/* Tambahkan jarak antara grid dan judul/paragraf */
+.produk-unggulan .product-grid {
+  margin-top: 30px; /* jarak dari paragraf ke produk */
+  gap: 30px;        /* jarak antar card tetap 30px */
+}
+
+/* Tambahkan jarak bawah tiap card ke kontainer bawah */
+.produk-unggulan .product-card {
+  margin-bottom: 30px; /* jarak bawah tiap card */
+}
