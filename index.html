@@ -2,10 +2,8 @@
 <html lang="id">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Tetuko Ethnic</title>
 
 <link rel="stylesheet" href="style.css">
@@ -14,35 +12,29 @@
 
 <body>
 
-
-<!-- NAVBAR -->
-
 <header class="navbar">
 
-<div class="nav-inner">
+<div class="nav-container">
 
 <div class="logo">
-<img src="images/logo.png" alt="Tetuko Ethnic">
+<img src="images/logo.png">
 </div>
 
 <ul class="nav-menu">
 
-<li class="menu-item">
-<a href="index.html">Beranda</a>
-</li>
+<li><a href="index.html">Beranda</a></li>
 
-<li class="menu-item">
+<li class="dropdown-parent">
 <a href="#">Profil</a>
 
 <div class="dropdown">
-
 <a href="profil.html">Siapa Tetuko Ethnic</a>
-
 </div>
 
 </li>
 
-<li class="menu-item">
+
+<li class="dropdown-parent">
 
 <a href="#">Galeri</a>
 
@@ -50,13 +42,14 @@
 
 <a href="galeri-workshop.html">Galeri Workshop</a>
 <a href="galeri-produk.html">Galeri Produk</a>
-<a href="proses-pembuatan.html">Proses Pembuatan</a>
+<a href="proses.html">Proses Pembuatan</a>
 
 </div>
 
 </li>
 
-<li class="menu-item">
+
+<li class="dropdown-parent">
 
 <a href="#">Edukasi</a>
 
@@ -72,17 +65,14 @@
 
 </li>
 
-<li class="menu-item">
-<a href="katalog.html">Katalog</a>
-</li>
 
-<li class="menu-item">
-<a href="kontak.html">Kontak</a>
-</li>
+<li><a href="katalog.html">Katalog</a></li>
+
+<li><a href="kontak.html">Kontak</a></li>
 
 </ul>
 
-<div class="search-icon" onclick="openSearch()">🔍</div>
+<div class="search">🔍</div>
 
 </div>
 
@@ -90,60 +80,25 @@
 
 
 
-<!-- SEARCH OVERLAY -->
-
-<div class="search-overlay" id="searchOverlay">
-
-<input type="text" placeholder="Cari rebab, tas rebab, gender...">
-
-<span class="close-search" onclick="closeSearch()">✕</span>
-
-</div>
-
-
-
-<!-- HERO -->
-
-<section id="beranda" class="hero">
-
-<div class="hero-text">
+<section class="hero">
 
 <h1>TETUKO ETHNIC</h1>
 
 <p>Produsen Rebab Berkualitas</p>
 
-<a href="#katalog" class="btn">Lihat Produk</a>
-
-</div>
+<a href="katalog.html" class="btn">Lihat Produk</a>
 
 </section>
 
 
 
-<!-- PROFIL -->
-
-<section id="profil">
-
-<h2>Profil Tetuko Ethnic</h2>
-
-<p>
-
-Rebab diketahui sebagai ricikan pokok dalam karawitan Jawa yang berfungsi sebagai pamurbå lagu.
-Tetuko Ethnic tidak hanya menekankan penjualan tetapi juga edukasi mengenai kualitas rebab.
-
-</p>
-
-</section>
-
-
-
-<!-- GALERI -->
-
-<section id="galeri">
+<section class="galeri">
 
 <h2>Galeri Tetuko Ethnic</h2>
 
-<div class="slider-galeri">
+<div class="slider">
+
+<div class="slide-track">
 
 <img src="images/galeri1.jpg">
 <img src="images/galeri2.jpg">
@@ -152,85 +107,16 @@ Tetuko Ethnic tidak hanya menekankan penjualan tetapi juga edukasi mengenai kual
 <img src="images/galeri5.jpg">
 <img src="images/galeri6.jpg">
 
-</div>
-
-<a href="galeri.html" class="lihat-galeri">Lihat Semua Galeri</a>
-
-</section>
-
-
-
-<!-- KATALOG -->
-
-<section id="katalog">
-
-<h2>Katalog Produk</h2>
-
-<div class="produk-grid">
-
-<div class="produk">
-
-<img src="images/produk1.jpg">
-
-<h3>Softcase Rebab</h3>
-
-<p>Softcase rebab dengan bahan kuat.</p>
-
-<a href="#" class="btn">Shop</a>
-
-</div>
-
-
-<div class="produk">
-
-<img src="images/produk2.jpg">
-
-<h3>Tas Rebab Premium</h3>
-
-<p>Tas rebab dengan desain elegan.</p>
-
-<a href="#" class="btn">Shop</a>
-
-</div>
-
-
-<div class="produk">
-
-<img src="images/produk3.jpg">
-
-<h3>Rebab Tetuko Ethnic</h3>
-
-<p>Rebab dengan kualitas suara optimal.</p>
-
-<a href="#" class="btn">Shop</a>
+<img src="images/galeri1.jpg">
+<img src="images/galeri2.jpg">
+<img src="images/galeri3.jpg">
+<img src="images/galeri4.jpg">
 
 </div>
 
 </div>
 
-</section>
-
-
-
-<!-- KONTAK -->
-
-<section id="kontak">
-
-<h2>Kontak</h2>
-
-<p><b>Tetuko Ethnic</b></p>
-
-<p>
-Gang Petir II No.51  
-Ngasinan RT02 RW13  
-Jebres – Surakarta
-</p>
-
-<p>HP : 0858-0375-3841</p>
-
-<p>Email : tetukoethnic@gmail.com</p>
-
-<a href="https://wa.me/6285803753841" class="btn">WhatsApp</a>
+<a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
 
 </section>
 
@@ -242,62 +128,5 @@ Jebres – Surakarta
 
 </footer>
 
-
-
-<!-- LIGHTBOX -->
-
-<div id="lightbox">
-<img id="lightbox-img">
-</div>
-
-
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-function openSearch(){
-
-document.getElementById("searchOverlay").classList.add("active");
-
-}
-
-function closeSearch(){
-
-document.getElementById("searchOverlay").classList.remove("active");
-
-}
-
-
-/* LIGHTBOX GALERI */
-
-const images = document.querySelectorAll(".slider-galeri img");
-
-const lightbox = document.getElementById("lightbox");
-
-const lightboxImg = document.getElementById("lightbox-img");
-
-images.forEach(img => {
-
-img.onclick = () => {
-
-lightbox.style.display = "flex";
-
-lightboxImg.src = img.src;
-
-}
-
-});
-
-lightbox.onclick = () => {
-
-lightbox.style.display = "none";
-
-}
-
-</script>
-
-
 </body>
 </html>
-
