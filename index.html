@@ -38,12 +38,16 @@ window.addEventListener("load",function(){
     <div class="logo"><img src="logo.png"></div>
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
+
+      <!-- Profil -->
       <li class="dropdown-parent">
         <span>Profil</span>
         <div class="dropdown">
           <a href="profil.html">Siapa Tetuko Ethnic</a>
         </div>
       </li>
+
+      <!-- Galeri -->
       <li class="dropdown-parent">
         <span>Galeri</span>
         <div class="dropdown">
@@ -52,6 +56,8 @@ window.addEventListener("load",function(){
           <a href="proses.html">Proses Pembuatan</a>
         </div>
       </li>
+
+      <!-- Edukasi -->
       <li class="dropdown-parent">
         <span>Edukasi</span>
         <div class="dropdown">
@@ -62,7 +68,11 @@ window.addEventListener("load",function(){
           <a href="karawitan.html">Karawitan</a>
         </div>
       </li>
+
+      <!-- Katalog -->
       <li><a href="katalog.html">Katalog</a></li>
+
+      <!-- Kontak -->
       <li>
         <a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">
         Kontak
@@ -96,17 +106,11 @@ window.addEventListener("load",function(){
   <div class="slider">
     <div class="slide-track">
       <img src="galeri1.jpg">
-      <img src="galeri1.jpg">
-      <img src="galeri1.jpg">
-      <img src="galeri1.jpg">
-      <img src="galeri1.jpg">
-      <img src="galeri1.jpg">
-      <img src="images/galeri1.jpg">
-      <img src="images/galeri2.jpg">
-      <img src="images/galeri3.jpg">
-      <img src="images/galeri4.jpg">
-      <img src="images/galeri5.jpg">
-      <img src="images/galeri6.jpg">
+      <img src="galeri2.jpg">
+      <img src="galeri3.jpg">
+      <img src="galeri4.jpg">
+      <img src="galeri5.jpg">
+      <img src="galeri6.jpg">
     </div>
   </div>
   <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
@@ -235,11 +239,9 @@ document.querySelectorAll('.dropdown-parent > span').forEach(parent => {
     parent.addEventListener('click', function(e) {
         e.stopPropagation(); // cegah bubble
         const dropdown = parent.nextElementSibling;
-        // tutup dropdown lain
         document.querySelectorAll('.dropdown').forEach(d => {
             if(d !== dropdown) d.style.display = 'none';
         });
-        // toggle dropdown ini
         dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
     });
 });
