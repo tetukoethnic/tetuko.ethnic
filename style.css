@@ -27,13 +27,9 @@ justify-content:space-between;
 padding:10px 30px;
 }
 
-/* LOGO */
-
 .logo img{
 height:55px;
 }
-
-/* MENU */
 
 .nav-menu{
 display:flex;
@@ -50,25 +46,37 @@ font-size:16px;
 font-weight:600;
 }
 
-/* DROPDOWN */
-
 .dropdown-parent{
 position:relative;
 }
 
-.dropdown-parent span{
+.dropdown-parent > span{
 cursor:pointer;
 font-size:16px;
 font-weight:600;
 }
 
-..dropdown-parent::after{
+.dropdown-parent::after{
 content:"";
 position:absolute;
 height:15px;
 width:100%;
 left:0;
 bottom:-15px;
+}
+
+.dropdown{
+position:absolute;
+top:45px;
+left:0;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+display:none;
+flex-direction:column;
+min-width:220px;
+padding:10px 0;
+z-index:1000;
 }
 
 .dropdown a{
