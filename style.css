@@ -175,6 +175,58 @@ text-decoration:none;
 border-radius:30px;
 
 }
+/* SLIDER GALERI */
+
+.slider-galeri{
+
+overflow:hidden;
+
+margin-top:40px;
+
+}
+
+.slide-track{
+
+display:flex;
+
+width:calc(250px * 16);
+
+animation:scroll 40s linear infinite;
+
+}
+
+.slide-track img{
+
+width:250px;
+
+height:180px;
+
+object-fit:cover;
+
+margin-right:20px;
+
+border-radius:10px;
+
+transition:0.3s;
+
+}
+
+.slide-track img:hover{
+
+transform:scale(1.08);
+
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
 
 
 
