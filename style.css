@@ -49,9 +49,9 @@ padding:8px 18px;
 border-radius:20px;
 }
 
-/* NAVBAR APPLE STYLE */
+/* APPLE STYLE NAVBAR */
 
-header{
+.apple-header{
 
 position:fixed;
 top:0;
@@ -65,7 +65,7 @@ z-index:1000;
 
 }
 
-.navbar{
+.nav-wrapper{
 
 max-width:1200px;
 
@@ -81,6 +81,10 @@ padding:10px 20px;
 
 }
 
+
+
+/* LOGO */
+
 .logo img{
 
 height:25px;
@@ -91,7 +95,7 @@ height:25px;
 
 /* MENU TENGAH */
 
-nav{
+.apple-nav{
 
 display:flex;
 
@@ -99,15 +103,19 @@ gap:35px;
 
 align-items:center;
 
+flex:1;
+
+justify-content:center;
+
 }
 
-.menu-item{
+.nav-item{
 
 position:relative;
 
 }
 
-.menu-item a{
+.nav-item a{
 
 text-decoration:none;
 
@@ -119,55 +127,31 @@ font-size:14px;
 
 
 
-/* DROPDOWN */
+/* MEGA MENU */
 
-.dropdown{
-
-display:none;
+.mega-menu{
 
 position:absolute;
 
-top:35px;
+top:40px;
 
-left:-20px;
+left:0;
+
+width:100vw;
 
 background:white;
 
-padding:20px;
+padding:40px 200px;
+
+display:none;
+
+gap:80px;
 
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 
-border-radius:10px;
-
-min-width:200px;
-
-flex-direction:column;
-
 }
 
-.dropdown a{
-
-display:block;
-
-padding:8px 10px;
-
-color:#333;
-
-}
-
-.dropdown a:hover{
-
-background:#f5f5f7;
-
-border-radius:5px;
-
-}
-
-
-
-/* HOVER */
-
-.menu-item:hover .dropdown{
+.nav-item:hover .mega-menu{
 
 display:flex;
 
@@ -175,19 +159,53 @@ display:flex;
 
 
 
+/* KOLOM MENU */
+
+.menu-column{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.menu-column h4{
+
+margin-bottom:10px;
+
+font-size:14px;
+
+color:#888;
+
+}
+
+.menu-column a{
+
+margin:5px 0;
+
+text-decoration:none;
+
+color:#333;
+
+font-size:16px;
+
+}
+
+.menu-column a:hover{
+
+color:#0071e3;
+
+}
+
+
+
 /* SEARCH */
 
-.search input{
+.search-icon{
 
-border:none;
+font-size:18px;
 
-background:#eee;
-
-padding:6px 10px;
-
-border-radius:15px;
-
-font-size:13px;
+cursor:pointer;
 
 }
 
