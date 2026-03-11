@@ -229,6 +229,25 @@ overlay.addEventListener("click", (e) => {
         iframe.src = "";
     }
 });
+
+// DROPDOWN CLICK TO OPEN
+document.querySelectorAll('.dropdown-parent > span').forEach(parent => {
+    parent.addEventListener('click', function(e) {
+        e.stopPropagation(); // cegah bubble
+        const dropdown = parent.nextElementSibling;
+        // tutup dropdown lain
+        document.querySelectorAll('.dropdown').forEach(d => {
+            if(d !== dropdown) d.style.display = 'none';
+        });
+        // toggle dropdown ini
+        dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+});
+
+// Tutup dropdown jika klik di luar
+document.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+});
 </script>
 
 </body>
