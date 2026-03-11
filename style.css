@@ -196,35 +196,55 @@ text-decoration:none;
 
 
 
-/* PRODUK */
-
-.produk-unggulan{
-padding:120px 10%;
-background:#f5f5f7;
-text-align:center;
-}
-
-.produk-container{
-display:flex;
-gap:40px;
-margin-top:50px;
-justify-content:center;
-flex-wrap:wrap;
-}
+/* PRODUK UNGGULAN APPLE STYLE */
 
 .produk-card{
+
+position:relative;
 width:300px;
 background:white;
 border-radius:15px;
 padding:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:all .35s ease;
+overflow:hidden;
+
 }
 
-.produk-card img{
+.produk-card:hover{
+
+transform:translateY(-12px);
+box-shadow:0 25px 60px rgba(0,0,0,0.18);
+
+}
+
+.produk-action{
+
+position:absolute;
+bottom:-60px;
+left:0;
 width:100%;
-border-radius:10px;
+text-align:center;
+transition:.35s;
+
 }
 
+.produk-card:hover .produk-action{
+
+bottom:20px;
+
+}
+
+.btn-katalog{
+
+background:#0071e3;
+color:white;
+padding:8px 18px;
+border-radius:20px;
+text-decoration:none;
+font-size:14px;
+
+}
 
 
 /* CTA */
