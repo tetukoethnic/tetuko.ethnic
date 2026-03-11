@@ -226,6 +226,56 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
   </div>
 </section>
 
+  <!-- ===== SECTION LIHAT LEBIH DEKAT (Video Testimoni) ===== -->
+<section class="section-look-apple">
+  <div class="look-inner">
+    <h2 class="look-title">Lihat Lebih Dekat</h2>
+    <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
+
+    <div class="video-preview" id="videoPreview">
+      <img src="https://via.placeholder.com/1200x700" alt="Preview Video Testimoni">
+      <div class="play-wrap">
+        <div class="play-icon"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Video -->
+<div class="video-overlay" id="videoOverlay">
+  <div class="video-container">
+    <span class="close-video" id="closeVideo">&times;</span>
+    <iframe id="iframeVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+// JavaScript untuk buka/tutup video
+const preview = document.getElementById("videoPreview");
+const overlay = document.getElementById("videoOverlay");
+const closeBtn = document.getElementById("closeVideo");
+const iframe = document.getElementById("iframeVideo");
+
+// Ganti dengan URL video testimoni yang sebenarnya
+const videoLink = "https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1";
+
+preview.addEventListener("click", () => {
+    iframe.src = videoLink;
+    overlay.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+    iframe.src = ""; 
+});
+
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = "none";
+        iframe.src = "";
+    }
+});
+</script>
   
 <footer>
 
@@ -338,5 +388,6 @@ closeSearch();
 
 </body>
 </html>
+
 
 
