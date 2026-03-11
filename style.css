@@ -1,3 +1,7 @@
+html,body{
+overflow-x:hidden;
+}
+
 ```css
 body{
 margin:0;
