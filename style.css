@@ -45,27 +45,22 @@ margin:0;
 padding:0;
 }
 
-.nav-menu a{
+.nav-menu a, .dropdown-parent > span{
 text-decoration:none;
 color:#1d1d1f;
 font-size:16px;
 font-weight:600;
+cursor:pointer;
 }
 
 .dropdown-parent{
 position:relative;
 }
 
-.dropdown-parent > span{
-cursor:pointer;
-font-size:16px;
-font-weight:600;
-}
-
 .dropdown-parent::after{
 content:"";
 position:absolute;
-height:15px;
+height:15px; /* hover area */
 width:100%;
 left:0;
 bottom:-15px;
@@ -73,7 +68,7 @@ bottom:-15px;
 
 .dropdown{
 position:absolute;
-top:45px;
+top:35px; /* menempel lebih dekat ke teks */
 left:0;
 background:white;
 border-radius:10px;
