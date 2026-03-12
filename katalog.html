@@ -1,59 +1,192 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katalog Produk</title>
-
+<title>Katalog Produk – Tetuko Ethnic</title>
 <link rel="stylesheet" href="style.css">
-</head>
+<style>
+/* ===== RESET & BODY ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#1d1d1f;background:#fff;line-height:1.6;}
+h1,h2,h3,h4,h5,h6{margin-bottom:10px;}
+a{text-decoration:none;color:inherit;}
 
+/* ===== NAVBAR ===== */
+.navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border-bottom:1px solid #eee;z-index:999;}
+.nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:15px 30px;}
+.logo img{height:50px;}
+.nav-menu{display:flex;gap:30px;list-style:none;}
+.nav-menu li{position:relative;}
+.nav-menu li a,.nav-menu li span{font-weight:600;color:#1d1d1f;cursor:pointer;}
+.nav-menu li a:hover{color:#0071e3;}
+.dropdown{display:none;position:absolute;top:55px;left:0;background:white;flex-direction:column;min-width:220px;box-shadow:0 10px 25px rgba(0,0,0,0.1);border-radius:12px;}
+.dropdown a{padding:10px 20px;color:#1d1d1f;}
+.dropdown a:hover{background:#f5f5f7;}
+@media(min-width:769px){.dropdown-parent:hover>.dropdown{display:flex;}}
+
+/* ===== HERO ===== */
+.hero-katalog{height:30vh;background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero-katalog.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:0 20px;}
+.hero-katalog h1{font-size:3rem;}
+
+/* ===== GRID PRODUK ===== */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;padding:120px 5% 50px 5%;}
+.product-card{border:1px solid #eee;border-radius:15px;padding:15px;cursor:pointer;transition:transform 0.3s, box-shadow 0.3s; text-align:center;background:#fafafa;}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,0.1);}
+.product-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
+.product-card h3{font-size:1.1rem;margin-bottom:5px;}
+.product-card p.price{color:#0071e3;font-weight:600;font-size:1.05rem;}
+
+/* ===== OVERLAY DETAIL PRODUK ===== */
+.product-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:flex-start;overflow-y:auto;z-index:2000;padding:50px 20px;}
+.product-overlay-content{background:#fff;width:90%;max-width:900px;border-radius:20px;padding:30px;position:relative;box-shadow:0 20px 40px rgba(0,0,0,0.2);}
+.close-overlay{position:absolute;top:20px;right:25px;font-size:28px;font-weight:bold;cursor:pointer;}
+.product-overlay img{width:100%;border-radius:15px;margin-bottom:20px;}
+.product-overlay h2{font-size:2rem;margin-bottom:10px;}
+.product-overlay p.price{color:#0071e3;font-weight:700;font-size:1.5rem;margin-bottom:15px;}
+.product-overlay p.detail{margin-bottom:15px;}
+
+/* ===== TOMBOL ===== */
+.btn-buy, .btn-chat{display:inline-block;padding:12px 25px;margin-right:15px;border-radius:25px;font-weight:600;cursor:pointer;transition:0.3s;text-align:center;}
+.btn-buy{background:#0071e3;color:white;}
+.btn-buy:hover{background:#005bb5;}
+.btn-chat{background:#25D366;color:white;}
+.btn-chat:hover{background:#128C7E;}
+
+/* ===== ULASAN ===== */
+.review-section{margin-top:30px;}
+.review-section h3{font-size:1.4rem;margin-bottom:15px;}
+.review{border-top:1px solid #eee;padding:10px 0;}
+.review p{margin-bottom:5px;}
+.review .author{font-weight:600;font-size:0.95rem;color:#555;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .product-overlay-content{padding:20px;}
+  .product-card img{height:150px;}
+}
+</style>
+</head>
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
-<div class="nav-container">
-
-<div class="logo">
-<img src="images/logo.png">
-</div>
-
-<ul class="nav-menu">
-
-<li><a href="index.html">Beranda</a></li>
-<li><a href="profil.html">Profil</a></li>
-<li><a href="galeri.html">Galeri</a></li>
-<li><a href="edukasi.html">Edukasi</a></li>
-<li><a href="katalog.html">Katalog</a></li>
-<li><a href="kontak.html">Kontak</a></li>
-
-</ul>
-
-</div>
+  <div class="nav-container">
+    <div class="logo"><img src="logo.png" alt="Tetuko Ethnic"></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li class="dropdown-parent"><span class="dropdown-toggle">Profil</span>
+        <div class="dropdown"><a href="profil.html">Siapa Tetuko Ethnic</a></div>
+      </li>
+      <li class="dropdown-parent"><span class="dropdown-toggle">Galeri</span>
+        <div class="dropdown">
+          <a href="galeri-produksi.html">Galeri Produksi</a>
+          <a href="galeri-produk.html">Galeri Produk</a>
+          <a href="proses.html">Proses Pembuatan</a>
+        </div>
+      </li>
+      <li class="dropdown-parent"><span class="dropdown-toggle">Edukasi</span>
+        <div class="dropdown">
+          <a href="rebab.html">Tentang Rebab</a>
+          <a href="rawat-rebab.html">Cara Merawat Rebab</a>
+          <a href="gender.html">Tentang Gender</a>
+          <a href="rawat-gender.html">Cara Merawat Gender</a>
+          <a href="karawitan.html">Karawitan</a>
+        </div>
+      </li>
+      <li><a href="katalog.html">Katalog</a></li>
+    </ul>
+  </div>
 </header>
 
-
-<section class="page">
-
-<h1>Katalog Produk</h1>
-
-<div class="produk-grid">
-
-<div class="produk">
-<img src="images/produk1.jpg">
-<h3>Rebab Handmade</h3>
-<p>Rebab kualitas pertunjukan.</p>
-</div>
-
-<div class="produk">
-<img src="images/produk2.jpg">
-<h3>Rebab Karawitan</h3>
-<p>Suara jernih dan resonan.</p>
-</div>
-
-</div>
-
+<!-- ===== HERO ===== -->
+<section class="hero-katalog">
+  <h1>Katalog Produk Tetuko Ethnic</h1>
 </section>
+
+<!-- ===== GRID PRODUK ===== -->
+<section class="product-grid">
+  <div class="product-card" data-name="Rebab Ukir Klasik" data-price="Rp2.500.000" data-detail="Rebab dengan ukiran khas, suara halus, cocok untuk karawitan profesional." data-spec="Bahan: Kayu Mahoni, Senar: Kualitas Premium">
+    <img src="images/produk1.jpg" alt="Rebab Ukir Klasik">
+    <h3>Rebab Ukir Klasik</h3>
+    <p class="price">Rp2.500.000</p>
+  </div>
+  <div class="product-card" data-name="Rebab Modern" data-price="Rp2.000.000" data-detail="Desain modern, suara tetap halus." data-spec="Bahan: Kayu Mahoni, Senar: Nylon Premium">
+    <img src="images/produk2.jpg" alt="Rebab Modern">
+    <h3>Rebab Modern</h3>
+    <p class="price">Rp2.000.000</p>
+  </div>
+  <div class="product-card" data-name="Gender Tradisional" data-price="Rp4.500.000" data-detail="Terbuat dari kayu berkualitas, suara autentik." data-spec="Bahan: Kayu Mahoni, Bilah: Kuningan">
+    <img src="images/produk3.jpg" alt="Gender Tradisional">
+    <h3>Gender Tradisional</h3>
+    <p class="price">Rp4.500.000</p>
+  </div>
+</section>
+
+<!-- ===== OVERLAY DETAIL PRODUK ===== -->
+<div class="product-overlay" id="productOverlay">
+  <div class="product-overlay-content">
+    <span class="close-overlay" id="closeOverlay">&times;</span>
+    <img id="overlayImage" src="" alt="">
+    <h2 id="overlayName"></h2>
+    <p class="price" id="overlayPrice"></p>
+    <p class="detail" id="overlayDetail"></p>
+    <p class="spec" id="overlaySpec"></p>
+    <div>
+      <span class="btn-buy">Beli</span>
+      <span class="btn-chat">Chat</span>
+    </div>
+    <div class="review-section">
+      <h3>Ulasan</h3>
+      <div class="review">
+        <p>“Produk berkualitas, suara sangat jernih!”</p>
+        <p class="author">- Ibu Rina</p>
+      </div>
+      <div class="review">
+        <p>“Pengiriman cepat dan kemasan aman.”</p>
+        <p class="author">- Bapak Andi</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// DROPDOWN HOVER & CLICK MOBILE
+document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const dropdown = btn.nextElementSibling;
+    dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+  });
+});
+document.addEventListener('click', ()=>{
+  document.querySelectorAll('.dropdown').forEach(dd => dd.style.display='none');
+});
+
+// OPEN PRODUCT OVERLAY
+const productCards = document.querySelectorAll('.product-card');
+const overlay = document.getElementById('productOverlay');
+const overlayImage = document.getElementById('overlayImage');
+const overlayName = document.getElementById('overlayName');
+const overlayPrice = document.getElementById('overlayPrice');
+const overlayDetail = document.getElementById('overlayDetail');
+const overlaySpec = document.getElementById('overlaySpec');
+const closeOverlay = document.getElementById('closeOverlay');
+
+productCards.forEach(card => {
+  card.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+    overlayImage.src = card.querySelector('img').src;
+    overlayName.textContent = card.dataset.name;
+    overlayPrice.textContent = card.dataset.price;
+    overlayDetail.textContent = card.dataset.detail;
+    overlaySpec.textContent = "Spesifikasi: " + card.dataset.spec;
+  });
+});
+
+closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.style.display='none'; });
+</script>
 
 </body>
 </html>
