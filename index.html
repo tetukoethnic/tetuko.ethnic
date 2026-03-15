@@ -26,37 +26,39 @@
 <header class="navbar">
   <div class="nav-container">
     <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <div class="nav-menu-wrapper">
+      <ul class="nav-menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li class="dropdown-parent">
+          <span>Profil</span>
+          <div class="dropdown">
+            <a href="profil.html">Siapa Tetuko Ethnic</a>
+          </div>
+        </li>
+        <li class="dropdown-parent">
+          <span>Galeri</span>
+          <div class="dropdown">
+            <a href="galeri-produksi.html">Galeri Produksi</a>
+            <a href="galeri-produk.html">Galeri Produk</a>
+            <a href="galeri-produksi.html">Proses Pembuatan</a>
+          </div>
+        </li>
+        <li class="dropdown-parent">
+          <span>Edukasi</span>
+          <div class="dropdown">
+            <a href="rebab.html">Tentang Rebab</a>
+            <a href="rawat-rebab.html">Cara Merawat Rebab</a>
+            <a href="gender.html">Tentang Gender</a>
+            <a href="rawat-gender.html">Cara Merawat Gender</a>
+            <a href="karawitan.html">Karawitan</a>
+          </div>
+        </li>
+        <li><a href="katalog.html">Katalog</a></li>
+        <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="search-icon" onclick="openSearch()">🔍</div>
     <div class="menu-toggle">&#9776;</div>
-    <ul class="nav-menu">
-      <li><a href="index.html">Beranda</a></li>
-      <li class="dropdown-parent">
-        <span>Profil</span>
-        <div class="dropdown">
-          <a href="profil.html">Siapa Tetuko Ethnic</a>
-        </div>
-      </li>
-      <li class="dropdown-parent">
-        <span>Galeri</span>
-        <div class="dropdown">
-          <a href="galeri-produksi.html">Galeri Produksi</a>
-          <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-produksi.html">Proses Pembuatan</a>
-        </div>
-      </li>
-      <li class="dropdown-parent">
-        <span>Edukasi</span>
-        <div class="dropdown">
-          <a href="rebab.html">Tentang Rebab</a>
-          <a href="rawat-rebab.html">Cara Merawat Rebab</a>
-          <a href="gender.html">Tentang Gender</a>
-          <a href="rawat-gender.html">Cara Merawat Gender</a>
-          <a href="karawitan.html">Karawitan</a>
-        </div>
-      </li>
-      <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
-    </ul>
-    <div class="search-icon">🔍</div>
   </div>
 </header>
 
@@ -126,10 +128,19 @@
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-    <div class="video-carousel">
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
+    <div class="video-carousel" id="videoCarousel">
+      <div class="video-preview">
+        <img src="https://via.placeholder.com/1200x700">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview">
+        <img src="https://via.placeholder.com/1200x700">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview">
+        <img src="https://via.placeholder.com/1200x700">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -160,20 +171,20 @@ window.addEventListener("load", function(){
   }
 });
 
-/* NAVBAR MOBILE TOGGLE */
+/* NAVBAR MOBILE & SEARCH */
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".nav-menu");
-toggle.onclick = function(){
-  if(window.innerWidth <= 768){
-    menu.classList.toggle("active");
-  }
-};
+toggle.onclick = function(){ menu.classList.toggle("active"); };
+
+function openSearch(){
+  document.getElementById("search-overlay").classList.add("active");
+  document.getElementById("search-input").focus();
+}
+function closeSearch(){
+  document.getElementById("search-overlay").classList.remove("active");
+}
 
 /* SEARCH */
-function openSearch(){ document.getElementById("search-overlay").classList.add("active"); document.getElementById("search-input").focus(); }
-function closeSearch(){ document.getElementById("search-overlay").classList.remove("active"); }
-document.querySelector(".search-icon").onclick = openSearch;
-
 function searchSite(){
   let input = document.getElementById("search-input").value.toLowerCase();
   let results = document.getElementById("search-results");
@@ -194,7 +205,7 @@ function searchSite(){
   });
 }
 
-/* DROPDOWN MOBILE FIX */
+/* DROPDOWN HIGHLIGHT SUB MENU */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
   item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
