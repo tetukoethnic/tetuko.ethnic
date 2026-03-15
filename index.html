@@ -19,7 +19,6 @@
     <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
     <div id="search-results"></div>
   </div>
-  <!-- Close button tetap di overlay, di pojok kanan atas, tidak menutupi input -->
   <span class="close-search" onclick="closeSearch()">✕</span>
 </div>
 
@@ -41,7 +40,7 @@
         <div class="dropdown">
           <a href="galeri-produksi.html">Galeri Produksi</a>
           <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-produksi.html">Proses Pembuatan</a>
+          <a href="galeri-proses.html">Proses Pembuatan</a>
         </div>
       </li>
       <li class="dropdown-parent">
@@ -85,12 +84,12 @@
   <h2>Galeri Tetuko Ethnic</h2>
   <div class="slider">
     <div class="slide-track">
-      <img src="galeri1.jpg">
-      <img src="galeri2.jpg">
-      <img src="galeri3.jpg">
-      <img src="galeri4.jpg">
-      <img src="galeri5.jpg">
-      <img src="galeri6.jpg">
+      <img src="galeri1.jpg" alt="">
+      <img src="galeri2.jpg" alt="">
+      <img src="galeri3.jpg" alt="">
+      <img src="galeri4.jpg" alt="">
+      <img src="galeri5.jpg" alt="">
+      <img src="galeri6.jpg" alt="">
     </div>
   </div>
   <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
@@ -102,19 +101,19 @@
   <p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
   <div class="product-grid">
     <div class="product-card">
-      <img src="images/produk1.jpg">
+      <img src="images/produk1.jpg" alt="">
       <h3>Rebab Ukir Klasik</h3>
       <p>Rebab ukiran khas dengan suara halus.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
     </div>
     <div class="product-card">
-      <img src="images/produk2.jpg">
+      <img src="images/produk2.jpg" alt="">
       <h3>Rebab Modern</h3>
       <p>Desain modern, suara tetap halus.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
     </div>
     <div class="product-card">
-      <img src="images/produk3.jpg">
+      <img src="images/produk3.jpg" alt="">
       <h3>Gender Tradisional</h3>
       <p>Terbuat dari kayu berkualitas, suara autentik.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
@@ -128,7 +127,7 @@
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
     <div class="video-preview" id="videoPreview">
-      <img src="https://via.placeholder.com/1200x700">
+      <img src="https://via.placeholder.com/1200x700" alt="">
       <div class="play-wrap"><div class="play-icon"></div></div>
     </div>
   </div>
@@ -150,72 +149,6 @@
   </p>
 </footer>
 
-<script>
-/* PRELOADER */
-window.addEventListener("load", function(){
-  const loader = document.getElementById("loader");
-  if(loader){
-    setTimeout(function(){
-      loader.style.opacity = "0";
-      setTimeout(function(){
-        loader.style.display = "none";
-      },800);
-    },1200);
-  }
-});
-
-/* NAVBAR MOBILE & SEARCH */
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".nav-menu");
-toggle.onclick = function(){
-  menu.classList.toggle("active");
-};
-
-function openSearch(){
-  document.getElementById("search-overlay").classList.add("active");
-  document.getElementById("search-input").focus();
-}
-function closeSearch(){
-  document.getElementById("search-overlay").classList.remove("active");
-}
-
-/* SEARCH */
-function searchSite(){
-  let input = document.getElementById("search-input").value.toLowerCase();
-  let results = document.getElementById("search-results");
-  let pages = [
-    {title:"Profil Tetuko Ethnic",link:"profil.html"},
-    {title:"Rebab",link:"rebab.html"},
-    {title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
-    {title:"Gender",link:"gender.html"},
-    {title:"Cara Merawat Gender",link:"rawat-gender.html"},
-    {title:"Karawitan",link:"karawitan.html"},
-    {title:"Katalog Produk",link:"katalog.html"}
-  ];
-  results.innerHTML="";
-  pages.forEach(function(page){
-    if(page.title.toLowerCase().includes(input)){
-      results.innerHTML += '<a href="'+page.link+'">'+page.title+'</a>';
-    }
-  });
-}
-
-/* DROPDOWN MOBILE FIX */
-document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
-  item.addEventListener("click",function(){
-    let dropdown=this.nextElementSibling;
-    document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){
-        menu.style.display="none";
-      }
-    });
-    if(dropdown.style.display==="flex"){
-      dropdown.style.display="none";
-    }else{
-      dropdown.style.display="flex";
-    }
-  });
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
