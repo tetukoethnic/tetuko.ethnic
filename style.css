@@ -202,23 +202,25 @@ filter:blur(6px);
   border-radius:8px;
 }
 
+/* Close Search Button Fixed Stylish */
 .close-search{
-  position:fixed;       /* tetap di pojok layar */
-  top:30px;
-  right:30px;
-  font-size:28px;
-  cursor:pointer;
-  z-index:4000;
-  color:#1d1d1f;
-  background:rgba(255,255,255,0.9);
+  position:fixed;        /* tetap di layar */
+  top:25px;              /* jarak dari atas */
+  right:25px;            /* jarak dari kanan */
+  width:45px;
+  height:45px;
   border-radius:50%;
-  width:40px;
-  height:40px;
+  background:rgba(255,255,255,0.95);
+  color:#1d1d1f;
+  font-size:28px;
+  font-weight:bold;
   display:flex;
-  align-items:center;
   justify-content:center;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  transition:0.3s;
+  align-items:center;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transition:0.3s ease;
+  z-index:5000;           /* di atas overlay search */
 }
 
 .close-search:hover{
