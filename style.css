@@ -285,22 +285,83 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 .video-container iframe{width:100%;height:100%;border:none;}
 .close-video{position:absolute;top:-40px;right:0;font-size:40px;color:white;cursor:pointer;}
 
-/* RESPONSIVE MOBILE */
+/* RESPONSIVE MOBILE ENHANCEMENT */
 @media (max-width:768px){
-.menu-toggle{display:block;}
-.nav-menu{
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-background:white;
-flex-direction:column;
-align-items:center;
-gap:20px;
-padding:25px 0;
-display:none;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
-}
-.nav-menu.active{display:flex;}
-.dropdown{position:relative;top:0;box-shadow:none;}
+  /* Navbar toolbar Apple-style */
+  .nav-container{
+    padding:10px 15px;
+    justify-content:space-between;
+  }
+  .logo img{height:45px;}
+  .menu-toggle{display:block;font-size:28px;cursor:pointer;}
+  .search-icon{font-size:22px;}
+
+  /* Mobile menu slide-in */
+  .nav-menu{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100%;
+    background:white;
+    padding-top:70px;
+    gap:15px;
+    transform:translateX(-100%);
+    transition:transform 0.3s ease;
+    box-shadow:2px 0 20px rgba(0,0,0,0.15);
+    z-index:10000;
+  }
+  .nav-menu.active{
+    transform:translateX(0);
+  }
+
+  .nav-menu li > a,
+  .dropdown-parent > span{
+    font-size:18px;
+    padding:12px 20px;
+    cursor:pointer;
+  }
+
+  /* Mobile dropdown accordion */
+  .dropdown{
+    display:none;
+    flex-direction:column;
+    padding-left:15px;
+  }
+  .dropdown-parent > span:after{
+    content:"▸";
+    margin-left:8px;
+    transition:transform 0.3s;
+  }
+  .dropdown-parent.active > span:after{
+    transform:rotate(90deg);
+  }
+
+  /* Mobile text & buttons */
+  .hero h1{font-size:42px;letter-spacing:2px;}
+  .hero p{font-size:18px;}
+  .hero .btn{padding:14px 28px;font-size:16px;}
+
+  .tentang{padding:80px 10%;font-size:16px;}
+  .galeri{padding:80px 5%;}
+  .slide-track img{width:200px;height:140px;margin-right:15px;}
+  .btn-galeri{padding:12px 28px;font-size:16px;}
+
+  .produk-unggulan .product-card{width:90%;max-width:280px;padding:18px;}
+  .produk-unggulan .product-card h3{font-size:1.1rem;}
+  .produk-unggulan .product-card p{font-size:0.9rem;}
+  .produk-unggulan .product-card .btn-katalog{padding:10px 20px;font-size:15px;}
+
+  .section-look-apple{padding:80px 5%;}
+  .section-look-apple .look-title{font-size:2rem;}
+  .section-look-apple .look-subtitle{font-size:1rem;margin-bottom:30px;}
+  .section-look-apple .video-preview{max-width:100%;}
+  .section-look-apple .play-wrap{width:70px;height:70px;}
+  .section-look-apple .play-icon{border-left:22px solid #000;border-top:12px solid transparent;border-bottom:12px solid transparent;}
+
+  .search-container{width:90%;}
+  #search-input{font-size:16px;padding:12px;}
+  #search-results a{font-size:16px;}
 }
