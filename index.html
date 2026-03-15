@@ -8,12 +8,12 @@
 </head>
 <body>
 
-<!-- PRELOADER -->
+<!-- PRELOADER FULLSCREEN -->
 <div id="loader">
   <img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
 </div>
 
-<!-- SEARCH OVERLAY -->
+<!-- SEARCH FULLSCREEN -->
 <div id="search-overlay">
   <div class="search-container">
     <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
@@ -26,6 +26,7 @@
 <header class="navbar">
   <div class="nav-container">
     <div class="logo"><img src="logo.png" alt="Logo"></div>
+
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
       <li class="dropdown-parent">
@@ -39,7 +40,7 @@
         <div class="dropdown">
           <a href="galeri-produksi.html">Galeri Produksi</a>
           <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="proses-pembuatan.html">Proses Pembuatan</a>
+          <a href="galeri-produksi.html">Proses Pembuatan</a>
         </div>
       </li>
       <li class="dropdown-parent">
@@ -55,7 +56,8 @@
       <li><a href="katalog.html">Katalog</a></li>
       <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
     </ul>
-    <div class="nav-actions">
+
+    <div class="right-icons">
       <div class="search-icon" onclick="openSearch()">🔍</div>
       <div class="menu-toggle">&#9776;</div>
     </div>
@@ -128,30 +130,22 @@
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-    <div class="video-slider" id="videoSlider">
+    <div class="video-scroll">
       <div class="video-preview">
-        <img src="https://via.placeholder.com/320x180?text=Video+1">
+        <img src="https://via.placeholder.com/1200x700">
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
       <div class="video-preview">
-        <img src="https://via.placeholder.com/320x180?text=Video+2">
+        <img src="https://via.placeholder.com/1200x700">
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
       <div class="video-preview">
-        <img src="https://via.placeholder.com/320x180?text=Video+3">
+        <img src="https://via.placeholder.com/1200x700">
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- VIDEO OVERLAY -->
-<div class="video-overlay" id="videoOverlay">
-  <div class="video-container">
-    <span class="close-video" id="closeVideo">&times;</span>
-    <iframe id="iframeVideo" src=""></iframe>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <footer>
@@ -206,7 +200,7 @@ function searchSite(){
   });
 }
 
-/* DROPDOWN MOBILE */
+/* DROPDOWN MOBILE FIX */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
   item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
