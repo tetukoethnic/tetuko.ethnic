@@ -294,15 +294,12 @@ color:#1d1d1f;
 
 #loader{
 position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
+inset:0;
 background:white;
 display:flex;
 align-items:center;
 justify-content:center;
-z-index:99999;
+z-index:999999;
 transition:opacity .8s ease;
 }
 
