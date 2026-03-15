@@ -8,12 +8,12 @@
 </head>
 <body>
 
-<!-- PRELOADER FULLSCREEN -->
+<!-- PRELOADER -->
 <div id="loader">
   <img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
 </div>
 
-<!-- SEARCH FULLSCREEN -->
+<!-- SEARCH OVERLAY -->
 <div id="search-overlay">
   <div class="search-container">
     <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
@@ -41,7 +41,7 @@
         <div class="dropdown">
           <a href="galeri-produksi.html">Galeri Produksi</a>
           <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-produksi.html">Proses Pembuatan</a>
+          <a href="galeri-proses.html">Proses Pembuatan</a>
         </div>
       </li>
       <li class="dropdown-parent">
@@ -55,7 +55,7 @@
         </div>
       </li>
       <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
+      <li><a href="https://wa.me/62895405919086" target="_blank">Kontak</a></li>
     </ul>
   </div>
 </header>
@@ -126,8 +126,6 @@
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-
-    <!-- Scrollable Video Slider -->
     <div class="video-slider">
       <div class="video-preview" data-video="https://www.youtube.com/embed/video1">
         <img src="https://via.placeholder.com/320x180">
@@ -142,7 +140,6 @@
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -166,82 +163,39 @@
 /* PRELOADER */
 window.addEventListener("load", function(){
   const loader = document.getElementById("loader");
-  if(loader){
-    loader.style.opacity = "0";
-    setTimeout(() => { loader.style.display = "none"; }, 600);
-  }
+  loader.style.opacity="0";
+  setTimeout(()=>loader.style.display="none",600);
 });
 
-/* NAVBAR MOBILE & SEARCH */
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".nav-menu");
-toggle.onclick = function(){ menu.classList.toggle("active"); };
-
-function openSearch(){
-  document.getElementById("search-overlay").classList.add("active");
-  document.getElementById("search-input").focus();
-}
-function closeSearch(){
-  document.getElementById("search-overlay").classList.remove("active");
-}
-
 /* SEARCH */
+function openSearch(){document.getElementById("search-overlay").classList.add("active");document.getElementById("search-input").focus();}
+function closeSearch(){document.getElementById("search-overlay").classList.remove("active");}
 function searchSite(){
-  let input = document.getElementById("search-input").value.toLowerCase();
-  let results = document.getElementById("search-results");
-  let pages = [
-    {title:"Profil Tetuko Ethnic",link:"profil.html"},
-    {title:"Rebab",link:"rebab.html"},
-    {title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
-    {title:"Gender",link:"gender.html"},
-    {title:"Cara Merawat Gender",link:"rawat-gender.html"},
-    {title:"Karawitan",link:"karawitan.html"},
-    {title:"Katalog Produk",link:"katalog.html"}
-  ];
+  let input=document.getElementById("search-input").value.toLowerCase();
+  let results=document.getElementById("search-results");
+  let pages=[{title:"Profil Tetuko Ethnic",link:"profil.html"},{title:"Rebab",link:"rebab.html"},{title:"Cara Merawat Rebab",link:"rawat-rebab.html"},{title:"Gender",link:"gender.html"},{title:"Cara Merawat Gender",link:"rawat-gender.html"},{title:"Karawitan",link:"karawitan.html"},{title:"Katalog Produk",link:"katalog.html"}];
   results.innerHTML="";
-  pages.forEach(function(page){
-    if(page.title.toLowerCase().includes(input)){
-      results.innerHTML += '<a href="'+page.link+'">'+page.title+'</a>';
-    }
-  });
+  pages.forEach(function(page){if(page.title.toLowerCase().includes(input)){results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';}}
+  );
 }
 
-/* DROPDOWN MOBILE & HIGHLIGHT */
+/* DROPDOWN HIGHLIGHT */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
   item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
-    document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){ menu.style.display="none"; }
-    });
-    dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
+    document.querySelectorAll(".dropdown").forEach(function(menu){if(menu!==dropdown) menu.style.display="none";});
+    dropdown.style.display=(dropdown.style.display==="flex"?"none":"flex");
   });
 });
 
 /* VIDEO MULTIPLE */
-const videoPreviews = document.querySelectorAll('.video-preview');
-const overlay = document.getElementById('videoOverlay');
-const iframe = document.getElementById('iframeVideo');
-const closeVideo = document.getElementById('closeVideo');
-
-videoPreviews.forEach(v => {
-  v.addEventListener('click', () => {
-    const videoSrc = v.getAttribute('data-video');
-    iframe.src = videoSrc;
-    overlay.style.display = 'flex';
-  });
-});
-
-closeVideo.addEventListener('click', () => {
-  overlay.style.display = 'none';
-  iframe.src = '';
-});
-
-overlay.addEventListener('click', e => {
-  if(e.target === overlay){
-    overlay.style.display = 'none';
-    iframe.src = '';
-  }
-});
+const videoPreviews=document.querySelectorAll('.video-preview');
+const overlay=document.getElementById('videoOverlay');
+const iframe=document.getElementById('iframeVideo');
+const closeVideo=document.getElementById('closeVideo');
+videoPreviews.forEach(v=>v.addEventListener('click',()=>{iframe.src=v.dataset.video;overlay.style.display='flex';}));
+closeVideo.addEventListener('click',()=>{overlay.style.display='none';iframe.src='';});
+overlay.addEventListener('click',e=>{if(e.target===overlay){overlay.style.display='none';iframe.src='';}});
 </script>
 
 </body>
