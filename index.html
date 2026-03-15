@@ -21,7 +21,7 @@ window.addEventListener("load",function(){
 
 <!-- LOADING SCREEN -->
 <div id="loader">
-  <div class="loader-logo">Tetuko Ethnic</div>
+  <img src="logo-loader.png" class="loader-logo">
 </div>
 
 <!-- SEARCH FULLSCREEN -->
@@ -39,7 +39,6 @@ window.addEventListener("load",function(){
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
 
-      <!-- Profil -->
       <li class="dropdown-parent">
         <span>Profil</span>
         <div class="dropdown">
@@ -47,7 +46,6 @@ window.addEventListener("load",function(){
         </div>
       </li>
 
-      <!-- Galeri -->
       <li class="dropdown-parent">
         <span>Galeri</span>
         <div class="dropdown">
@@ -57,7 +55,6 @@ window.addEventListener("load",function(){
         </div>
       </li>
 
-      <!-- Edukasi -->
       <li class="dropdown-parent">
         <span>Edukasi</span>
         <div class="dropdown">
@@ -69,10 +66,8 @@ window.addEventListener("load",function(){
         </div>
       </li>
 
-      <!-- Katalog -->
       <li><a href="katalog.html">Katalog</a></li>
 
-      <!-- Kontak -->
       <li>
         <a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">
         Kontak
@@ -100,7 +95,6 @@ window.addEventListener("load",function(){
   </p>
 </section>
 
-<!-- GALERI DENGAN BACKGROUND ABU-ABU -->
 <section class="galeri galeri-abu">
   <h2>Galeri Tetuko Ethnic</h2>
   <div class="slider">
@@ -141,13 +135,12 @@ window.addEventListener("load",function(){
   </div>
 </section>
 
-<!-- LIHAT LEBIH DEKAT (Video Testimoni) -->
 <section class="section-look-apple">
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
     <div class="video-preview" id="videoPreview">
-      <img src="https://via.placeholder.com/1200x700" alt="Preview Video Testimoni">
+      <img src="https://via.placeholder.com/1200x700">
       <div class="play-wrap"><div class="play-icon"></div></div>
     </div>
   </div>
@@ -156,7 +149,7 @@ window.addEventListener("load",function(){
 <div class="video-overlay" id="videoOverlay">
   <div class="video-container">
     <span class="close-video" id="closeVideo">&times;</span>
-    <iframe id="iframeVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="iframeVideo" src=""></iframe>
   </div>
 </div>
 
@@ -167,90 +160,3 @@ window.addEventListener("load",function(){
     TikTok : @tetuko.ethnic
   </p>
 </footer>
-
-<script>
-// SEARCH FULLSCREEN
-function openSearch(){
-  const overlay = document.getElementById("search-overlay");
-  const input = document.getElementById("search-input");
-  overlay.classList.add("active");
-  setTimeout(()=>{input.focus();},200);
-}
-function closeSearch(){
-  const overlay = document.getElementById("search-overlay");
-  overlay.classList.remove("active");
-  document.getElementById("search-input").value="";
-  document.getElementById("search-results").innerHTML="";
-}
-
-// SEARCH DATA
-const pages=[
-  {title:"Rebab",url:"rebab.html"},
-  {title:"Gender",url:"gender.html"},
-  {title:"Karawitan",url:"karawitan.html"},
-  {title:"Galeri Produksi",url:"galeri-produksi.html"},
-  {title:"Galeri Produk",url:"galeri-produk.html"},
-  {title:"Katalog",url:"katalog.html"}
-];
-function searchSite(){
-  let input=document.getElementById("search-input").value.toLowerCase();
-  let results=document.getElementById("search-results");
-  results.innerHTML="";
-  if(input==="") return;
-  let found=false;
-  pages.forEach(page=>{
-    if(page.title.toLowerCase().includes(input)){
-      let link=document.createElement("a");
-      link.href=page.url;
-      link.textContent=page.title;
-      results.appendChild(link);
-      found=true;
-    }
-  });
-  if(!found) results.innerHTML="<p>Tidak ditemukan</p>";
-}
-document.addEventListener("keydown",function(e){
-  if(e.key==="Escape") closeSearch();
-});
-
-// VIDEO LIGHTBOX
-const preview = document.getElementById("videoPreview");
-const overlay = document.getElementById("videoOverlay");
-const closeBtn = document.getElementById("closeVideo");
-const iframe = document.getElementById("iframeVideo");
-const videoLink = "https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1";
-preview.addEventListener("click", () => {
-    iframe.src = videoLink;
-    overlay.style.display = "flex";
-});
-closeBtn.addEventListener("click", () => {
-    overlay.style.display = "none";
-    iframe.src = ""; 
-});
-overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) {
-        overlay.style.display = "none";
-        iframe.src = "";
-    }
-});
-
-// DROPDOWN CLICK TO OPEN
-document.querySelectorAll('.dropdown-parent > span').forEach(parent => {
-    parent.addEventListener('click', function(e) {
-        e.stopPropagation(); // cegah bubble
-        const dropdown = parent.nextElementSibling;
-        document.querySelectorAll('.dropdown').forEach(d => {
-            if(d !== dropdown) d.style.display = 'none';
-        });
-        dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
-    });
-});
-
-// Tutup dropdown jika klik di luar
-document.addEventListener('click', function() {
-    document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
-});
-</script>
-
-</body>
-</html>
