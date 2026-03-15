@@ -12,12 +12,25 @@
 
 <script>
 window.addEventListener("load",function(){
+
+const loader=document.getElementById("loader");
+
+if(loader){
+
 setTimeout(function(){
-document.getElementById("loader").style.opacity="0";
+
+loader.style.opacity="0";
+
 setTimeout(function(){
-document.getElementById("loader").style.display="none";
+
+loader.style.display="none";
+
 },800);
-},1000);
+
+},1200);
+
+}
+
 });
 </script>
 
@@ -227,6 +240,32 @@ results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';
 });
 
 }
+
+/* DROPDOWN MOBILE FIX */
+
+document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
+
+item.addEventListener("click",function(){
+
+let dropdown=this.nextElementSibling;
+
+document.querySelectorAll(".dropdown").forEach(function(menu){
+
+if(menu!==dropdown){
+menu.style.display="none";
+}
+
+});
+
+if(dropdown.style.display==="flex"){
+dropdown.style.display="none";
+}else{
+dropdown.style.display="flex";
+}
+
+});
+
+});
 
 </script>
 
