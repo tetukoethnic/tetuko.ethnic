@@ -25,7 +25,7 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-container">
-    <div class="logo"><img src="logo.png"></div>
+    <div class="logo"><img src="logo.png" alt="Logo Tetuko Ethnic"></div>
     <div class="menu-toggle">&#9776;</div>
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
@@ -58,12 +58,7 @@
       </li>
 
       <li><a href="katalog.html">Katalog</a></li>
-
-      <li>
-        <a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">
-          Kontak
-        </a>
-      </li>
+      <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
     </ul>
     <div class="search-icon" onclick="openSearch()">🔍</div>
   </div>
@@ -116,14 +111,12 @@
       <p>Rebab ukiran khas dengan suara halus.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
     </div>
-
     <div class="product-card">
       <img src="images/produk2.jpg">
       <h3>Rebab Modern</h3>
       <p>Desain modern, suara tetap halus.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
     </div>
-
     <div class="product-card">
       <img src="images/produk3.jpg">
       <h3>Gender Tradisional</h3>
@@ -174,17 +167,14 @@ window.addEventListener("load", function(){
   }
 });
 
+/* MENU MOBILE TOGGLE */
 const toggle=document.querySelector(".menu-toggle");
 const menu=document.querySelector(".nav-menu");
 toggle.onclick=function(){ menu.classList.toggle("active"); }
 
-function openSearch(){
-  document.getElementById("search-overlay").classList.add("active");
-  document.getElementById("search-input").focus();
-}
-function closeSearch(){
-  document.getElementById("search-overlay").classList.remove("active");
-}
+/* SEARCH */
+function openSearch(){ document.getElementById("search-overlay").classList.add("active"); document.getElementById("search-input").focus(); }
+function closeSearch(){ document.getElementById("search-overlay").classList.remove("active"); }
 function searchSite(){
   let input=document.getElementById("search-input").value.toLowerCase();
   let results=document.getElementById("search-results");
