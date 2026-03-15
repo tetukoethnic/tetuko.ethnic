@@ -203,21 +203,21 @@ filter:blur(6px);
 }
 
 .close-search{
-  position:absolute;
-  top:-10px;      /* sesuaikan agar di atas input */
-  right:-10px;    /* sesuaikan agar di kanan input */
-  font-size:26px;
+  position:fixed;       /* tetap di pojok layar */
+  top:30px;
+  right:30px;
+  font-size:28px;
   cursor:pointer;
-  z-index:10;
-  color:#1d1d1f;  /* pastikan terlihat */
+  z-index:4000;
+  color:#1d1d1f;
   background:rgba(255,255,255,0.9);
   border-radius:50%;
-  width:35px;
-  height:35px;
+  width:40px;
+  height:40px;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
   transition:0.3s;
 }
 
