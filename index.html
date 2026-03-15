@@ -25,8 +25,8 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Logo Tetuko Ethnic"></div>
-    <div class="nav-menu-wrapper">
+    <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <div class="nav-center">
       <ul class="nav-menu">
         <li><a href="index.html">Beranda</a></li>
         <li class="dropdown-parent">
@@ -40,7 +40,7 @@
           <div class="dropdown">
             <a href="galeri-produksi.html">Galeri Produksi</a>
             <a href="galeri-produk.html">Galeri Produk</a>
-            <a href="proses-pembuatan.html">Proses Pembuatan</a>
+            <a href="galeri-produksi.html">Proses Pembuatan</a>
           </div>
         </li>
         <li class="dropdown-parent">
@@ -57,8 +57,10 @@
         <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
       </ul>
     </div>
-    <div class="search-icon" onclick="openSearch()">🔍</div>
-    <div class="menu-toggle">&#9776;</div>
+    <div class="nav-right">
+      <div class="search-icon" onclick="openSearch()">🔍</div>
+      <div class="menu-toggle">&#9776;</div>
+    </div>
   </div>
 </header>
 
@@ -86,12 +88,12 @@
   <h2>Galeri Tetuko Ethnic</h2>
   <div class="slider">
     <div class="slide-track">
-      <img src="galeri1.jpg" alt="">
-      <img src="galeri2.jpg" alt="">
-      <img src="galeri3.jpg" alt="">
-      <img src="galeri4.jpg" alt="">
-      <img src="galeri5.jpg" alt="">
-      <img src="galeri6.jpg" alt="">
+      <img src="galeri1.jpg">
+      <img src="galeri2.jpg">
+      <img src="galeri3.jpg">
+      <img src="galeri4.jpg">
+      <img src="galeri5.jpg">
+      <img src="galeri6.jpg">
     </div>
   </div>
   <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
@@ -103,19 +105,19 @@
   <p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
   <div class="product-grid">
     <div class="product-card">
-      <img src="images/produk1.jpg" alt="">
+      <img src="images/produk1.jpg">
       <h3>Rebab Ukir Klasik</h3>
       <p>Rebab ukiran khas dengan suara halus.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
     </div>
     <div class="product-card">
-      <img src="images/produk2.jpg" alt="">
+      <img src="images/produk2.jpg">
       <h3>Rebab Modern</h3>
       <p>Desain modern, suara tetap halus.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
     </div>
     <div class="product-card">
-      <img src="images/produk3.jpg" alt="">
+      <img src="images/produk3.jpg">
       <h3>Gender Tradisional</h3>
       <p>Terbuat dari kayu berkualitas, suara autentik.</p>
       <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
@@ -128,17 +130,17 @@
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-    <div class="video-carousel" id="videoCarousel">
-      <div class="video-preview" onclick="openVideo('https://www.youtube.com/embed/VIDEO1')">
-        <img src="https://via.placeholder.com/1200x700" alt="">
+    <div class="video-slider">
+      <div class="video-preview">
+        <img src="https://via.placeholder.com/1200x700">
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
-      <div class="video-preview" onclick="openVideo('https://www.youtube.com/embed/VIDEO2')">
-        <img src="https://via.placeholder.com/1200x700" alt="">
+      <div class="video-preview">
+        <img src="https://via.placeholder.com/1200x700">
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
-      <div class="video-preview" onclick="openVideo('https://www.youtube.com/embed/VIDEO3')">
-        <img src="https://via.placeholder.com/1200x700" alt="">
+      <div class="video-preview">
+        <img src="https://via.placeholder.com/1200x700">
         <div class="play-wrap"><div class="play-icon"></div></div>
       </div>
     </div>
@@ -171,12 +173,11 @@ window.addEventListener("load", function(){
   }
 });
 
-/* NAVBAR MOBILE */
+/* NAVBAR MOBILE & SEARCH */
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".nav-menu");
 toggle.onclick = function(){ menu.classList.toggle("active"); };
 
-/* SEARCH */
 function openSearch(){
   document.getElementById("search-overlay").classList.add("active");
   document.getElementById("search-input").focus();
@@ -184,6 +185,8 @@ function openSearch(){
 function closeSearch(){
   document.getElementById("search-overlay").classList.remove("active");
 }
+
+/* SEARCH */
 function searchSite(){
   let input = document.getElementById("search-input").value.toLowerCase();
   let results = document.getElementById("search-results");
@@ -204,7 +207,7 @@ function searchSite(){
   });
 }
 
-/* DROPDOWN HIGHLIGHT */
+/* DROPDOWN MOBILE FIX */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
   item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
@@ -214,16 +217,6 @@ document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
     dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
   });
 });
-
-/* VIDEO OVERLAY */
-function openVideo(url){
-  document.getElementById("videoOverlay").style.display="flex";
-  document.getElementById("iframeVideo").src = url;
-}
-document.getElementById("closeVideo").onclick = function(){
-  document.getElementById("videoOverlay").style.display="none";
-  document.getElementById("iframeVideo").src = "";
-};
 </script>
 
 </body>
