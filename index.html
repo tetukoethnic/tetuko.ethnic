@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- LOADING SCREEN -->
+<!-- PRELOADER FULLSCREEN -->
 <div id="loader">
   <img src="logo-loader.png" class="loader-logo">
 </div>
@@ -25,27 +25,24 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Logo Tetuko Ethnic"></div>
+    <div class="logo"><img src="logo.png"></div>
     <div class="menu-toggle">&#9776;</div>
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
-
       <li class="dropdown-parent">
         <span>Profil</span>
         <div class="dropdown">
           <a href="profil.html">Siapa Tetuko Ethnic</a>
         </div>
       </li>
-
       <li class="dropdown-parent">
         <span>Galeri</span>
         <div class="dropdown">
           <a href="galeri-produksi.html">Galeri Produksi</a>
           <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-proses.html">Proses Pembuatan</a>
+          <a href="galeri-produksi.html">Proses Pembuatan</a>
         </div>
       </li>
-
       <li class="dropdown-parent">
         <span>Edukasi</span>
         <div class="dropdown">
@@ -56,7 +53,6 @@
           <a href="karawitan.html">Karawitan</a>
         </div>
       </li>
-
       <li><a href="katalog.html">Katalog</a></li>
       <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
     </ul>
@@ -103,7 +99,6 @@
 <section class="produk-unggulan">
   <h2>Produk Unggulan</h2>
   <p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
-
   <div class="product-grid">
     <div class="product-card">
       <img src="images/produk1.jpg">
@@ -138,7 +133,6 @@
   </div>
 </section>
 
-<!-- VIDEO OVERLAY -->
 <div class="video-overlay" id="videoOverlay">
   <div class="video-container">
     <span class="close-video" id="closeVideo">&times;</span>
@@ -155,30 +149,40 @@
   </p>
 </footer>
 
-<!-- SCRIPTS -->
 <script>
+/* PRELOADER */
 window.addEventListener("load", function(){
-  const loader=document.getElementById("loader");
+  const loader = document.getElementById("loader");
   if(loader){
     setTimeout(function(){
-      loader.style.opacity="0";
-      setTimeout(function(){ loader.style.display="none"; },800);
+      loader.style.opacity = "0";
+      setTimeout(function(){
+        loader.style.display = "none";
+      },800);
     },1200);
   }
 });
 
-/* MENU MOBILE TOGGLE */
-const toggle=document.querySelector(".menu-toggle");
-const menu=document.querySelector(".nav-menu");
-toggle.onclick=function(){ menu.classList.toggle("active"); }
+/* NAVBAR MOBILE & SEARCH */
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".nav-menu");
+toggle.onclick = function(){
+  menu.classList.toggle("active");
+};
+
+function openSearch(){
+  document.getElementById("search-overlay").classList.add("active");
+  document.getElementById("search-input").focus();
+}
+function closeSearch(){
+  document.getElementById("search-overlay").classList.remove("active");
+}
 
 /* SEARCH */
-function openSearch(){ document.getElementById("search-overlay").classList.add("active"); document.getElementById("search-input").focus(); }
-function closeSearch(){ document.getElementById("search-overlay").classList.remove("active"); }
 function searchSite(){
-  let input=document.getElementById("search-input").value.toLowerCase();
-  let results=document.getElementById("search-results");
-  let pages=[
+  let input = document.getElementById("search-input").value.toLowerCase();
+  let results = document.getElementById("search-results");
+  let pages = [
     {title:"Profil Tetuko Ethnic",link:"profil.html"},
     {title:"Rebab",link:"rebab.html"},
     {title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
@@ -190,22 +194,27 @@ function searchSite(){
   results.innerHTML="";
   pages.forEach(function(page){
     if(page.title.toLowerCase().includes(input)){
-      results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';
+      results.innerHTML += '<a href="'+page.link+'">'+page.title+'</a>';
     }
   });
 }
 
-/* MOBILE DROPDOWN CLICK FIX */
+/* DROPDOWN MOBILE FIX */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
-  item.addEventListener("click", function(){
+  item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
     document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){ menu.style.display="none"; }
+      if(menu!==dropdown){
+        menu.style.display="none";
+      }
     });
-    dropdown.style.display=(dropdown.style.display==="flex")?"none":"flex";
+    if(dropdown.style.display==="flex"){
+      dropdown.style.display="none";
+    }else{
+      dropdown.style.display="flex";
+    }
   });
 });
 </script>
-
 </body>
 </html>
