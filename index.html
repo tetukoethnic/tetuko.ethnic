@@ -26,6 +26,7 @@
 <header class="navbar">
   <div class="nav-container">
     <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <div class="search-icon" onclick="openSearch()">🔍</div>
     <div class="menu-toggle">&#9776;</div>
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
@@ -56,7 +57,6 @@
       <li><a href="katalog.html">Katalog</a></li>
       <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
     </ul>
-    <div class="search-icon" onclick="openSearch()">🔍</div>
   </div>
 </header>
 
@@ -126,10 +126,23 @@
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-    <div class="video-preview" id="videoPreview">
-      <img src="https://via.placeholder.com/1200x700">
-      <div class="play-wrap"><div class="play-icon"></div></div>
+
+    <!-- Scrollable Video Slider -->
+    <div class="video-slider">
+      <div class="video-preview" data-video="https://www.youtube.com/embed/video1">
+        <img src="https://via.placeholder.com/320x180">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/video2">
+        <img src="https://via.placeholder.com/320x180">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/video3">
+        <img src="https://via.placeholder.com/320x180">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -193,33 +206,41 @@ function searchSite(){
   });
 }
 
-/* DROPDOWN HIGHLIGHT MOBILE */
+/* DROPDOWN MOBILE & HIGHLIGHT */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
   item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
-    if(dropdown){
-      dropdown.classList.toggle("show");
-    }
-    // tutup dropdown lain
     document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){ menu.classList.remove("show"); }
+      if(menu!==dropdown){ menu.style.display="none"; }
     });
+    dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
   });
 });
 
-/* VIDEO OVERLAY */
-const videoPreview = document.getElementById("videoPreview");
-const videoOverlay = document.getElementById("videoOverlay");
-const iframeVideo = document.getElementById("iframeVideo");
-const closeVideo = document.getElementById("closeVideo");
+/* VIDEO MULTIPLE */
+const videoPreviews = document.querySelectorAll('.video-preview');
+const overlay = document.getElementById('videoOverlay');
+const iframe = document.getElementById('iframeVideo');
+const closeVideo = document.getElementById('closeVideo');
 
-videoPreview.addEventListener("click", ()=>{
-  iframeVideo.src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1";
-  videoOverlay.style.display = "flex";
+videoPreviews.forEach(v => {
+  v.addEventListener('click', () => {
+    const videoSrc = v.getAttribute('data-video');
+    iframe.src = videoSrc;
+    overlay.style.display = 'flex';
+  });
 });
-closeVideo.addEventListener("click", ()=>{
-  iframeVideo.src = "";
-  videoOverlay.style.display = "none";
+
+closeVideo.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  iframe.src = '';
+});
+
+overlay.addEventListener('click', e => {
+  if(e.target === overlay){
+    overlay.style.display = 'none';
+    iframe.src = '';
+  }
 });
 </script>
 
