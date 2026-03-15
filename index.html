@@ -165,5 +165,48 @@ window.addEventListener("load",function(){
   </p>
 </footer>
 
+<script>
+
+function openSearch(){
+document.getElementById("search-overlay").classList.add("active");
+document.getElementById("search-input").focus();
+}
+
+function closeSearch(){
+document.getElementById("search-overlay").classList.remove("active");
+}
+
+function searchSite(){
+
+let input=document.getElementById("search-input").value.toLowerCase();
+let results=document.getElementById("search-results");
+
+let pages=[
+{title:"Profil Tetuko Ethnic",link:"profil.html"},
+{title:"Rebab",link:"rebab.html"},
+{title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
+{title:"Gender",link:"gender.html"},
+{title:"Cara Merawat Gender",link:"rawat-gender.html"},
+{title:"Karawitan",link:"karawitan.html"},
+{title:"Katalog Produk",link:"katalog.html"}
+];
+
+results.innerHTML="";
+
+pages.forEach(function(page){
+
+if(page.title.toLowerCase().includes(input)){
+
+results.innerHTML+=
+'<a href="'+page.link+'">'+page.title+'</a>';
+
+}
+
+});
+
+}
+
+</script>
+
 </body>
 </html>
