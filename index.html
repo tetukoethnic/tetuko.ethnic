@@ -232,16 +232,15 @@ results.innerHTML="";
 pages.forEach(function(page){
 
 if(page.title.toLowerCase().includes(input)){
-
 results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';
-
 }
 
 });
 
 }
 
-/* DROPDOWN MOBILE FIX */
+/* DROPDOWN HANYA MOBILE */
+if(window.innerWidth < 768){
 
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
 
@@ -266,6 +265,8 @@ dropdown.style.display="flex";
 });
 
 });
+
+}
 
 </script>
 
