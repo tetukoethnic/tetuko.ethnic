@@ -26,8 +26,10 @@
 <header class="navbar">
   <div class="nav-container">
     <div class="logo"><img src="logo.png" alt="Logo"></div>
-    <div class="menu-toggle">&#9776;</div>
-    <div class="search-icon" onclick="openSearch()">🔍</div>
+    <div class="mobile-toolbar">
+      <div class="search-icon" onclick="openSearch()">🔍</div>
+      <div class="menu-toggle">&#9776;</div>
+    </div>
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
       <li class="dropdown-parent">
@@ -159,21 +161,11 @@ window.addEventListener("load", function(){
   }
 });
 
-/* MOBILE MENU APPLE-STYLE */
+/* NAVBAR MOBILE & SEARCH */
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".nav-menu");
 toggle.onclick = function(){ menu.classList.toggle("active"); };
 
-// Mobile dropdown accordion
-document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
-  item.addEventListener("click",function(){
-    this.parentElement.classList.toggle("active");
-    const dropdown = this.nextElementSibling;
-    dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
-  });
-});
-
-/* SEARCH */
 function openSearch(){
   document.getElementById("search-overlay").classList.add("active");
   document.getElementById("search-input").focus();
@@ -182,6 +174,7 @@ function closeSearch(){
   document.getElementById("search-overlay").classList.remove("active");
 }
 
+/* SEARCH */
 function searchSite(){
   let input = document.getElementById("search-input").value.toLowerCase();
   let results = document.getElementById("search-results");
@@ -201,6 +194,25 @@ function searchSite(){
     }
   });
 }
+
+/* DROPDOWN MOBILE SMOOTH + HIGHLIGHT */
+document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
+  item.addEventListener("click",function(){
+    let dropdown=this.nextElementSibling;
+    let isOpen=dropdown.classList.contains("show");
+    document.querySelectorAll(".dropdown").forEach(function(d){ d.classList.remove("show"); });
+    if(!isOpen){ dropdown.classList.add("show"); }
+  });
+});
+
+/* HIGHLIGHT SUB MENU */
+document.querySelectorAll(".dropdown a").forEach(function(a){
+  a.addEventListener("click",function(){
+    document.querySelectorAll(".dropdown a").forEach(function(x){ x.style.background=""; });
+    this.style.background="rgba(0,113,227,0.1)";
+    this.style.borderRadius="8px";
+  });
+});
 </script>
 
 </body>
