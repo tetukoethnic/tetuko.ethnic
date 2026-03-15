@@ -1,210 +1,191 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tetuko Ethnic</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Reset & body */
+html, body {margin:0;padding:0;overflow-x:hidden;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1f;background:#fff;}
 
-<!-- PRELOADER FULLSCREEN -->
-<div id="loader">
-  <img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
-</div>
-
-<!-- SEARCH FULLSCREEN -->
-<div id="search-overlay">
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
-    <div id="search-results"></div>
-  </div>
-  <span class="close-search" onclick="closeSearch()">✕</span>
-</div>
-
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Logo"></div>
-    <div class="menu-toggle">&#9776;</div>
-    <ul class="nav-menu">
-      <li><a href="index.html">Beranda</a></li>
-      <li class="dropdown-parent">
-        <span>Profil</span>
-        <div class="dropdown">
-          <a href="profil.html">Siapa Tetuko Ethnic</a>
-        </div>
-      </li>
-      <li class="dropdown-parent">
-        <span>Galeri</span>
-        <div class="dropdown">
-          <a href="galeri-produksi.html">Galeri Produksi</a>
-          <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-produksi.html">Proses Pembuatan</a>
-        </div>
-      </li>
-      <li class="dropdown-parent">
-        <span>Edukasi</span>
-        <div class="dropdown">
-          <a href="rebab.html">Tentang Rebab</a>
-          <a href="rawat-rebab.html">Cara Merawat Rebab</a>
-          <a href="gender.html">Tentang Gender</a>
-          <a href="rawat-gender.html">Cara Merawat Gender</a>
-          <a href="karawitan.html">Karawitan</a>
-        </div>
-      </li>
-      <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
-    </ul>
-    <div class="search-icon">🔍</div>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>TETUKO ETHNIC</h1>
-  <p>Produsen Rebab dan Perangkat Karawitan Berkualitas Tinggi</p>
-  <a href="katalog.html" class="btn">Lihat Produk</a>
-</section>
-
-<!-- TENTANG -->
-<section class="tentang">
-  <h2>Tentang Tetuko Ethnic</h2>
-  <p>
-    Tetuko Ethnic merupakan produsen alat musik tradisional khususnya rebab dan perangkat karawitan
-    yang dibuat secara teliti dengan memperhatikan kualitas bahan, keindahan bentuk, serta karakter suara.
-    Setiap produk dibuat dengan proses pengerjaan yang detail sehingga menghasilkan
-    alat musik yang tidak hanya indah secara visual tetapi juga memiliki kualitas bunyi yang baik
-    untuk kebutuhan karawitan profesional maupun pendidikan seni.
-  </p>
-</section>
-
-<!-- GALERI -->
-<section class="galeri galeri-abu">
-  <h2>Galeri Tetuko Ethnic</h2>
-  <div class="slider">
-    <div class="slide-track">
-      <img src="galeri1.jpg">
-      <img src="galeri2.jpg">
-      <img src="galeri3.jpg">
-      <img src="galeri4.jpg">
-      <img src="galeri5.jpg">
-      <img src="galeri6.jpg">
-    </div>
-  </div>
-  <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
-</section>
-
-<!-- PRODUK UNGGULAN -->
-<section class="produk-unggulan">
-  <h2>Produk Unggulan</h2>
-  <p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/produk1.jpg">
-      <h3>Rebab Ukir Klasik</h3>
-      <p>Rebab ukiran khas dengan suara halus.</p>
-      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
-    </div>
-    <div class="product-card">
-      <img src="images/produk2.jpg">
-      <h3>Rebab Modern</h3>
-      <p>Desain modern, suara tetap halus.</p>
-      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
-    </div>
-    <div class="product-card">
-      <img src="images/produk3.jpg">
-      <h3>Gender Tradisional</h3>
-      <p>Terbuat dari kayu berkualitas, suara autentik.</p>
-      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
-    </div>
-  </div>
-</section>
-
-<!-- LIHAT LEBIH DEKAT -->
-<section class="section-look-apple">
-  <div class="look-inner">
-    <h2 class="look-title">Lihat Lebih Dekat</h2>
-    <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-    <div class="video-carousel">
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="video-overlay" id="videoOverlay">
-  <div class="video-container">
-    <span class="close-video" id="closeVideo">&times;</span>
-    <iframe id="iframeVideo" src=""></iframe>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Tetuko Ethnic</p>
-  <p>
-    Instagram : @tetuko.ethnic<br>
-    TikTok : @tetuko.ethnic
-  </p>
-</footer>
-
-<script>
-/* PRELOADER */
-window.addEventListener("load", function(){
-  const loader = document.getElementById("loader");
-  if(loader){
-    loader.style.opacity = "0";
-    setTimeout(() => { loader.style.display = "none"; }, 600);
-  }
-});
-
-/* NAVBAR MOBILE TOGGLE */
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".nav-menu");
-toggle.onclick = function(){
-  if(window.innerWidth <= 768){
-    menu.classList.toggle("active");
-  }
-};
-
-/* SEARCH */
-function openSearch(){ document.getElementById("search-overlay").classList.add("active"); document.getElementById("search-input").focus(); }
-function closeSearch(){ document.getElementById("search-overlay").classList.remove("active"); }
-document.querySelector(".search-icon").onclick = openSearch;
-
-function searchSite(){
-  let input = document.getElementById("search-input").value.toLowerCase();
-  let results = document.getElementById("search-results");
-  let pages = [
-    {title:"Profil Tetuko Ethnic",link:"profil.html"},
-    {title:"Rebab",link:"rebab.html"},
-    {title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
-    {title:"Gender",link:"gender.html"},
-    {title:"Cara Merawat Gender",link:"rawat-gender.html"},
-    {title:"Karawitan",link:"karawitan.html"},
-    {title:"Katalog Produk",link:"katalog.html"}
-  ];
-  results.innerHTML="";
-  pages.forEach(function(page){
-    if(page.title.toLowerCase().includes(input)){
-      results.innerHTML += '<a href="'+page.link+'">'+page.title+'</a>';
-    }
-  });
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #eee;
+z-index:9999;
 }
 
-/* DROPDOWN MOBILE FIX */
-document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
-  item.addEventListener("click",function(){
-    let dropdown=this.nextElementSibling;
-    document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){ menu.style.display="none"; }
-    });
-    dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
-  });
-});
-</script>
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 30px;
+}
 
-</body>
-</html>
+.logo img{height:55px;}
+
+.menu-toggle{
+display:none; /* desktop hide */
+font-size:28px;
+cursor:pointer;
+}
+
+.nav-menu{
+display:flex;
+gap:35px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.nav-menu li{
+display:flex;
+align-items:center;
+position:relative;
+}
+
+.nav-menu li > a,
+.dropdown-parent > span{
+display:flex;
+align-items:center;
+height:35px;
+cursor:pointer;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:#1d1d1f;
+font-size:16px;
+font-weight:600;
+}
+
+/* DROPDOWN */
+.dropdown-parent{position:relative;}
+.dropdown-parent > span{font-size:16px;font-weight:600;}
+
+/* Desktop hover dropdown */
+@media(min-width:769px){
+  .dropdown-parent:hover .dropdown{
+    display:flex;
+    flex-direction:column;
+  }
+}
+
+/* Dropdown common */
+.dropdown{
+position:absolute;
+top:35px;
+left:0;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+display:none;
+flex-direction:column;
+min-width:220px;
+padding:10px 0;
+z-index:10000;
+}
+
+.dropdown a{
+padding:10px 20px;
+display:block;
+color:#1d1d1f;
+text-decoration:none;
+transition:0.3s;
+}
+
+.dropdown a:hover{ background:#f1f1f1; }
+
+/* HERO */
+.hero{
+min-height:100vh;
+background:url("background.png") center/cover;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+.hero h1{font-size:72px;letter-spacing:4px;}
+.hero p{font-size:22px;}
+.btn{background:#0071e3;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;margin-top:20px;}
+
+/* TENTANG */
+.tentang{padding:120px 15%;text-align:center;line-height:1.8;font-size:18px;}
+
+/* GALERI */
+.galeri{padding:120px 10%;text-align:center;background:#fafafa;}
+.slider{overflow:hidden;margin-top:40px;}
+.slide-track{display:flex;width:max-content;animation:scroll 40s linear infinite;}
+.slide-track img{width:250px;height:170px;object-fit:cover;border-radius:10px;margin-right:20px;transition:0.3s;}
+.slide-track img:hover{transform:scale(1.1);}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.btn-galeri{display:inline-block;margin-top:40px;background:#333;color:white;padding:10px 25px;border-radius:25px;text-decoration:none;}
+
+/* PRODUK UNGGULAN */
+.produk-unggulan .product-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
+.produk-unggulan .product-card{background:#f9f9f9;border-radius:20px;padding:20px;width:220px;transition:transform 0.3s, box-shadow 0.3s;cursor:pointer;text-align:center;margin-bottom:30px;}
+.produk-unggulan .product-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.1);}
+.produk-unggulan .product-card img{width:100%;height:auto;max-height:275px;object-fit:cover;border-radius:15px;}
+.produk-unggulan .product-card h3{margin:15px 0 10px;font-size:1.2rem;}
+.produk-unggulan .product-card p{font-size:0.95rem;color:#555;}
+.produk-unggulan .product-card .btn-katalog{display:inline-block;margin-top:10px;padding:8px 16px;border-radius:12px;background:#0071e3;color:#fff;text-decoration:none;font-weight:500;transition:background 0.3s;}
+
+/* CTA */
+.cta{padding:120px 10%;text-align:center;}
+
+/* FOOTER */
+footer{background:#111;color:#aaa;text-align:center;padding:30px;}
+
+/* SEARCH ICON */
+.search-icon{cursor:pointer;font-size:18px;}
+
+/* SEARCH RESULTS */
+#search-results{margin-top:20px;text-align:left;}
+#search-results a{display:block;padding:10px;text-decoration:none;color:#1d1d1f;}
+
+/* PRELOADER FULLSCREEN */
+#loader {position: fixed; inset:0; background:white; display:flex; align-items:center; justify-content:center; z-index:99999; transition: opacity 0.6s ease;}
+.loader-logo {width:520px; animation: luxuryReveal 3s ease-in-out infinite; filter: blur(6px);}
+@keyframes luxuryReveal {0%{opacity:0;transform:scale(0.85);filter:blur(10px);}40%{opacity:1;transform:scale(1);filter:blur(0);}70%{opacity:1;transform:scale(1.03);}100%{opacity:0;transform:scale(1.08);filter:blur(4px);}}
+
+/* SEARCH FULLSCREEN */
+#search-overlay{position: fixed; top:0; left:0;width:100%; height:100%; background: rgba(255,255,255,0.95); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition: opacity 0.3s ease, visibility 0.3s; z-index:10000;}
+#search-overlay.active{opacity:1; visibility:visible;}
+.search-container{width:500px; max-width:90%; text-align:center; position:relative;}
+#search-input{width:100%; padding:15px; font-size:18px; border:1px solid #ddd; border-radius:8px;}
+
+/* Close button */
+.close-search{position:fixed; top:25px; right:25px; width:45px; height:45px; border-radius:50%; background:rgba(255,255,255,0.95); color:#1d1d1f; font-size:28px; font-weight:bold; display:flex; justify-content:center; align-items:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.15); transition:0.3s ease; z-index:10100;}
+.close-search:hover{background:rgba(255,255,255,1); transform:scale(1.1);}
+
+/* PRODUK HEADERS */
+.produk-unggulan h2,.produk-unggulan p{text-align:center;margin:0 auto 20px auto;max-width:600px;}
+
+/* LIHAT LEBIH DEKAT */
+.section-look-apple{padding:120px 10%;text-align:center;background:#fafafa;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+.section-look-apple .look-title{font-size:2.8rem;font-weight:600;margin-bottom:10px;color:#1d1d1f;}
+.section-look-apple .look-subtitle{font-size:1.1rem;color:#6e6e73;margin-bottom:40px;}
+.video-carousel{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px;}
+.section-look-apple .video-preview{position:relative;display:inline-block;max-width:100%;border-radius:24px;overflow:hidden;cursor:pointer;transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.section-look-apple .video-preview img{width:100%;display:block;}
+.section-look-apple .video-preview:hover{transform:scale(1.02);box-shadow:0 12px 30px rgba(0,0,0,0.18);}
+.section-look-apple .play-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;background:rgba(255,255,255,0.85);border-radius:50%;display:flex;justify-content:center;align-items:center;transition:0.3s;}
+.section-look-apple .play-icon{width:0;height:0;border-left:22px solid #1d1d1f;border-top:12px solid transparent;border-bottom:12px solid transparent;}
+.section-look-apple .video-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:10001;}
+.section-look-apple .video-container{position:relative;width:90%;max-width:1200px;}
+.section-look-apple .video-container iframe{width:100%;height:80vh;border:none;border-radius:16px;}
+.section-look-apple .close-video{position:absolute;top:-25px;right:0;font-size:48px;color:white;cursor:pointer;}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:768px){
+  .nav-container{padding:10px 15px;}
+  .menu-toggle{display:block;}
+  .nav-menu{display:none;flex-direction:column;width:100%;gap:20px;background:white;position:absolute;top:70px;left:0;padding:20px 0;box-shadow:0 10px 20px rgba(0,0,0,0.08);}
+  .nav-menu.active{display:flex;}
+  .nav-menu li{justify-content:center;}
+  .dropdown{position:relative;top:0;box-shadow:none;min-width:unset;}
+  .hero h1{font-size:48px;}
+  .hero p{font-size:18px;}
+}
