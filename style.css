@@ -60,10 +60,46 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 #search-results a{display:block;padding:10px;text-decoration:none;color:#1d1d1f;}
 #search-results a:hover{background:#f5f5f7;}
 
-/* LOADER */
-#loader{position:fixed;width:100%;height:100%;background:white;display:flex;align-items:center;justify-content:center;z-index:5000;transition:opacity .8s ease;}
-.loader-logo{width:320px;animation:fadeLogo 2s infinite;}
-@keyframes fadeLogo{0%{opacity:.3}50%{opacity:1}100%{opacity:.3}}
+/* LOADER PREMIUM BRAND */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:5000;
+transition:opacity .8s ease;
+}
+
+.loader-logo{
+width:520px;
+animation:luxuryReveal 3s ease-in-out infinite;
+filter:blur(6px);
+}
+
+@keyframes luxuryReveal{
+0%{
+opacity:0;
+transform:scale(0.85);
+filter:blur(10px);
+}
+40%{
+opacity:1;
+transform:scale(1);
+filter:blur(0);
+}
+70%{
+opacity:1;
+transform:scale(1.03);
+}
+100%{
+opacity:0;
+transform:scale(1.08);
+filter:blur(4px);
+}
+}
 
 /* SEARCH FULLSCREEN */
 #search-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;z-index:3000;}
