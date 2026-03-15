@@ -40,7 +40,7 @@
         <div class="dropdown">
           <a href="galeri-produksi.html">Galeri Produksi</a>
           <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-produksi.html">Proses Pembuatan</a>
+          <a href="galeri-produk.html">Proses Pembuatan</a>
         </div>
       </li>
       <li class="dropdown-parent">
@@ -126,18 +126,29 @@
   <div class="look-inner">
     <h2 class="look-title">Lihat Lebih Dekat</h2>
     <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
+    
     <div class="video-carousel">
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
-      <div class="video-preview"><img src="https://via.placeholder.com/1200x700"><div class="play-wrap"><div class="play-icon"></div></div></div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+        <img src="https://via.placeholder.com/300x180" alt="Video 1">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/oHg5SJYRHA0">
+        <img src="https://via.placeholder.com/300x180" alt="Video 2">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/9bZkp7q19f0">
+        <img src="https://via.placeholder.com/300x180" alt="Video 3">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="video-overlay" id="videoOverlay">
+<!-- VIDEO OVERLAY -->
+<div id="videoOverlay">
   <div class="video-container">
     <span class="close-video" id="closeVideo">&times;</span>
-    <iframe id="iframeVideo" src=""></iframe>
+    <iframe id="iframeVideo" src="" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -203,6 +214,23 @@ document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
     });
     dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
   });
+});
+
+/* VIDEO OVERLAY */
+document.querySelectorAll('.video-preview').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const overlay = document.getElementById('videoOverlay');
+    const iframe = overlay.querySelector('#iframeVideo');
+    iframe.src = item.dataset.video;
+    overlay.classList.add('active');
+  });
+});
+
+document.getElementById('closeVideo').addEventListener('click',()=>{
+  const overlay = document.getElementById('videoOverlay');
+  const iframe = overlay.querySelector('#iframeVideo');
+  iframe.src = "";
+  overlay.classList.remove('active');
 });
 </script>
 
