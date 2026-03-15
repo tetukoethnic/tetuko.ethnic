@@ -25,7 +25,9 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Logo Tetuko Ethnic"></div>
+    <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <div class="search-icon" onclick="openSearch()">🔍</div>
+    <div class="menu-toggle">&#9776;</div>
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
       <li class="dropdown-parent">
@@ -55,8 +57,6 @@
       <li><a href="katalog.html">Katalog</a></li>
       <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
     </ul>
-    <div class="search-icon" onclick="openSearch()">🔍</div>
-    <div class="menu-toggle">&#9776;</div>
   </div>
 </header>
 
@@ -165,7 +165,7 @@ window.addEventListener("load", function(){
   const loader = document.getElementById("loader");
   if(loader){
     loader.style.opacity = "0";
-    setTimeout(()=>{ loader.style.display="none";},600);
+    setTimeout(()=>loader.style.display="none",600);
   }
 });
 
@@ -182,11 +182,11 @@ function closeSearch(){
   document.getElementById("search-overlay").classList.remove("active");
 }
 
-/* SEARCH */
+/* SEARCH FUNCTION */
 function searchSite(){
-  let input=document.getElementById("search-input").value.toLowerCase();
-  let results=document.getElementById("search-results");
-  let pages=[
+  let input = document.getElementById("search-input").value.toLowerCase();
+  let results = document.getElementById("search-results");
+  let pages = [
     {title:"Profil Tetuko Ethnic",link:"profil.html"},
     {title:"Rebab",link:"rebab.html"},
     {title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
@@ -196,24 +196,23 @@ function searchSite(){
     {title:"Katalog Produk",link:"katalog.html"}
   ];
   results.innerHTML="";
-  pages.forEach(function(page){
+  pages.forEach(page=>{
     if(page.title.toLowerCase().includes(input)){
-      results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';
+      results.innerHTML += '<a href="'+page.link+'">'+page.title+'</a>';
     }
   });
 }
 
-/* DROPDOWN MOBILE FIX */
-document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
+/* DROPDOWN HIGHLIGHT MOBILE & DESKTOP */
+document.querySelectorAll(".dropdown-parent > span").forEach(item=>{
   item.addEventListener("click",function(){
     let dropdown=this.nextElementSibling;
-    document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){ menu.style.display="none"; }
+    document.querySelectorAll(".dropdown").forEach(menu=>{
+      if(menu!==dropdown) menu.style.display="none";
     });
-    dropdown.style.display=dropdown.style.display==="flex"?"none":"flex";
+    dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
   });
 });
 </script>
-
 </body>
 </html>
