@@ -27,12 +27,7 @@
   <div class="nav-container">
     <div class="logo"><img src="logo.png" alt="Logo"></div>
     
-    <!-- Mobile toolbar -->
-    <div class="mobile-toolbar">
-      <div class="search-icon" onclick="openSearch()">🔍</div>
-      <div class="menu-toggle">&#9776;</div>
-    </div>
-    
+    <!-- Desktop menu -->
     <ul class="nav-menu">
       <li><a href="index.html">Beranda</a></li>
       <li class="dropdown-parent">
@@ -60,8 +55,15 @@
         </div>
       </li>
       <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
+      <li><a href="https://wa.me/62895405919086" target="_blank">Kontak</a></li>
     </ul>
+    
+    <!-- Mobile toolbar -->
+    <div class="mobile-toolbar">
+      <div class="search-icon" onclick="openSearch()">🔍</div>
+      <div class="menu-toggle">&#9776;</div>
+    </div>
+    
   </div>
 </header>
 
@@ -198,7 +200,7 @@ function searchSite(){
   });
 }
 
-/* DROPDOWN MOBILE */
+/* DROPDOWN MOBILE & HIGHLIGHT SUB */
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
   item.addEventListener("click", function(){
     const dropdown = this.nextElementSibling;
