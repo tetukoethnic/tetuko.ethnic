@@ -88,9 +88,11 @@ transition:transform 0.3s, background 0.3s;
 
 /* TENTANG */
 .tentang{padding:120px 15%;text-align:center;line-height:1.8;font-size:18px;}
+.tentang h2{font-size:2.2rem; margin-bottom:20px;}
 
 /* GALERI */
 .galeri{padding:120px 10%;text-align:center;background:#fafafa;}
+.galeri h2{font-size:2.2rem;margin-bottom:20px;}
 .slider{overflow:hidden;margin-top:40px;}
 .slide-track{display:flex;width:max-content;animation:scroll 40s linear infinite;}
 .slide-track img{width:250px;height:170px;object-fit:cover;border-radius:10px;margin-right:20px;transition:0.3s;}
@@ -109,7 +111,8 @@ transition:transform 0.3s, background 0.3s;
 .btn-galeri:hover{transform:scale(1.05); background:#000;}
 
 /* PRODUK UNGGULAN */
-.produk-unggulan h2,.produk-unggulan p{text-align:center;margin:0 auto 20px auto;max-width:600px;}
+.produk-unggulan h2{font-size:2.2rem; margin-bottom:10px;}
+.produk-unggulan p{text-align:center;margin:0 auto 20px auto;max-width:600px;}
 .produk-unggulan .product-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
 .produk-unggulan .product-card{
 background:#f9f9f9;
@@ -243,4 +246,13 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 .hero p{font-size:18px;}
 .video-carousel{gap:15px; justify-content:flex-start; padding-bottom:20px;}
 .section-look-apple .video-preview{flex:0 0 70%;}
+}
+
+/* JUDUL SECTION DESKTOP LEBIH BESAR */
+@media(min-width:769px){
+  .tentang h2,
+  .galeri h2,
+  .produk-unggulan h2{
+    font-size:3rem;
+  }
 }
