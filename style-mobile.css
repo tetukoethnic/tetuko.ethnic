@@ -1,159 +1,80 @@
-/* =====================================================
-   MOBILE STYLE
-   HANYA BERLAKU DI MOBILE
-   DESKTOP TIDAK TERPENGARUH
-===================================================== */
-
-@media screen and (max-width:768px){
-
-/* NAVBAR */
-
-.navbar{
-height:60px;
-}
+@media(max-width:768px){
 
 .nav-container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:6px 16px;
-}
 
-/* LOGO */
+padding:8px 16px;
+
+}
 
 .logo img{
+
 height:38px;
+
 }
-
-/* ICON GROUP */
-
-.nav-icons{
-display:flex;
-align-items:center;
-gap:14px;
-}
-
-/* SEARCH ICON */
-
-.search-icon{
-font-size:18px;
-cursor:pointer;
-display:flex;
-align-items:center;
-}
-
-/* HAMBURGER */
 
 .menu-toggle{
+
 display:block;
 font-size:24px;
 cursor:pointer;
-display:flex;
-align-items:center;
+
 }
 
-/* MOBILE MENU */
+.nav-icons{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+}
 
 .nav-menu{
+
 position:fixed;
 top:60px;
 left:0;
 width:100%;
-height:calc(100vh - 60px);
-
-background:#ffffff;
-
-display:flex;
+height:100vh;
+background:white;
 flex-direction:column;
-align-items:flex-start;
-
 transform:translateY(-20px);
 opacity:0;
 pointer-events:none;
+transition:0.3s;
 
-transition:all .35s ease;
-
-z-index:9999;
 }
 
 .nav-menu.active{
+
 transform:translateY(0);
 opacity:1;
 pointer-events:auto;
-}
 
-/* MENU ITEM */
+}
 
 .nav-menu li{
-width:100%;
+
 border-bottom:1px solid #eee;
+
 }
 
-.nav-menu li a,
-.dropdown-parent > span{
+.nav-menu a{
+
 display:block;
-width:100%;
-padding:18px 22px;
-font-size:17px;
+padding:18px;
+
 }
-
-/* DROPDOWN */
-
-.dropdown{
-display:none;
-flex-direction:column;
-background:#f7f7f7;
-width:100%;
-}
-
-.dropdown-parent.open .dropdown{
-display:flex;
-}
-
-.dropdown a{
-padding:14px 34px;
-}
-
-/* HERO */
 
 .hero h1{
+
 font-size:38px;
+
 }
 
 .hero p{
+
 font-size:16px;
-padding:0 20px;
-}
 
-/* GALERI SLIDER MOBILE */
-
-.slide-track{
-display:flex;
-overflow-x:auto;
-gap:12px;
-
-scroll-snap-type:x mandatory;
--webkit-overflow-scrolling:touch;
-}
-
-.slide-track img{
-flex:0 0 auto;
-width:80%;
-max-width:260px;
-scroll-snap-align:center;
-}
-
-/* VIDEO SECTION */
-
-.video-carousel{
-display:flex;
-overflow-x:auto;
-gap:16px;
-padding-bottom:10px;
-}
-
-.video-preview{
-min-width:260px;
 }
 
 }
