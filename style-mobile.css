@@ -1,134 +1,17 @@
-/* Reset Mobile */
-@media (max-width: 768px) {
-  html, body {
-    font-size: 16px;
-  }
-
-  /* NAVBAR */
-  .nav-container {
-    padding: 10px 15px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 0;
-    background: rgba(255,255,255,0.95);
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100%;
-    height: calc(100% - 70px);
-    padding-top: 20px;
-    transition: left 0.3s ease;
-    z-index: 9998;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-menu li {
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  .dropdown {
-    position: static;
-    box-shadow: none;
-    border-radius: 0;
-    display: none;
-  }
-
-  .dropdown-parent.active .dropdown {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* HERO */
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 15px;
-  }
-
-  /* TENTANG */
-  .tentang {
-    padding: 80px 8%;
-    font-size: 16px;
-  }
-
-  .tentang h2 {
-    font-size: 2rem;
-  }
-
-  /* GALERI */
-  .galeri {
-    padding: 80px 8%;
-  }
-
-  .slide-track img {
-    width: 180px;
-    height: 120px;
-  }
-
-  .btn-galeri {
-    padding: 8px 20px;
-  }
-
-  /* PRODUK UNGGULAN */
-  .produk-unggulan {
-    padding: 80px 8%;
-  }
-
-  .product-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-card {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  /* LIHAT LEBIH DEKAT */
-  .section-look-apple {
-    padding: 80px 8%;
-  }
-
-  .look-title {
-    font-size: 2rem;
-  }
-
-  .look-subtitle {
-    font-size: 1rem;
-  }
-
-  .video-preview {
-    flex: 0 0 80%;
-  }
-}
-
-/* SEARCH OVERLAY ADJUST MOBILE */
-@media (max-width: 768px) {
-  #search-overlay .search-container {
-    width: 90%;
-  }
-
-  #search-input {
-    font-size: 16px;
-    padding: 12px;
-  }
+/* MOBILE */
+@media(max-width:768px){
+  .nav-menu{flex-direction:column;position:fixed;top:70px;right:-100%;width:250px;height:calc(100% - 70px);background:white;gap:0;padding-top:20px;transition:0.3s;overflow-y:auto;}
+  .nav-menu.active{right:0;}
+  .nav-menu li{margin:0;}
+  .dropdown{position:relative;top:0;left:0;min-width:100%;display:none;box-shadow:none;padding-left:15px;}
+  .dropdown-parent.open > .dropdown{display:flex;flex-direction:column;}
+  .menu-toggle{display:flex;}
+  .nav-icons{gap:15px;}
+  .hero h1{font-size:48px;}
+  .hero p{font-size:18px;}
+  .tentang{padding:80px 10%;}
+  .galeri{padding:80px 5%;}
+  .produk-unggulan{padding:80px 5%;}
+  .section-look-apple{padding:80px 5%;}
+  .video-carousel{flex-wrap:nowrap;overflow-x:auto;gap:15px;}
 }
