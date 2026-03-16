@@ -1,17 +1,208 @@
-/* MOBILE */
-@media(max-width:768px){
-  .nav-menu{flex-direction:column;position:fixed;top:70px;right:-100%;width:250px;height:calc(100% - 70px);background:white;gap:0;padding-top:20px;transition:0.3s;overflow-y:auto;}
-  .nav-menu.active{right:0;}
-  .nav-menu li{margin:0;}
-  .dropdown{position:relative;top:0;left:0;min-width:100%;display:none;box-shadow:none;padding-left:15px;}
-  .dropdown-parent.open > .dropdown{display:flex;flex-direction:column;}
-  .menu-toggle{display:flex;}
-  .nav-icons{gap:15px;}
-  .hero h1{font-size:48px;}
-  .hero p{font-size:18px;}
-  .tentang{padding:80px 10%;}
-  .galeri{padding:80px 5%;}
-  .produk-unggulan{padding:80px 5%;}
-  .section-look-apple{padding:80px 5%;}
-  .video-carousel{flex-wrap:nowrap;overflow-x:auto;gap:15px;}
+/* =====================================================
+   MOBILE STYLE FINAL
+   DESKTOP TIDAK TERPENGARUH
+===================================================== */
+@media screen and (max-width:768px){
+
+/* ===== NAVBAR ===== */
+.navbar {
+  height:60px;
+  padding:0;
+}
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 16px;
+}
+
+/* LOGO */
+.logo img {
+  height:38px;
+}
+
+/* ICONS: SEARCH + HAMBURGER */
+.nav-icons {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* SEARCH ICON */
+.search-icon {
+  font-size:20px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+}
+
+/* MENU HAMBURGER */
+.menu-toggle {
+  display:flex;
+  font-size:24px;
+  cursor:pointer;
+  align-items:center;
+}
+
+/* NAV MENU MOBILE */
+.nav-menu {
+  position:fixed;
+  top:60px;
+  left:0;
+  width:100%;
+  height:calc(100vh - 60px);
+  background:white;
+  flex-direction:column;
+  align-items:flex-start;
+  transform:translateY(-20px);
+  opacity:0;
+  pointer-events:none;
+  transition:all .35s ease;
+  z-index:9999;
+}
+
+.nav-menu.active {
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+
+.nav-menu li {
+  width:100%;
+  border-bottom:1px solid #eee;
+}
+
+.nav-menu li a,
+.dropdown-parent > span {
+  display:block;
+  width:100%;
+  padding:16px 22px;
+  font-size:16px;
+}
+
+/* ===== DROPDOWN MOBILE ===== */
+.dropdown {
+  display:none;
+  flex-direction:column;
+  background:#f7f7f7;
+  width:100%;
+}
+
+.dropdown-parent.open > .dropdown {
+  display:flex;
+}
+
+.dropdown a {
+  padding:14px 32px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align:center;
+  padding:100px 15px 60px;
+}
+
+.hero h1 {
+  font-size:36px;
+  line-height:1.2;
+}
+
+.hero p {
+  font-size:16px;
+  margin-top:10px;
+}
+
+/* ===== GALERI ===== */
+.slide-track {
+  display:flex;
+  overflow-x:auto;
+  gap:12px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+
+.slide-track img {
+  flex:0 0 auto;
+  width:80%;
+  max-width:260px;
+  scroll-snap-align:center;
+}
+
+/* ===== PRODUK UNGGULAN ===== */
+.produk-unggulan .product-grid {
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+
+.produk-unggulan .product-card {
+  width:90%;
+  max-width:260px;
+}
+
+/* ===== LIHAT LEBIH DEKAT (VIDEO) ===== */
+.video-carousel {
+  display:flex;
+  overflow-x:auto;
+  gap:16px;
+  padding-bottom:10px;
+}
+
+.section-look-apple .video-preview {
+  min-width:260px;
+  flex:0 0 auto;
+  border-radius:24px;
+  overflow:hidden;
+}
+
+.section-look-apple .video-preview img {
+  width:100%;
+  display:block;
+}
+
+.section-look-apple .play-wrap {
+  width:70px;
+  height:70px;
+}
+
+.section-look-apple .play-icon {
+  border-left:14px solid #1d1d1f;
+  border-top:9px solid transparent;
+  border-bottom:9px solid transparent;
+}
+
+/* ===== SEARCH OVERLAY ===== */
+#search-overlay {
+  align-items:center;
+  justify-content:center;
+  padding:0 15px;
+}
+
+.search-container {
+  width:100%;
+  max-width:400px;
+}
+
+#search-input {
+  width:100%;
+  font-size:16px;
+  padding:12px 15px;
+}
+
+/* ===== VIDEO OVERLAY ===== */
+#videoOverlay .video-container {
+  width:95%;
+}
+
+#videoOverlay .video-container iframe {
+  height:60vh;
+}
+
+/* ===== RESET MEDIA ===== */
+.nav-menu li a,
+.dropdown-parent > span {
+  line-height:1.5;
+}
+
 }
