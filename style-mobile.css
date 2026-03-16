@@ -1,47 +1,45 @@
 /* =====================================================
-   MOBILE ONLY STYLE
-   SEMUA STYLE HANYA BERLAKU DI MOBILE
-   DESKTOP TIDAK AKAN TERPENGARUH
+   STYLE MOBILE KHUSUS
+   TIDAK MEMPENGARUHI DESKTOP
 ===================================================== */
 
 @media screen and (max-width:768px){
 
-/* ================= NAVBAR MOBILE ================= */
+/* ================= NAVBAR ================= */
+
+.navbar{
+height:60px;
+}
 
 .nav-container{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:8px 16px;
+padding:6px 16px;
 }
 
 /* LOGO */
 
 .logo img{
-height:42px;
+height:40px;
 }
 
-/* SEARCH & HAMBURGER */
+/* ICON KANAN */
 
 .search-icon{
 font-size:18px;
-margin-right:12px;
+margin-right:14px;
 cursor:pointer;
+display:flex;
+align-items:center;
 }
 
 .menu-toggle{
 display:block;
 font-size:24px;
 cursor:pointer;
-}
-
-/* POSISI ICON */
-
-.search-icon,
-.menu-toggle{
 display:flex;
 align-items:center;
-justify-content:center;
 }
 
 /* MENU MOBILE */
@@ -51,7 +49,7 @@ position:fixed;
 top:60px;
 left:0;
 width:100%;
-background:#ffffff;
+background:white;
 
 flex-direction:column;
 align-items:flex-start;
@@ -76,11 +74,11 @@ border-bottom:1px solid #eee;
 .nav-menu li a,
 .dropdown-parent > span{
 display:block;
-padding:16px 20px;
 width:100%;
+padding:16px 20px;
 }
 
-/* DROPDOWN MOBILE */
+/* ================= DROPDOWN ================= */
 
 .dropdown{
 display:none;
@@ -108,7 +106,7 @@ font-size:16px;
 padding:0 20px;
 }
 
-/* ================= GALERI SLIDER ================= */
+/* ================= GALERI ================= */
 
 .slide-track{
 display:flex;
