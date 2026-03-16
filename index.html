@@ -4,236 +4,435 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tetuko Ethnic</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style-mobile.css">
+
 </head>
 <body>
 
-<!-- PRELOADER FULLSCREEN -->
+<!-- PRELOADER -->
 <div id="loader">
-  <img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
+<img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
 </div>
 
-<!-- SEARCH FULLSCREEN -->
+
+<!-- SEARCH OVERLAY -->
 <div id="search-overlay">
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
-    <div id="search-results"></div>
-  </div>
-  <span class="close-search" onclick="closeSearch()">✕</span>
+<div class="search-container">
+<input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
+<div id="search-results"></div>
 </div>
+<span class="close-search" onclick="closeSearch()">✕</span>
+</div>
+
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Logo"></div>
-    <div class="menu-toggle">&#9776;</div>
-    <ul class="nav-menu">
-      <li><a href="index.html">Beranda</a></li>
-      <li class="dropdown-parent">
-        <span>Profil</span>
-        <div class="dropdown">
-          <a href="profil.html">Siapa Tetuko Ethnic</a>
-        </div>
-      </li>
-      <li class="dropdown-parent">
-        <span>Galeri</span>
-        <div class="dropdown">
-          <a href="galeri-produksi.html">Galeri Produksi</a>
-          <a href="galeri-produk.html">Galeri Produk</a>
-          <a href="galeri-produk.html">Proses Pembuatan</a>
-        </div>
-      </li>
-      <li class="dropdown-parent">
-        <span>Edukasi</span>
-        <div class="dropdown">
-          <a href="rebab.html">Tentang Rebab</a>
-          <a href="rawat-rebab.html">Cara Merawat Rebab</a>
-          <a href="gender.html">Tentang Gender</a>
-          <a href="rawat-gender.html">Cara Merawat Gender</a>
-          <a href="karawitan.html">Karawitan</a>
-        </div>
-      </li>
-      <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">Kontak</a></li>
-    </ul>
-    <div class="search-icon">🔍</div>
-  </div>
+
+<div class="nav-container">
+
+<div class="logo">
+<img src="logo.png" alt="Logo">
+</div>
+
+<div class="menu-toggle">&#9776;</div>
+
+<ul class="nav-menu">
+
+<li><a href="index.html">Beranda</a></li>
+
+<li class="dropdown-parent">
+<span>Profil</span>
+<div class="dropdown">
+<a href="profil.html">Siapa Tetuko Ethnic</a>
+</div>
+</li>
+
+<li class="dropdown-parent">
+<span>Galeri</span>
+<div class="dropdown">
+<a href="galeri-produksi.html">Galeri Produksi</a>
+<a href="galeri-produk.html">Galeri Produk</a>
+<a href="galeri-produk.html">Proses Pembuatan</a>
+</div>
+</li>
+
+<li class="dropdown-parent">
+<span>Edukasi</span>
+<div class="dropdown">
+<a href="rebab.html">Tentang Rebab</a>
+<a href="rawat-rebab.html">Cara Merawat Rebab</a>
+<a href="gender.html">Tentang Gender</a>
+<a href="rawat-gender.html">Cara Merawat Gender</a>
+<a href="karawitan.html">Karawitan</a>
+</div>
+</li>
+
+<li><a href="katalog.html">Katalog</a></li>
+
+<li>
+<a href="https://wa.me/62895405919086?text=Halo%20Tetuko%20Ethnic%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank">
+Kontak
+</a>
+</li>
+
+</ul>
+
+<div class="search-icon">🔍</div>
+
+</div>
+
 </header>
+
 
 <!-- HERO -->
 <section class="hero">
-  <h1>TETUKO ETHNIC</h1>
-  <p>Produsen Rebab dan Perangkat Karawitan Berkualitas Tinggi</p>
-  <a href="katalog.html" class="btn">Lihat Produk</a>
+
+<h1>TETUKO ETHNIC</h1>
+
+<p>Produsen Rebab dan Perangkat Karawitan Berkualitas Tinggi</p>
+
+<a href="katalog.html" class="btn">Lihat Produk</a>
+
 </section>
+
 
 <!-- TENTANG -->
-<section class="tentang">
-  <h2>Tentang Tetuko Ethnic</h2>
-  <p>
-    Tetuko Ethnic merupakan produsen alat musik tradisional khususnya rebab dan perangkat karawitan
-    yang dibuat secara teliti dengan memperhatikan kualitas bahan, keindahan bentuk, serta karakter suara.
-    Setiap produk dibuat dengan proses pengerjaan yang detail sehingga menghasilkan
-    alat musik yang tidak hanya indah secara visual tetapi juga memiliki kualitas bunyi yang baik
-    untuk kebutuhan karawitan profesional maupun pendidikan seni.
-  </p>
+<section class="tentang reveal">
+
+<h2>Tentang Tetuko Ethnic</h2>
+
+<p>
+Tetuko Ethnic merupakan produsen alat musik tradisional khususnya rebab dan perangkat karawitan
+yang dibuat secara teliti dengan memperhatikan kualitas bahan, keindahan bentuk, serta karakter suara.
+Setiap produk dibuat dengan proses pengerjaan yang detail sehingga menghasilkan
+alat musik yang tidak hanya indah secara visual tetapi juga memiliki kualitas bunyi yang baik
+untuk kebutuhan karawitan profesional maupun pendidikan seni.
+</p>
+
 </section>
+
 
 <!-- GALERI -->
-<section class="galeri galeri-abu">
-  <h2>Galeri Tetuko Ethnic</h2>
-  <div class="slider">
-    <div class="slide-track">
-      <img src="galeri1.jpg">
-      <img src="galeri2.jpg">
-      <img src="galeri3.jpg">
-      <img src="galeri4.jpg">
-      <img src="galeri5.jpg">
-      <img src="galeri6.jpg">
-    </div>
-  </div>
-  <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
+<section class="galeri galeri-abu reveal">
+
+<h2>Galeri Tetuko Ethnic</h2>
+
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="galeri1.jpg">
+<img src="galeri2.jpg">
+<img src="galeri3.jpg">
+<img src="galeri4.jpg">
+<img src="galeri5.jpg">
+<img src="galeri6.jpg">
+
+</div>
+
+</div>
+
+<a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
+
 </section>
 
-<!-- PRODUK UNGGULAN -->
-<section class="produk-unggulan">
-  <h2>Produk Unggulan</h2>
-  <p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/produk1.jpg">
-      <h3>Rebab Ukir Klasik</h3>
-      <p>Rebab ukiran khas dengan suara halus.</p>
-      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
-    </div>
-    <div class="product-card">
-      <img src="images/produk2.jpg">
-      <h3>Rebab Modern</h3>
-      <p>Desain modern, suara tetap halus.</p>
-      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
-    </div>
-    <div class="product-card">
-      <img src="images/produk3.jpg">
-      <h3>Gender Tradisional</h3>
-      <p>Terbuat dari kayu berkualitas, suara autentik.</p>
-      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
-    </div>
-  </div>
+
+<!-- PRODUK -->
+<section class="produk-unggulan reveal">
+
+<h2>Produk Unggulan</h2>
+
+<p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="images/produk1.jpg">
+<h3>Rebab Ukir Klasik</h3>
+<p>Rebab ukiran khas dengan suara halus.</p>
+<a href="katalog.html" class="btn-katalog">Lihat Detail</a>
+</div>
+
+<div class="product-card">
+<img src="images/produk2.jpg">
+<h3>Rebab Modern</h3>
+<p>Desain modern, suara tetap halus.</p>
+<a href="katalog.html" class="btn-katalog">Lihat Detail</a>
+</div>
+
+<div class="product-card">
+<img src="images/produk3.jpg">
+<h3>Gender Tradisional</h3>
+<p>Terbuat dari kayu berkualitas, suara autentik.</p>
+<a href="katalog.html" class="btn-katalog">Lihat Detail</a>
+</div>
+
+</div>
+
 </section>
 
-<!-- LIHAT LEBIH DEKAT -->
-<section class="section-look-apple">
-  <div class="look-inner">
-    <h2 class="look-title">Lihat Lebih Dekat</h2>
-    <p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
-    
-    <div class="video-carousel">
-      <div class="video-preview" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-        <img src="https://via.placeholder.com/300x180" alt="Video 1">
-        <div class="play-wrap"><div class="play-icon"></div></div>
-      </div>
-      <div class="video-preview" data-video="https://www.youtube.com/embed/oHg5SJYRHA0">
-        <img src="https://via.placeholder.com/300x180" alt="Video 2">
-        <div class="play-wrap"><div class="play-icon"></div></div>
-      </div>
-      <div class="video-preview" data-video="https://www.youtube.com/embed/9bZkp7q19f0">
-        <img src="https://via.placeholder.com/300x180" alt="Video 3">
-        <div class="play-wrap"><div class="play-icon"></div></div>
-      </div>
-    </div>
-  </div>
+
+<!-- VIDEO -->
+<section class="section-look-apple reveal">
+
+<div class="look-inner">
+
+<h2 class="look-title">Lihat Lebih Dekat</h2>
+
+<p class="look-subtitle">Testimoni dari para pakar dan ahli di bidang karawitan.</p>
+
+<div class="video-carousel">
+
+<div class="video-preview" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+<img src="https://via.placeholder.com/300x180">
+<div class="play-wrap"><div class="play-icon"></div></div>
+</div>
+
+<div class="video-preview" data-video="https://www.youtube.com/embed/oHg5SJYRHA0">
+<img src="https://via.placeholder.com/300x180">
+<div class="play-wrap"><div class="play-icon"></div></div>
+</div>
+
+<div class="video-preview" data-video="https://www.youtube.com/embed/9bZkp7q19f0">
+<img src="https://via.placeholder.com/300x180">
+<div class="play-wrap"><div class="play-icon"></div></div>
+</div>
+
+</div>
+
+</div>
+
 </section>
+
 
 <!-- VIDEO OVERLAY -->
 <div id="videoOverlay">
-  <div class="video-container">
-    <span class="close-video" id="closeVideo">&times;</span>
-    <iframe id="iframeVideo" src="" allowfullscreen></iframe>
-  </div>
+
+<div class="video-container">
+
+<span class="close-video" id="closeVideo">&times;</span>
+
+<iframe id="iframeVideo" src="" allowfullscreen></iframe>
+
 </div>
+
+</div>
+
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Tetuko Ethnic</p>
-  <p>
-    Instagram : @tetuko.ethnic<br>
-    TikTok : @tetuko.ethnic
-  </p>
+
+<p>© 2026 Tetuko Ethnic</p>
+
+<p>
+Instagram : @tetuko.ethnic<br>
+TikTok : @tetuko.ethnic
+</p>
+
 </footer>
 
+
 <script>
+
 /* PRELOADER */
-window.addEventListener("load", function(){
-  const loader = document.getElementById("loader");
-  if(loader){
-    loader.style.opacity = "0";
-    setTimeout(() => { loader.style.display = "none"; }, 600);
-  }
+
+window.addEventListener("load",function(){
+
+const loader=document.getElementById("loader");
+
+loader.style.opacity="0";
+
+setTimeout(function(){
+loader.style.display="none";
+},600);
+
 });
 
-/* NAVBAR MOBILE TOGGLE */
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".nav-menu");
-toggle.onclick = function(){
-  if(window.innerWidth <= 768){
-    menu.classList.toggle("active");
-  }
-};
+
+/* NAVBAR MOBILE */
+
+const toggle=document.querySelector(".menu-toggle");
+const menu=document.querySelector(".nav-menu");
+
+toggle.addEventListener("click",function(){
+menu.classList.toggle("active");
+});
+
 
 /* SEARCH */
-function openSearch(){ document.getElementById("search-overlay").classList.add("active"); document.getElementById("search-input").focus(); }
-function closeSearch(){ document.getElementById("search-overlay").classList.remove("active"); }
-document.querySelector(".search-icon").onclick = openSearch;
 
-function searchSite(){
-  let input = document.getElementById("search-input").value.toLowerCase();
-  let results = document.getElementById("search-results");
-  let pages = [
-    {title:"Profil Tetuko Ethnic",link:"profil.html"},
-    {title:"Rebab",link:"rebab.html"},
-    {title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
-    {title:"Gender",link:"gender.html"},
-    {title:"Cara Merawat Gender",link:"rawat-gender.html"},
-    {title:"Karawitan",link:"karawitan.html"},
-    {title:"Katalog Produk",link:"katalog.html"}
-  ];
-  results.innerHTML="";
-  pages.forEach(function(page){
-    if(page.title.toLowerCase().includes(input)){
-      results.innerHTML += '<a href="'+page.link+'">'+page.title+'</a>';
-    }
-  });
+function openSearch(){
+document.getElementById("search-overlay").classList.add("active");
+document.getElementById("search-input").focus();
 }
 
-/* DROPDOWN MOBILE FIX */
+function closeSearch(){
+document.getElementById("search-overlay").classList.remove("active");
+}
+
+document.querySelector(".search-icon").onclick=openSearch;
+
+
+function searchSite(){
+
+let input=document.getElementById("search-input").value.toLowerCase();
+
+let results=document.getElementById("search-results");
+
+let pages=[
+{title:"Profil Tetuko Ethnic",link:"profil.html"},
+{title:"Rebab",link:"rebab.html"},
+{title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
+{title:"Gender",link:"gender.html"},
+{title:"Cara Merawat Gender",link:"rawat-gender.html"},
+{title:"Karawitan",link:"karawitan.html"},
+{title:"Katalog Produk",link:"katalog.html"}
+];
+
+results.innerHTML="";
+
+pages.forEach(function(page){
+
+if(page.title.toLowerCase().includes(input)){
+results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';
+}
+
+});
+
+}
+
+
+/* DROPDOWN MOBILE */
+
 document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
-  item.addEventListener("click",function(){
-    let dropdown=this.nextElementSibling;
-    document.querySelectorAll(".dropdown").forEach(function(menu){
-      if(menu!==dropdown){ menu.style.display="none"; }
-    });
-    dropdown.style.display = dropdown.style.display==="flex" ? "none" : "flex";
-  });
+
+item.addEventListener("click",function(){
+
+let parent=this.parentElement;
+
+document.querySelectorAll(".dropdown-parent").forEach(function(el){
+if(el!==parent){
+el.classList.remove("open");
+}
 });
 
-/* VIDEO OVERLAY */
-document.querySelectorAll('.video-preview').forEach(item=>{
-  item.addEventListener('click',()=>{
-    const overlay = document.getElementById('videoOverlay');
-    const iframe = overlay.querySelector('#iframeVideo');
-    iframe.src = item.dataset.video;
-    overlay.classList.add('active');
-  });
+parent.classList.toggle("open");
+
 });
 
-document.getElementById('closeVideo').addEventListener('click',()=>{
-  const overlay = document.getElementById('videoOverlay');
-  const iframe = overlay.querySelector('#iframeVideo');
-  iframe.src = "";
-  overlay.classList.remove('active');
 });
+
+
+/* VIDEO POPUP */
+
+document.querySelectorAll(".video-preview").forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+const overlay=document.getElementById("videoOverlay");
+const iframe=overlay.querySelector("#iframeVideo");
+
+iframe.src=item.dataset.video;
+
+overlay.classList.add("active");
+
+});
+
+});
+
+
+document.getElementById("closeVideo").addEventListener("click",()=>{
+
+const overlay=document.getElementById("videoOverlay");
+const iframe=overlay.querySelector("#iframeVideo");
+
+iframe.src="";
+
+overlay.classList.remove("active");
+
+});
+
+
+/* SHRINK NAVBAR */
+
+window.addEventListener("scroll",function(){
+
+const navbar=document.querySelector(".navbar");
+
+if(window.scrollY>50){
+navbar.classList.add("shrink");
+}else{
+navbar.classList.remove("shrink");
+}
+
+});
+
+
+/* HERO PARALLAX */
+
+window.addEventListener("scroll",function(){
+
+const hero=document.querySelector(".hero");
+
+let offset=window.scrollY*0.2;
+
+hero.style.transform="translateY("+offset+"px)";
+
+});
+
+
+/* SCROLL REVEAL */
+
+function reveal(){
+
+const reveals=document.querySelectorAll(".reveal");
+
+reveals.forEach(function(el){
+
+const windowHeight=window.innerHeight;
+
+const elementTop=el.getBoundingClientRect().top;
+
+if(elementTop<windowHeight-100){
+el.classList.add("active");
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
+
+
+/* GALERI AUTO SCROLL */
+
+const slider=document.querySelector(".slide-track");
+
+let scrollAmount=0;
+
+function autoScroll(){
+
+if(window.innerWidth<=768){
+
+scrollAmount+=1;
+
+slider.scrollLeft=scrollAmount;
+
+if(scrollAmount>=slider.scrollWidth-slider.clientWidth){
+scrollAmount=0;
+}
+
+}
+
+}
+
+setInterval(autoScroll,40);
+
 </script>
+
 
 </body>
 </html>
