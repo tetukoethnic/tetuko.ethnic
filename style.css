@@ -222,7 +222,7 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
   position: fixed;
   inset: 0;
   background: white;
-  display: flex;
+  display: flex; /* harus terlihat saat page mulai load */
   align-items: center;
   justify-content: center;
   z-index: 99999;
@@ -230,8 +230,8 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 }
 
 .loader-logo {
-  width: 80%;
-  max-width: 520px;
+  width: 80%;          /* responsive */
+  max-width: 520px;    /* tetap besar di desktop */
   animation: luxuryReveal 3s ease-in-out 1; /* animasi 1x selesai */
   filter: blur(6px);
 }
