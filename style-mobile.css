@@ -1,10 +1,4 @@
-/* =================================
-MOBILE APPLE STYLE
-================================= */
-
 @media (max-width:768px){
-
-/* NAVBAR */
 
 .nav-container{
 display:flex;
@@ -17,8 +11,6 @@ padding:10px 16px;
 height:42px;
 }
 
-/* icon kanan */
-
 .search-icon,
 .menu-toggle{
 display:inline-flex;
@@ -26,29 +18,18 @@ align-items:center;
 justify-content:center;
 font-size:22px;
 cursor:pointer;
-margin-left:14px;
-z-index:10001;
+margin-left:12px;
 }
-
-.search-icon:active,
-.menu-toggle:active{
-transform:scale(.9);
-}
-
-/* MENU MOBILE */
 
 .nav-menu{
-position:absolute;
-top:60px;
+position:fixed;
+top:65px;
 left:0;
 width:100%;
 background:#fff;
 flex-direction:column;
-display:flex;
-
 max-height:0;
 overflow:hidden;
-
 transition:max-height .35s ease;
 border-top:1px solid #eee;
 z-index:9999;
@@ -59,7 +40,6 @@ max-height:600px;
 }
 
 .nav-menu li{
-width:100%;
 border-bottom:1px solid #eee;
 }
 
@@ -67,10 +47,7 @@ border-bottom:1px solid #eee;
 .dropdown-parent > span{
 display:block;
 padding:16px 20px;
-font-size:16px;
 }
-
-/* DROPDOWN */
 
 .dropdown{
 display:none;
@@ -78,50 +55,12 @@ flex-direction:column;
 background:#fafafa;
 }
 
-.dropdown a{
-padding:14px 30px;
-font-size:15px;
-}
-
 .dropdown-parent.open .dropdown{
 display:flex;
-animation:dropdownFade .25s ease;
 }
 
-@keyframes dropdownFade{
-from{
-opacity:0;
-transform:translateY(-6px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* HERO */
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-/* PRODUK */
-
-.produk-unggulan .product-grid{
-flex-direction:column;
-align-items:center;
-}
-
-.produk-unggulan .product-card{
-width:90%;
-margin-bottom:25px;
-}
-
-/* GALERI MOBILE SWIPE */
+.hero h1{font-size:42px;}
+.hero p{font-size:16px;}
 
 .slide-track{
 display:flex;
@@ -129,40 +68,16 @@ overflow-x:auto;
 gap:12px;
 scroll-snap-type:x mandatory;
 -webkit-overflow-scrolling:touch;
-padding-bottom:10px;
 }
 
 .slide-track img{
 flex:0 0 auto;
-scroll-snap-align:start;
-border-radius:8px;
 width:80%;
 max-width:250px;
 }
 
-/* VIDEO CAROUSEL */
-
 .video-carousel{
-display:flex;
-flex-wrap:nowrap;
 overflow-x:auto;
-gap:15px;
-padding-bottom:20px;
-}
-
-/* BUTTON TOUCH */
-
-.btn,
-.btn-galeri,
-.btn-katalog{
-transition:transform .15s ease, box-shadow .15s ease;
-}
-
-.btn:active,
-.btn-galeri:active,
-.btn-katalog:active{
-transform:scale(.97);
-box-shadow:0 2px 5px rgba(0,0,0,.2);
 }
 
 }
