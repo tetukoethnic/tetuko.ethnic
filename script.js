@@ -1,11 +1,5 @@
 // PRELOADER
-// tampilkan loader segera saat DOM siap
-document.addEventListener("DOMContentLoaded", function() {
-  const loader = document.getElementById("loader");
-  loader.style.display = "flex"; // pastikan preloader terlihat
-});
-
-// fade out loader setelah halaman sepenuhnya load
+// FADE OUT LOADER setelah halaman sepenuhnya load
 window.addEventListener("load", function() {
   const loader = document.getElementById("loader");
   loader.style.opacity = "0"; // fade out
