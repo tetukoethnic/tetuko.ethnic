@@ -16,7 +16,6 @@
 <img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
 </div>
 
-
 <!-- SEARCH OVERLAY -->
 <div id="search-overlay">
 <div class="search-container">
@@ -25,7 +24,6 @@
 </div>
 <span class="close-search" onclick="closeSearch()">✕</span>
 </div>
-
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -85,7 +83,6 @@ Kontak
 
 </header>
 
-
 <!-- HERO -->
 <section class="hero">
 
@@ -96,7 +93,6 @@ Kontak
 <a href="katalog.html" class="btn">Lihat Produk</a>
 
 </section>
-
 
 <!-- TENTANG -->
 <section class="tentang reveal">
@@ -112,7 +108,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 </p>
 
 </section>
-
 
 <!-- GALERI -->
 <section class="galeri galeri-abu reveal">
@@ -137,7 +132,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
 
 </section>
-
 
 <!-- PRODUK -->
 <section class="produk-unggulan reveal">
@@ -173,7 +167,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 </section>
 
-
 <!-- VIDEO -->
 <section class="section-look-apple reveal">
 
@@ -206,7 +199,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 </section>
 
-
 <!-- VIDEO OVERLAY -->
 <div id="videoOverlay">
 
@@ -220,7 +212,6 @@ untuk kebutuhan karawitan profesional maupun pendidikan seni.
 
 </div>
 
-
 <!-- FOOTER -->
 <footer>
 
@@ -232,7 +223,6 @@ TikTok : @tetuko.ethnic
 </p>
 
 </footer>
-
 
 <script>
 
@@ -250,59 +240,33 @@ loader.style.display="none";
 
 });
 
+/* NAVBAR MOBILE FIX */
 
-/* NAVBAR MOBILE */
+document.addEventListener("DOMContentLoaded",function(){
 
 const toggle=document.querySelector(".menu-toggle");
 const menu=document.querySelector(".nav-menu");
 
-toggle.addEventListener("click",function(){
+if(toggle && menu){
+
+toggle.addEventListener("click",function(e){
+
+e.stopPropagation();
 menu.classList.toggle("active");
+
 });
 
+document.addEventListener("click",function(e){
 
-/* SEARCH */
-
-function openSearch(){
-document.getElementById("search-overlay").classList.add("active");
-document.getElementById("search-input").focus();
-}
-
-function closeSearch(){
-document.getElementById("search-overlay").classList.remove("active");
-}
-
-document.querySelector(".search-icon").onclick=openSearch;
-
-
-function searchSite(){
-
-let input=document.getElementById("search-input").value.toLowerCase();
-
-let results=document.getElementById("search-results");
-
-let pages=[
-{title:"Profil Tetuko Ethnic",link:"profil.html"},
-{title:"Rebab",link:"rebab.html"},
-{title:"Cara Merawat Rebab",link:"rawat-rebab.html"},
-{title:"Gender",link:"gender.html"},
-{title:"Cara Merawat Gender",link:"rawat-gender.html"},
-{title:"Karawitan",link:"karawitan.html"},
-{title:"Katalog Produk",link:"katalog.html"}
-];
-
-results.innerHTML="";
-
-pages.forEach(function(page){
-
-if(page.title.toLowerCase().includes(input)){
-results.innerHTML+='<a href="'+page.link+'">'+page.title+'</a>';
+if(!menu.contains(e.target) && !toggle.contains(e.target)){
+menu.classList.remove("active");
 }
 
 });
 
 }
 
+});
 
 /* DROPDOWN MOBILE */
 
@@ -324,115 +288,7 @@ parent.classList.toggle("open");
 
 });
 
-
-/* VIDEO POPUP */
-
-document.querySelectorAll(".video-preview").forEach(item=>{
-
-item.addEventListener("click",()=>{
-
-const overlay=document.getElementById("videoOverlay");
-const iframe=overlay.querySelector("#iframeVideo");
-
-iframe.src=item.dataset.video;
-
-overlay.classList.add("active");
-
-});
-
-});
-
-
-document.getElementById("closeVideo").addEventListener("click",()=>{
-
-const overlay=document.getElementById("videoOverlay");
-const iframe=overlay.querySelector("#iframeVideo");
-
-iframe.src="";
-
-overlay.classList.remove("active");
-
-});
-
-
-/* SHRINK NAVBAR */
-
-window.addEventListener("scroll",function(){
-
-const navbar=document.querySelector(".navbar");
-
-if(window.scrollY>50){
-navbar.classList.add("shrink");
-}else{
-navbar.classList.remove("shrink");
-}
-
-});
-
-
-/* HERO PARALLAX */
-
-window.addEventListener("scroll",function(){
-
-const hero=document.querySelector(".hero");
-
-let offset=window.scrollY*0.2;
-
-hero.style.transform="translateY("+offset+"px)";
-
-});
-
-
-/* SCROLL REVEAL */
-
-function reveal(){
-
-const reveals=document.querySelectorAll(".reveal");
-
-reveals.forEach(function(el){
-
-const windowHeight=window.innerHeight;
-
-const elementTop=el.getBoundingClientRect().top;
-
-if(elementTop<windowHeight-100){
-el.classList.add("active");
-}
-
-});
-
-}
-
-window.addEventListener("scroll",reveal);
-window.addEventListener("load",reveal);
-
-
-/* GALERI AUTO SCROLL */
-
-const slider=document.querySelector(".slide-track");
-
-let scrollAmount=0;
-
-function autoScroll(){
-
-if(window.innerWidth<=768){
-
-scrollAmount+=1;
-
-slider.scrollLeft=scrollAmount;
-
-if(scrollAmount>=slider.scrollWidth-slider.clientWidth){
-scrollAmount=0;
-}
-
-}
-
-}
-
-setInterval(autoScroll,40);
-
 </script>
-
 
 </body>
 </html>
