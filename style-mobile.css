@@ -1,188 +1,168 @@
-/* ================================
-   MOBILE SPECIFIC APPLE-STYLE FULL
-   ================================ */
+/* =================================
+MOBILE APPLE STYLE
+================================= */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-  /* ================== NAVBAR ================== */
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    position: relative;
-    z-index: 10000;
-  }
+/* NAVBAR */
 
-  .logo img {
-    height: 45px;
-  }
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 16px;
+}
 
-  /* Tombol hamburger & search */
-  .menu-toggle, .search-icon {
-    display: inline-flex;
-    font-size: 24px;
-    cursor: pointer;
-    margin-left: 15px;
-    align-items: center;
-    justify-content: center;
-  }
+.logo img{
+height:42px;
+}
 
-  .menu-toggle {
-    transition: transform 0.3s ease;
-  }
+/* icon kanan */
 
-  .search-icon {
-    transition: transform 0.3s ease;
-  }
+.search-icon,
+.menu-toggle{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+margin-left:14px;
+z-index:10001;
+}
 
-  .menu-toggle:active, .search-icon:active {
-    transform: scale(0.9);
-  }
+.search-icon:active,
+.menu-toggle:active{
+transform:scale(.9);
+}
 
-  /* NAV-MENU MOBILE */
-  .nav-menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    display: none;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease;
-    z-index: 9999;
-    border-top: 1px solid #eee;
-  }
+/* MENU MOBILE */
 
-  .nav-menu.active {
-    display: flex;
-    max-height: 1000px; /* cukup tinggi untuk semua menu */
-  }
+.nav-menu{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#fff;
+flex-direction:column;
+display:flex;
 
-  .nav-menu li {
-    width: 100%;
-    border-bottom: 1px solid #eee;
-  }
+max-height:0;
+overflow:hidden;
 
-  .nav-menu li a, .dropdown-parent > span {
-    padding: 15px 20px;
-    font-size: 16px;
-    display: block;
-  }
+transition:max-height .35s ease;
+border-top:1px solid #eee;
+z-index:9999;
+}
 
-  /* Dropdown mobile */
-  .dropdown {
-    display: none;
-    flex-direction: column;
-    background: #fafafa;
-  }
+.nav-menu.active{
+max-height:600px;
+}
 
-  .dropdown a {
-    padding: 12px 30px;
-    font-size: 15px;
-  }
+.nav-menu li{
+width:100%;
+border-bottom:1px solid #eee;
+}
 
-  /* Dropdown toggle via JS: slide down effect */
-  .dropdown-parent.open .dropdown {
-    display: flex;
-    animation: slideDown 0.25s ease forwards;
-  }
+.nav-menu li a,
+.dropdown-parent > span{
+display:block;
+padding:16px 20px;
+font-size:16px;
+}
 
-  @keyframes slideDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+/* DROPDOWN */
 
-  /* ================== HERO ================== */
-  .hero h1 {
-    font-size: 42px;
-    line-height: 1.2;
-  }
+.dropdown{
+display:none;
+flex-direction:column;
+background:#fafafa;
+}
 
-  .hero p {
-    font-size: 16px;
-  }
+.dropdown a{
+padding:14px 30px;
+font-size:15px;
+}
 
-  /* ================== PRODUK UNGGULAN ================== */
-  .produk-unggulan .product-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+.dropdown-parent.open .dropdown{
+display:flex;
+animation:dropdownFade .25s ease;
+}
 
-  .produk-unggulan .product-card {
-    width: 90%;
-    margin-bottom: 25px;
-  }
+@keyframes dropdownFade{
+from{
+opacity:0;
+transform:translateY(-6px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-  /* ================== GALERI ================== */
-  .slide-track {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 10px;
-  }
+/* HERO */
 
-  .slide-track img {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 250px;
-  }
+.hero h1{
+font-size:42px;
+}
 
-  /* ================== VIDEO SECTION ================== */
-  .video-carousel {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 15px;
-    justify-content: flex-start;
-    padding-bottom: 20px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
+.hero p{
+font-size:16px;
+}
 
-  .section-look-apple .video-preview {
-    flex: 0 0 70%;
-  }
+/* PRODUK */
 
-  /* ================== BUTTON ANIMASI ================== */
-  .btn, .btn-galeri, .btn-katalog {
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    display: inline-block;
-  }
+.produk-unggulan .product-grid{
+flex-direction:column;
+align-items:center;
+}
 
-  .btn:active, .btn-galeri:active, .btn-katalog:active {
-    transform: scale(0.97);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
+.produk-unggulan .product-card{
+width:90%;
+margin-bottom:25px;
+}
 
-  /* ================== SEARCH OVERLAY ================== */
-  #search-overlay {
-    padding: 20px;
-  }
+/* GALERI MOBILE SWIPE */
 
-  #search-input {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 15px;
-  }
+.slide-track{
+display:flex;
+overflow-x:auto;
+gap:12px;
+scroll-snap-type:x mandatory;
+-webkit-overflow-scrolling:touch;
+padding-bottom:10px;
+}
 
-  #search-results a {
-    display: block;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-bottom: 1px solid #eee;
-  }
+.slide-track img{
+flex:0 0 auto;
+scroll-snap-align:start;
+border-radius:8px;
+width:80%;
+max-width:250px;
+}
 
-  /* ================== FOOTER ================== */
-  footer {
-    text-align: center;
-    font-size: 14px;
-    padding: 20px 10px;
-  }
+/* VIDEO CAROUSEL */
+
+.video-carousel{
+display:flex;
+flex-wrap:nowrap;
+overflow-x:auto;
+gap:15px;
+padding-bottom:20px;
+}
+
+/* BUTTON TOUCH */
+
+.btn,
+.btn-galeri,
+.btn-katalog{
+transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.btn:active,
+.btn-galeri:active,
+.btn-katalog:active{
+transform:scale(.97);
+box-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+
 }
