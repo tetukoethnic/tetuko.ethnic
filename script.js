@@ -1,8 +1,10 @@
 // PRELOADER
-window.addEventListener("load", function(){
+window.addEventListener("load", function() {
   const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  setTimeout(()=>{loader.style.display="none";}, 600);
+  loader.style.opacity = "0"; // fade out
+  setTimeout(() => {
+    loader.style.display = "none"; // hilangkan loader
+  }, 600); // waktu fade sesuai CSS
 });
 
 // MOBILE MENU TOGGLE
