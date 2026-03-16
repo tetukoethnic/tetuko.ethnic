@@ -1,11 +1,11 @@
 /* =====================================================
-   STYLE MOBILE KHUSUS
-   TIDAK MEMPENGARUHI DESKTOP
+   MOBILE STYLE FINAL
+   DESKTOP TIDAK TERPENGARUH
 ===================================================== */
 
 @media screen and (max-width:768px){
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 
 .navbar{
 height:60px;
@@ -21,18 +21,27 @@ padding:6px 16px;
 /* LOGO */
 
 .logo img{
-height:40px;
+height:38px;
 }
 
-/* ICON KANAN */
+/* ICON GROUP */
+
+.nav-icons{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+/* SEARCH */
 
 .search-icon{
 font-size:18px;
-margin-right:14px;
 cursor:pointer;
 display:flex;
 align-items:center;
 }
+
+/* HAMBURGER */
 
 .menu-toggle{
 display:block;
@@ -42,28 +51,33 @@ display:flex;
 align-items:center;
 }
 
-/* MENU MOBILE */
+/* MENU */
 
 .nav-menu{
 position:fixed;
 top:60px;
 left:0;
 width:100%;
+height:calc(100vh - 60px);
+
 background:white;
 
 flex-direction:column;
 align-items:flex-start;
 
-max-height:0;
-overflow:hidden;
+transform:translateY(-20px);
+opacity:0;
+pointer-events:none;
 
-transition:max-height .35s ease;
+transition:all .35s ease;
 
 z-index:9999;
 }
 
 .nav-menu.active{
-max-height:600px;
+transform:translateY(0);
+opacity:1;
+pointer-events:auto;
 }
 
 .nav-menu li{
@@ -75,10 +89,11 @@ border-bottom:1px solid #eee;
 .dropdown-parent > span{
 display:block;
 width:100%;
-padding:16px 20px;
+padding:18px 22px;
+font-size:17px;
 }
 
-/* ================= DROPDOWN ================= */
+/* DROPDOWN */
 
 .dropdown{
 display:none;
@@ -92,13 +107,13 @@ display:flex;
 }
 
 .dropdown a{
-padding:12px 30px;
+padding:14px 34px;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero h1{
-font-size:40px;
+font-size:38px;
 }
 
 .hero p{
@@ -106,7 +121,7 @@ font-size:16px;
 padding:0 20px;
 }
 
-/* ================= GALERI ================= */
+/* GALERI */
 
 .slide-track{
 display:flex;
@@ -124,12 +139,13 @@ max-width:260px;
 scroll-snap-align:center;
 }
 
-/* ================= VIDEO ================= */
+/* VIDEO */
 
 .video-carousel{
 display:flex;
 overflow-x:auto;
 gap:16px;
+padding-bottom:10px;
 }
 
 .video-preview{
