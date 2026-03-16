@@ -1,14 +1,15 @@
 // PRELOADER
-// pastikan loader tampil segera setelah DOM siap
+// tampilkan loader segera saat DOM siap
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.getElementById("loader");
-  loader.style.display = "flex"; // tampilkan preloader
+  loader.style.display = "flex"; // pastikan preloader terlihat
 });
 
-// fade out setelah semua konten load
+// fade out loader setelah halaman sepenuhnya load
 window.addEventListener("load", function() {
   const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
+  loader.style.opacity = "0"; // fade out
+
   setTimeout(() => {
     loader.style.display = "none"; // hilangkan preloader
   }, 600); // fade out 0.6 detik
