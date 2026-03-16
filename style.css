@@ -233,7 +233,6 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 .close-search:hover{background:rgba(255,255,255,1); transform:scale(1.1);}
 
 /* RESPONSIVE MOBILE */
-@media(max-width:768px){
 .nav-container{padding:10px 15px;}
 .menu-toggle{display:block;}
 .nav-menu{position:fixed;top:70px;left:0;width:100%;height:calc(100% - 70px);background:white;flex-direction:column;gap:0;overflow-y:auto;transform:translateX(-100%);transition:transform 0.3s ease;z-index:9998;}
