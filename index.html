@@ -4,179 +4,171 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tetuko Ethnic</title>
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style-mobile.css">
-
 </head>
 <body>
 
 <!-- PRELOADER -->
 <div id="loader">
-<img src="logo-loader.png" class="loader-logo" alt="Tetuko Ethnic">
+  <img src="logo-loader.png" class="loader-logo" alt="Logo Tetuko Ethnic">
 </div>
 
 <!-- NAVBAR -->
 <header class="navbar">
-<div class="nav-container">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo Tetuko Ethnic">
+    </div>
 
-<div class="logo">
-<img src="logo.png" alt="Tetuko Ethnic">
-</div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
 
-<ul class="nav-menu">
-<li><a href="#">Beranda</a></li>
+      <li class="dropdown-parent">
+        <span>Profil</span>
+        <div class="dropdown">
+          <a href="profil.html">Siapa Tetuko Ethnic</a>
+        </div>
+      </li>
 
-<li class="dropdown-parent">
-<span>Profil</span>
-<div class="dropdown">
-<a href="#">Tentang Kami</a>
-<a href="#">Visi Misi</a>
-<a href="#">Tim</a>
-</div>
-</li>
+      <li class="dropdown-parent">
+        <span>Galeri</span>
+        <div class="dropdown">
+          <a href="galeri-produksi.html">Galeri Produksi</a>
+          <a href="galeri-produk.html">Galeri Produk</a>
+          <a href="galeri-proses.html">Proses Pembuatan</a>
+        </div>
+      </li>
 
-<li class="dropdown-parent">
-<span>Galeri</span>
-<div class="dropdown">
-<a href="#">Galeri Produksi</a>
-<a href="#">Galeri Produk</a>
-<a href="#">Proses Pembuatan</a>
-</div>
-</li>
+      <li class="dropdown-parent">
+        <span>Edukasi</span>
+        <div class="dropdown">
+          <a href="rebab.html">Tentang Rebab</a>
+          <a href="rawat-rebab.html">Cara Merawat Rebab</a>
+          <a href="gender.html">Tentang Gender</a>
+          <a href="rawat-gender.html">Cara Merawat Gender</a>
+          <a href="karawitan.html">Karawitan</a>
+        </div>
+      </li>
 
-<li class="dropdown-parent">
-<span>Edukasi</span>
-<div class="dropdown">
-<a href="#">Artikel</a>
-<a href="#">Video</a>
-</div>
-</li>
+      <li><a href="katalog.html">Katalog</a></li>
 
-<li><a href="#">Katalog</a></li>
-<li><a href="#">Kontak</a></li>
-</ul>
+      <li>
+        <a href="https://wa.me/62895405919086" target="_blank">Kontak</a>
+      </li>
+    </ul>
 
-<div class="nav-icons">
-<span class="search-icon">🔍</span>
-<div class="menu-toggle">☰</div>
-</div>
-
-</div>
+    <div class="nav-icons">
+      <span class="search-icon">🔍</span>
+      <div class="menu-toggle">☰</div>
+    </div>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<h1>TETUKO ETHNIC</h1>
-<p>Warisan budaya dalam karya</p>
-<a href="#" class="btn">Lihat Katalog</a>
+  <h1>TETUKO ETHNIC</h1>
+  <p>Produsen Rebab dan Perangkat Karawitan Berkualitas Tinggi</p>
+  <a href="katalog.html" class="btn">Lihat Produk</a>
 </section>
 
 <!-- TENTANG -->
-<section class="tentang">
-<h2>Tentang Tetuko Ethnic</h2>
-<p>
-Tetuko Ethnic menghadirkan karya budaya yang terinspirasi dari nilai
-tradisi Nusantara dengan sentuhan desain modern.
-</p>
+<section class="tentang reveal">
+  <h2>Tentang Tetuko Ethnic</h2>
+  <p>
+    Tetuko Ethnic merupakan produsen alat musik tradisional khususnya rebab dan perangkat karawitan
+    yang dibuat secara teliti dengan memperhatikan kualitas bahan, keindahan bentuk, serta karakter suara.
+    Setiap produk dibuat dengan proses pengerjaan yang detail sehingga menghasilkan
+    alat musik yang tidak hanya indah secara visual tetapi juga memiliki kualitas bunyi yang baik
+    untuk kebutuhan karawitan profesional maupun pendidikan seni.
+  </p>
 </section>
 
 <!-- GALERI -->
-<section class="galeri">
-<h2>Galeri Tetuko Ethnic</h2>
-<div class="slider">
-<div class="slide-track">
-<img src="img1.jpg" alt="Galeri 1">
-<img src="img2.jpg" alt="Galeri 2">
-<img src="img3.jpg" alt="Galeri 3">
-<img src="img4.jpg" alt="Galeri 4">
-<img src="img5.jpg" alt="Galeri 5">
-<img src="img6.jpg" alt="Galeri 6">
-</div>
-</div>
-<a class="btn-galeri">Lihat Galeri</a>
+<section class="galeri galeri-abu reveal">
+  <h2>Galeri Tetuko Ethnic</h2>
+  <div class="slider">
+    <div class="slide-track">
+      <img src="galeri1.jpg">
+      <img src="galeri2.jpg">
+      <img src="galeri3.jpg">
+      <img src="galeri4.jpg">
+      <img src="galeri5.jpg">
+      <img src="galeri6.jpg">
+    </div>
+  </div>
+  <a href="galeri.html" class="btn-galeri">Lihat Semua Galeri</a>
 </section>
 
 <!-- PRODUK UNGGULAN -->
-<section class="produk-unggulan">
-<h2>Produk Unggulan</h2>
-<p>Koleksi pilihan dari Tetuko Ethnic yang memadukan nilai tradisi
-dengan sentuhan desain modern.</p>
-<div class="product-grid">
-<div class="product-card">
-<img src="produk1.jpg" alt="Produk 1">
-<h3>Produk 1</h3>
-<p>Karya etnik dengan sentuhan modern.</p>
-<div class="product-icons">
-<span>❤️</span> <span>⭐</span>
-</div>
-<a href="#" class="btn-katalog">Lihat Produk</a>
-</div>
-
-<div class="product-card">
-<img src="produk2.jpg" alt="Produk 2">
-<h3>Produk 2</h3>
-<p>Desain budaya yang elegan.</p>
-<div class="product-icons">
-<span>❤️</span> <span>⭐</span>
-</div>
-<a href="#" class="btn-katalog">Lihat Produk</a>
-</div>
-
-<div class="product-card">
-<img src="produk3.jpg" alt="Produk 3">
-<h3>Produk 3</h3>
-<p>Karya khas Tetuko Ethnic.</p>
-<div class="product-icons">
-<span>❤️</span> <span>⭐</span>
-</div>
-<a href="#" class="btn-katalog">Lihat Produk</a>
-</div>
-</div>
+<section class="produk-unggulan reveal">
+  <h2>Produk Unggulan</h2>
+  <p>Rebab dan perangkat karawitan berkualitas tinggi karya Tetuko Ethnic.</p>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/produk1.jpg">
+      <h3>Rebab Ukir Klasik</h3>
+      <p>Rebab ukiran khas dengan suara halus.</p>
+      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
+    </div>
+    <div class="product-card">
+      <img src="images/produk2.jpg">
+      <h3>Rebab Modern</h3>
+      <p>Desain modern, suara tetap halus.</p>
+      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
+    </div>
+    <div class="product-card">
+      <img src="images/produk3.jpg">
+      <h3>Gender Tradisional</h3>
+      <p>Terbuat dari kayu berkualitas, suara autentik.</p>
+      <a href="katalog.html" class="btn-katalog">Lihat Detail</a>
+    </div>
+  </div>
 </section>
 
 <!-- LIHAT LEBIH DEKAT -->
-<section class="section-look-apple">
-<h2 class="look-title">Lihat Lebih Dekat</h2>
-<p class="look-subtitle">Proses kreatif di balik karya Tetuko Ethnic</p>
-<div class="video-carousel">
-<div class="video-preview" data-video="https://www.youtube.com/embed/VIDEOID1">
-<img src="thumb1.jpg" alt="Video 1">
-<div class="play-wrap"><div class="play-icon"></div></div>
-</div>
-
-<div class="video-preview" data-video="https://www.youtube.com/embed/VIDEOID2">
-<img src="thumb2.jpg" alt="Video 2">
-<div class="play-wrap"><div class="play-icon"></div></div>
-</div>
-
-<div class="video-preview" data-video="https://www.youtube.com/embed/VIDEOID3">
-<img src="thumb3.jpg" alt="Video 3">
-<div class="play-wrap"><div class="play-icon"></div></div>
-</div>
-</div>
+<section class="section-look-apple reveal">
+  <div class="look-inner">
+    <h2 class="look-title">Lihat Lebih Dekat</h2>
+    <p class="look-subtitle">Testimoni dan proses pembuatan</p>
+    <div class="video-carousel">
+      <div class="video-preview" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+        <img src="https://via.placeholder.com/300x180">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/oHg5SJYRHA0">
+        <img src="https://via.placeholder.com/300x180">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-preview" data-video="https://www.youtube.com/embed/9bZkp7q19f0">
+        <img src="https://via.placeholder.com/300x180">
+        <div class="play-wrap"><div class="play-icon"></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- VIDEO OVERLAY -->
 <div id="videoOverlay">
-<div class="video-container">
-<span class="close-video">×</span>
-<iframe src="" allowfullscreen></iframe>
-</div>
+  <div class="video-container">
+    <span class="close-video" id="closeVideo">&times;</span>
+    <iframe id="iframeVideo" src="" allowfullscreen></iframe>
+  </div>
 </div>
 
 <!-- SEARCH OVERLAY -->
 <div id="search-overlay">
-<div class="search-container">
-<input type="text" id="search-input" placeholder="Cari produk...">
-</div>
-<div class="close-search">×</div>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Cari di Tetuko Ethnic..." onkeyup="searchSite()">
+    <div id="search-results"></div>
+  </div>
+  <span class="close-search" onclick="closeSearch()">✕</span>
 </div>
 
 <!-- FOOTER -->
 <footer>
-<p>© 2026 Tetuko Ethnic</p>
-<p>Instagram : @tetuko.ethnic | TikTok : @tetuko.ethnic</p>
+  <p>© 2026 Tetuko Ethnic</p>
+  <p>Instagram : @tetuko.ethnic<br>TikTok : @tetuko.ethnic</p>
 </footer>
 
 <script src="script.js"></script>
