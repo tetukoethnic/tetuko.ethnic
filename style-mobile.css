@@ -1,35 +1,18 @@
 @media(max-width:768px){
 
 .nav-container{
-
 padding:8px 16px;
-
 }
 
 .logo img{
-
 height:38px;
-
 }
 
 .menu-toggle{
-
 display:block;
-font-size:24px;
-cursor:pointer;
-
-}
-
-.nav-icons{
-
-display:flex;
-align-items:center;
-gap:12px;
-
 }
 
 .nav-menu{
-
 position:fixed;
 top:60px;
 left:0;
@@ -41,40 +24,29 @@ transform:translateY(-20px);
 opacity:0;
 pointer-events:none;
 transition:0.3s;
-
 }
 
 .nav-menu.active{
-
 transform:translateY(0);
 opacity:1;
 pointer-events:auto;
-
 }
 
 .nav-menu li{
-
 border-bottom:1px solid #eee;
-
 }
 
 .nav-menu a{
-
 display:block;
 padding:18px;
-
 }
 
 .hero h1{
-
 font-size:38px;
-
 }
 
 .hero p{
-
 font-size:16px;
-
 }
 
 }
