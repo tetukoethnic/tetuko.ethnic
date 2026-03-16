@@ -1,128 +1,28 @@
-/* =========================
-   MOBILE ONLY
-   TIDAK MENGUBAH DESKTOP
-========================= */
-
 @media screen and (max-width:768px){
 
-/* NAVBAR */
+.navbar{height:60px;}
+.nav-container{display:flex;align-items:center;justify-content:space-between;padding:6px 16px;}
+.logo img{height:38px;}
 
-.nav-container{
-padding:10px 15px;
-}
+.nav-icons{display:flex;align-items:center;gap:14px;}
+.search-icon{font-size:18px;cursor:pointer;display:flex;align-items:center;}
+.menu-toggle{display:flex;font-size:24px;cursor:pointer;align-items:center;}
 
-.logo img{
-height:40px;
-}
+.nav-menu{position:fixed;top:60px;left:0;width:100%;height:calc(100vh - 60px);background:white;flex-direction:column;align-items:flex-start;transform:translateY(-20px);opacity:0;pointer-events:none;transition:all .35s ease;z-index:9999;}
+.nav-menu.active{transform:translateY(0);opacity:1;pointer-events:auto;}
+.nav-menu li{width:100%;border-bottom:1px solid #eee;}
+.nav-menu li a,.dropdown-parent > span{display:block;width:100%;padding:18px 22px;font-size:17px;}
 
+.dropdown{display:none;flex-direction:column;background:#f7f7f7;width:100%;}
+.dropdown-parent.open .dropdown{display:flex;}
+.dropdown a{padding:14px 34px;}
 
-/* ICON AREA */
+.hero h1{font-size:38px;}
+.hero p{font-size:16px;padding:0 20px;}
 
-.nav-icons{
-display:flex;
-align-items:center;
-gap:15px;
-}
+.slide-track{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.slide-track img{flex:0 0 auto;width:80%;max-width:260px;scroll-snap-align:center;}
 
-
-/* HAMBURGER */
-
-.menu-toggle{
-display:block;
-font-size:26px;
-cursor:pointer;
-}
-
-
-/* MENU MOBILE */
-
-.nav-menu{
-position:fixed;
-top:70px;
-left:0;
-width:100%;
-background:white;
-flex-direction:column;
-align-items:center;
-gap:20px;
-padding:30px 0;
-display:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-.nav-menu.active{
-display:flex;
-}
-
-
-/* HERO */
-
-.hero h1{
-font-size:36px;
-letter-spacing:2px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-
-/* TENTANG */
-
-.tentang{
-padding:90px 8%;
-font-size:16px;
-}
-
-
-/* GALERI */
-
-.galeri{
-padding:90px 5%;
-}
-
-.slide-track img{
-width:200px;
-height:140px;
-}
-
-
-/* PRODUK */
-
-.product-grid{
-flex-direction:column;
-align-items:center;
-}
-
-.product-card{
-width:90%;
-max-width:320px;
-}
-
-
-/* LIHAT LEBIH DEKAT */
-
-.video-carousel{
-justify-content:flex-start;
-overflow-x:auto;
-}
-
-.video-preview{
-flex:0 0 260px;
-}
-
-
-/* SEARCH OVERLAY */
-
-.search-container{
-width:90%;
-}
-
-
-/* FOOTER */
-
-footer{
-padding:25px 10px;
-}
-
+.video-carousel{display:flex;overflow-x:auto;gap:16px;padding-bottom:10px;}
+.video-preview{min-width:260px;}
 }
