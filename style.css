@@ -230,8 +230,9 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 }
 
 .loader-logo {
-  width: 520px;
-  animation: luxuryReveal 5s ease-in-out infinite;
+  width: 80%;
+  max-width: 520px;
+  animation: luxuryReveal 3s ease-in-out 1; /* animasi 1x selesai */
   filter: blur(6px);
 }
 
