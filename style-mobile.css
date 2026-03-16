@@ -1,0 +1,108 @@
+/* ================================
+   MOBILE SPECIFIC APPLE-STYLE
+   ================================ */
+
+/* Hanya untuk layar max 768px */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav-container {
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 45px; /* lebih proporsional untuk mobile */
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .search-icon {
+    font-size: 22px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 9998;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-menu li a,
+  .dropdown-parent > span {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+
+  /* Dropdown */
+  .dropdown {
+    position: static;
+    flex-direction: column;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown a {
+    padding: 12px 30px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* PRODUK UNGGULAN */
+  .produk-unggulan .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produk-unggulan .product-card {
+    width: 90%;
+    margin-bottom: 25px;
+  }
+
+  /* GALERI */
+  .slide-track {
+    animation: none; /* agar mobile lebih stabil */
+  }
+
+  /* VIDEO SECTION (Lihat Lebih Dekat) */
+  .video-carousel {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+  }
+
+  .section-look-apple .video-preview {
+    flex: 0 0 70%;
+  }
+
+}
