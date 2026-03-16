@@ -1,47 +1,44 @@
 // PRELOADER
-window.addEventListener("load",function(){
-const loader=document.getElementById("loader");
-loader.style.opacity="0";
-setTimeout(function(){loader.style.display="none";},600);
+window.addEventListener("load", function(){
+  const loader = document.getElementById("loader");
+  loader.style.opacity = 0;
+  setTimeout(()=>loader.style.display="none",600);
 });
 
-// HAMBURGER MENU
+// MENU TOGGLE MOBILE
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".nav-menu");
 toggle.addEventListener("click",function(){
-menu.classList.toggle("active");
-toggle.innerHTML = menu.classList.contains("active") ? "✕" : "☰";
+  menu.classList.toggle("active");
+  toggle.innerHTML = menu.classList.contains("active") ? "✕" : "☰";
 });
-
-// SEARCH
-const searchBtn=document.querySelector(".search-icon");
-const searchOverlay=document.getElementById("search-overlay");
-const closeSearch=document.querySelector(".close-search");
-searchBtn.onclick=function(){searchOverlay.classList.add("active");}
-closeSearch.onclick=function(){searchOverlay.classList.remove("active");}
 
 // DROPDOWN MOBILE
-document.querySelectorAll(".dropdown-parent > span").forEach(function(item){
-item.addEventListener("click",function(){
-let parent=this.parentElement;
-document.querySelectorAll(".dropdown-parent").forEach(function(el){if(el!==parent){el.classList.remove("open");}});
-parent.classList.toggle("open");
+document.querySelectorAll(".dropdown-parent > span").forEach(span=>{
+  span.addEventListener("click",()=>{
+    const parent = span.parentElement;
+    parent.classList.toggle("open");
+  });
 });
-});
+
+// SEARCH OVERLAY
+const searchIcon = document.querySelector(".search-icon");
+const searchOverlay = document.getElementById("search-overlay");
+function openSearch(){searchOverlay.classList.add("active");}
+function closeSearch(){searchOverlay.classList.remove("active");}
+searchIcon.addEventListener("click",openSearch);
+document.querySelector(".close-search").addEventListener("click",closeSearch);
 
 // VIDEO OVERLAY
-const previews=document.querySelectorAll(".video-preview");
-const overlay=document.getElementById("videoOverlay");
-const iframe=document.querySelector("#videoOverlay iframe");
-const closeVideo=document.querySelector(".close-video");
-
-previews.forEach(item=>{
-item.onclick=function(){
-iframe.src=this.dataset.video;
-overlay.classList.add("active");
-}
+const videoOverlay = document.getElementById("videoOverlay");
+const iframeVideo = document.getElementById("iframeVideo");
+document.querySelectorAll(".video-preview").forEach(preview=>{
+  preview.addEventListener("click",()=>{
+    iframeVideo.src = preview.dataset.video;
+    videoOverlay.classList.add("active");
+  });
 });
-closeVideo.onclick=function(){
-overlay.classList.remove("active");
-iframe.src="";
-};
+document.getElementById("closeVideo").addEventListener("click",()=>{
+  videoOverlay.classList.remove("active");
+  iframeVideo.src = "";
+});
