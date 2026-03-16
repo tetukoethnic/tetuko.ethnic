@@ -242,14 +242,6 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
   }
 }
 
-/* MOBILE MENU + SEARCH FIX */
-
-document.addEventListener("DOMContentLoaded",function(){
-
-const toggle=document.querySelector(".menu-toggle");
-const menu=document.querySelector(".nav-menu");
-const searchBtn=document.querySelector(".search-icon");
-
 /* HAMBURGER */
 
 toggle.addEventListener("click",function(){
