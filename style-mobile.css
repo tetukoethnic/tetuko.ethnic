@@ -6,21 +6,49 @@
 
 @media screen and (max-width:768px){
 
-/* NAVBAR */
+/* ================= NAVBAR MOBILE ================= */
 
 .nav-container{
-padding:10px 16px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:8px 16px;
+}
+
+/* LOGO */
+
+.logo img{
+height:42px;
+}
+
+/* SEARCH & HAMBURGER */
+
+.search-icon{
+font-size:18px;
+margin-right:12px;
+cursor:pointer;
 }
 
 .menu-toggle{
 display:block;
-font-size:26px;
+font-size:24px;
 cursor:pointer;
 }
 
+/* POSISI ICON */
+
+.search-icon,
+.menu-toggle{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* MENU MOBILE */
+
 .nav-menu{
 position:fixed;
-top:70px;
+top:60px;
 left:0;
 width:100%;
 background:#ffffff;
@@ -45,13 +73,14 @@ width:100%;
 border-bottom:1px solid #eee;
 }
 
-.nav-menu li a{
+.nav-menu li a,
+.dropdown-parent > span{
 display:block;
 padding:16px 20px;
 width:100%;
 }
 
-/* DROPDOWN */
+/* DROPDOWN MOBILE */
 
 .dropdown{
 display:none;
@@ -68,7 +97,7 @@ display:flex;
 padding:12px 30px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero h1{
 font-size:40px;
@@ -79,7 +108,7 @@ font-size:16px;
 padding:0 20px;
 }
 
-/* GALERI SLIDER */
+/* ================= GALERI SLIDER ================= */
 
 .slide-track{
 display:flex;
@@ -97,7 +126,7 @@ max-width:260px;
 scroll-snap-align:center;
 }
 
-/* VIDEO */
+/* ================= VIDEO ================= */
 
 .video-carousel{
 display:flex;
