@@ -1,10 +1,14 @@
 // PRELOADER
 window.addEventListener("load", function() {
   const loader = document.getElementById("loader");
-  loader.style.opacity = "0"; // fade out
+
+  // fade out
+  loader.style.opacity = "0";
+
+  // delay sebelum display:none agar animasi terlihat lebih lama
   setTimeout(() => {
-    loader.style.display = "none"; // hilangkan loader
-  }, 600); // waktu fade sesuai CSS
+    loader.style.display = "none";
+  }, 2000); // ini 1000ms = 1 detik, bisa diubah lebih besar misal 2000
 });
 
 // MOBILE MENU TOGGLE
