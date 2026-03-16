@@ -1,47 +1,64 @@
 /* ================================
-   MOBILE SPECIFIC APPLE-STYLE FIXED
+   MOBILE SPECIFIC APPLE-STYLE FULL
    ================================ */
 
 @media (max-width: 768px) {
 
   /* ================== NAVBAR ================== */
   .nav-container {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 15px;
+    position: relative;
+    z-index: 10000;
   }
 
   .logo img {
-    height: 45px; /* proporsional untuk mobile */
+    height: 45px;
+  }
+
+  /* Tombol hamburger & search */
+  .menu-toggle, .search-icon {
+    display: inline-flex;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu-toggle {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
+    transition: transform 0.3s ease;
   }
 
   .search-icon {
-    font-size: 22px;
+    transition: transform 0.3s ease;
   }
 
+  .menu-toggle:active, .search-icon:active {
+    transform: scale(0.9);
+  }
+
+  /* NAV-MENU MOBILE */
   .nav-menu {
-    position: fixed;
+    position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    height: calc(100% - 60px);
     background: white;
     flex-direction: column;
-    gap: 0;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 9998;
-    display: flex; /* pastikan tetap flex di mobile */
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    z-index: 9999;
+    border-top: 1px solid #eee;
   }
 
   .nav-menu.active {
-    transform: translateX(0);
+    display: flex;
+    max-height: 1000px; /* cukup tinggi untuk semua menu */
   }
 
   .nav-menu li {
@@ -49,23 +66,33 @@
     border-bottom: 1px solid #eee;
   }
 
-  .nav-menu li a,
-  .dropdown-parent > span {
-    padding: 15px 25px;
+  .nav-menu li a, .dropdown-parent > span {
+    padding: 15px 20px;
     font-size: 16px;
+    display: block;
   }
 
-  /* Dropdown */
+  /* Dropdown mobile */
   .dropdown {
-    display: none; /* default mobile */
-    position: static;
+    display: none;
     flex-direction: column;
-    box-shadow: none;
-    padding: 0;
+    background: #fafafa;
   }
 
   .dropdown a {
     padding: 12px 30px;
+    font-size: 15px;
+  }
+
+  /* Dropdown toggle via JS: slide down effect */
+  .dropdown-parent.open .dropdown {
+    display: flex;
+    animation: slideDown 0.25s ease forwards;
+  }
+
+  @keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
   /* ================== HERO ================== */
@@ -91,19 +118,23 @@
 
   /* ================== GALERI ================== */
   .slide-track {
-    animation: none; /* matikan animasi scroll untuk stabil di mobile */
-    display: flex; /* pastikan horizontal scroll bekerja */
+    display: flex;
     overflow-x: auto;
-    gap: 10px;
-    scroll-behavior: smooth;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
   }
 
-  .slider img {
-    width: auto;
-    max-height: 150px;
+  .slide-track img {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 250px;
   }
 
-  /* ================== VIDEO SECTION (Lihat Lebih Dekat) ================== */
+  /* ================== VIDEO SECTION ================== */
   .video-carousel {
     display: flex;
     flex-wrap: nowrap;
@@ -112,10 +143,22 @@
     justify-content: flex-start;
     padding-bottom: 20px;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
   .section-look-apple .video-preview {
     flex: 0 0 70%;
+  }
+
+  /* ================== BUTTON ANIMASI ================== */
+  .btn, .btn-galeri, .btn-katalog {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: inline-block;
+  }
+
+  .btn:active, .btn-galeri:active, .btn-katalog:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 
   /* ================== SEARCH OVERLAY ================== */
