@@ -1,9 +1,15 @@
+/* =====================================================
+   MOBILE ONLY STYLE
+   SEMUA STYLE HANYA BERLAKU DI MOBILE
+   DESKTOP TIDAK AKAN TERPENGARUH
+===================================================== */
+
 @media screen and (max-width:768px){
 
-/* NAVBAR MOBILE */
+/* NAVBAR */
 
 .nav-container{
-padding:10px 15px;
+padding:10px 16px;
 }
 
 .menu-toggle{
@@ -17,26 +23,32 @@ position:fixed;
 top:70px;
 left:0;
 width:100%;
-background:white;
+background:#ffffff;
+
 flex-direction:column;
-gap:0;
-overflow:hidden;
+align-items:flex-start;
+
 max-height:0;
+overflow:hidden;
+
 transition:max-height .35s ease;
+
 z-index:9999;
 }
 
 .nav-menu.active{
-max-height:500px;
+max-height:600px;
 }
 
 .nav-menu li{
+width:100%;
 border-bottom:1px solid #eee;
 }
 
 .nav-menu li a{
 display:block;
-padding:15px 20px;
+padding:16px 20px;
+width:100%;
 }
 
 /* DROPDOWN */
@@ -45,6 +57,7 @@ padding:15px 20px;
 display:none;
 flex-direction:column;
 background:#f7f7f7;
+width:100%;
 }
 
 .dropdown-parent.open .dropdown{
@@ -63,26 +76,33 @@ font-size:40px;
 
 .hero p{
 font-size:16px;
-padding:0 15px;
+padding:0 20px;
 }
 
-/* GALERI */
+/* GALERI SLIDER */
 
 .slide-track{
+display:flex;
 overflow-x:auto;
-gap:10px;
+gap:12px;
+
+scroll-snap-type:x mandatory;
+-webkit-overflow-scrolling:touch;
 }
 
 .slide-track img{
+flex:0 0 auto;
 width:80%;
 max-width:260px;
+scroll-snap-align:center;
 }
 
 /* VIDEO */
 
 .video-carousel{
+display:flex;
 overflow-x:auto;
-gap:15px;
+gap:16px;
 }
 
 .video-preview{
