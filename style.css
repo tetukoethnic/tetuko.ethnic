@@ -92,14 +92,18 @@ transition:transform 0.3s, background 0.3s;
 /* GALERI */
 .galeri{padding:120px 10%;text-align:center;background:#fafafa;}
 .galeri h2{font-size:2.2rem;margin-bottom:20px;text-align:center;}
-.slider{overflow:hidden;margin-top:40px;}
+.slider{
+overflow:hidden;
+margin-top:40px;
+padding-left:10px;
+}
 .slide-track{display:flex;width:max-content;animation:scroll 40s linear infinite;}
 .slide-track img{
-width:420px;
+width:520px;
 height:260px;
 object-fit:contain;
 border-radius:10px;
-margin-right:10px;
+margin-right:5px;
 transition:0.3s;
 }
 .slide-track img:hover{transform:scale(1.1);}
@@ -277,3 +281,4 @@ margin-right:15px;
     font-size:3rem;
   }
 }
+
