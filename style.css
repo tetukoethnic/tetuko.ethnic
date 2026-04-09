@@ -106,7 +106,7 @@ animation:scroll 40s linear infinite;
 .slide-track img{
 width:560px;
 height:340px;
-object-fit:contain;
+object-fit:cover;
 border-radius:10px;
 margin-right:0px;
 transition:0.3s;
