@@ -104,12 +104,13 @@ width:max-content;
 animation:scroll 40s linear infinite;
 }
 .slide-track img{
-width:560px;
-height:340px;
-object-fit:cover;
-border-radius:10px;
-margin-right:0px;
-transition:0.3s;
+  width:560px;
+  height:340px;
+  object-fit:cover;
+  object-position:center; /* TAMBAHKAN INI */
+  border-radius:10px;
+  margin-right:0px;
+  transition:0.3s;
 }
 .slide-track img:hover{transform:scale(1.1);}
 @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
